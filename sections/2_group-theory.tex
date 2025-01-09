@@ -1,0 +1,409 @@
+\section{Lie Groups and Algebra}\label{sec:lie-groups-algebras}
+
+The concept of symmetry is ubiquitous in Physics and is the basis of every fundamental theory, as well as in their respective applications. In fact, if on the one hand fundamental physics is determined by the symmetries that characterise the various theories, on the other hand the presence of such symmetries reduces the complexity of the models and the resolution of the equations determining the dynamical evolution of a given physical system. In broad terms, without deliberately going into more precise and formal characterisations (which are however possible, with different degrees of abstractness and generality, using for example the invariance of the action or Category Theory), a symmetry can be defined as following.
+
+\begin{definition}[Symmetry]
+    A \emph{symmetry} is a transformation of a physical system that preserves its dynamics.
+\end{definition}
+
+The mathematical formalisation of such a concept can be realised by considering the properties that the symmetries are hypothesised to satisfy. In particular, since a symmetry does not change the dynamics of a system, it is reasonable to assume that the composition of two symmetries must be a symmetry itself. It is worth noting that the order in which these transformations act is not, in general, arbitrary. However, respecting the arrangements, the composition of more than two symmetries does not have to depend on how the symmetries are grouped. Given these observations, one can deduce that an abstract set of symmetries is associated to a physical system, and the operation that combines these transformations must satisfy the closure and associativity properties. Furthermore, in the abstract set there must be also present the identity symmetry, since it does not change the features of a physical system, and the inverse symmetry, which is the transformation that nullifies the action of a symmetry. Hence, the natural algebraic structure that allows to describe symmetries is the group. 
+
+
+\begin{definition}[Group]\label{def:group-axioms}
+    A \emph{group} $(G,\circ)$ is a set $G$ equipped with an internal binary operation,
+    \begin{align*}
+        \circ \colon G \times G \to G \\
+        \left(g , h \right) \mapsto g \circ h 
+    \end{align*} 
+    called \emph{group operation}, which satisfies the following axioms:
+    \begin{itemize}
+        \item \emph{associativity}: $(g_1 \circ g_2) \circ g_3 = g_1 \circ (g_2 \circ g_3) \quad \forall g_1, g_2, g_3 \in G \qquad ;$
+        \item \emph{neutral element}: $\exists e \in G$ such that $ g \circ e = e \circ g = g \quad \forall g \in G \qquad ;$
+        \item \emph{inverse element}: $\forall g \in G \exists g^{-1} \in G$ such that $g \circ g^{-1} = g^{-1} \circ g = e \qquad .$
+    \end{itemize}
+    If, in addition, the group operation satisfies the commutativity property, that is, 
+    \begin{equation*}
+        g_1 \circ g_2 = g_2 \circ g_1 \quad \forall g_1, g_2 \in G \qquad ,
+    \end{equation*}
+    then $(G,\circ)$ is said to be \emph{Abelian}.
+\end{definition}
+
+\begin{definition}[Subgroup]
+    Let $(G, \circ)$ be a group. A \emph{subgroup} $(H,\circ)$ is a subset $H$ of $G$ that satisfies the group axioms with the composition inherited from $G$.
+\end{definition}
+
+\begin{remark}
+    The subgroup of a group has the same identity element. \\
+    It is trivial to prove that Abelian group admits \emph{only} abelian subgroups. In contrast, a non-Abelian group \emph{can} have both Abelian and non-Abelian subgroups.
+\end{remark}
+
+\begin{definition}[Order of a group]
+    The \emph{order} of a group is the number of its elements.
+\end{definition}
+
+\begin{remark}
+    A group is finite or infinite whether is order is finite or infinite.
+\end{remark}
+
+\begin{definition}[Dimension of a group]
+    The \emph{dimension} of a group $(G,\circ)$ is the order of the minimal subset $S$ of $G$ whose elements generate every other element of $G$ via the group operation.
+    
+\end{definition}
+
+\begin{remark}
+     The \emph{dimension} of a group $(G,\circ)$ can be put into correspondence with the number of parameters required to specify an element of $G$.
+\end{remark}
+
+\begin{definition}[Group homomorphism and isomorphism]\label{def:group-homomorphism}
+    Let $(G, \circ)$ and $(H, \star)$ be two groups. A \emph{group homomorphism} is a map $f\colon G \to H$  that preserves the group structure, that is
+    \begin{equation}
+        f(g_1) \star f(g_2) = f(g_1 \circ g_2) \qquad .
+    \end{equation}
+
+    A \emph{group isomorphism} is a bijective group homomorphism.
+\end{definition}
+
+\begin{definition}[One-parameter subgroup]\label{def:one-parameter}
+    A \emph{one-parameter subgroup} is a continuous group homomorphism
+    \begin{equation}
+        \phi\colon \R \to G ,
+    \end{equation}
+    where $\R$ is considered as an additive group. If $\phi$ is injective, its image $\phi(\R)$ forms a subgroup of $G$, isomorphic to $R$.
+\end{definition}
+
+\begin{definition}[Lie group]
+    A \emph{Lie group} is a group whose elements depend continuously and differentiably on a set of real parameters $\theta^a$, where  $a = 1, \dots N$. Thus, a Lie group is both a group and a differentiable manifold.
+\end{definition}
+
+\begin{remark}
+    While a Lie group could be defined as a Hausdorff topological group that behaves
+    like a transformation group near the identity, we will focus on its manifold structure, which
+    is more relevant to our purposes.
+\end{remark}
+
+Each element of the Lie group can be represented as a point on its manifold, and the dimension of the group matches that of the manifold. We denote a generic element as $g(\theta)$ and choose the coordinates $\theta^a$ such that the identity element $e$ of the group corresponds to $\theta^a = 0$, i.e., $g(0) = e$. This structure allows us to expand group elements in a Taylor-like series and consider elements infinitesimally close to the identity. The set of these “infinitesimal” elements forms the tangent space at the identity $e$, which is the basis of the Lie algebra. 
+
+To clarify, we introduce the following definitions.
+
+\begin{definition}[Tangent space]
+    Let $\M$ be a manifold. For each point $x \in \M$, the \emph{tangent space} at $x$, $T_x \M$, is the space of tangent vectors
+    \begin{equation}
+        v = \left. \frac{\ud}{\ud t}\right|_{t=0} \gamma(t)  \in T_x \M,
+    \end{equation}
+    where $\gamma\colon \R \to \M$ is any curve on the manifold passing through $x$. The dimension of $T_xM$ matches that of $M$.
+\end{definition}
+
+\begin{definition}[Lie algebra]
+    For a Lie group $G$ with identity $e \in G$, the \emph{Lie Algebra} $\g$ is the tangent space at the identity, $\g = T_e G$.
+\end{definition}
+
+
+Let's now introduce some definitions and theorems which will be useful later for studying the properties of the Poincaré group. Recall that, as a manifold, a Lie group is also a topological space, allowing us to apply the results developed for such spaces. However, whenever possible, we'll specify concepts in terms of the manifold structure upon the topological space, to provide greater clarity and focus on the applications of interest.
+
+\begin{definition}[Connected space]\label{def:connected}
+    A topological space is said to be \emph{connected} if it can't be represented as the union of two or more disjoint non-empty open subsets.
+\end{definition}
+
+\begin{definition}[Connected component]\label{def:connected-component}
+    For a group $G$, the \emph{connected component} (also known as \emph{identity component} or \emph{unity component}), is the largest connected subgroup of $G$ containing the identity element.
+\end{definition}
+
+\begin{definition}[Simply connected]\label{def:simply-connected}
+    A Lie group $G$ is \emph{simply connected} if any two paths $\gamma(t)$, $\gamma'(t)$, which share the same endpoints, can be continuously deformed into one another.
+\end{definition}
+
+The Lorentz group, for example, has four connected components, of which we choose the proper orthochronous part. Since it's not simply connected, the following theorem becomes relevant.
+
+\begin{theorem}\label{th:universal-cover}
+    If $G$ is \emph{not} simply connected, there exists another Lie group $\tilde{G}$ with \emph{isomorphic} Lie algebra, $\tilde{\g} \cong \g$, which is simply connected. This $\tilde{G}$ is called \emph{universal cover} of $G$. There is thus a projection map $\pi \colon \tilde{G} \to G$ which is a surjective group homomorphism.
+\end{theorem}
+
+Thus, the algebras of $\tilde{G}$ and $G$ coincide, i.e., $\tilde{\g} \cong \g$. This means that for each point $g \in \tilde{G}$, there exists an open neighbourhood $g \in U \subset \tilde{G}$ such that the restriction $\pi|_U \colon U \to \Phi(U)$ is a diffeomorphism\footnote{A \emph{diffeomorphism} is a smooth invertible map.}. Consequently, the tangent space at $g \in \tilde{G}$ is isomorphic to the tangent space at $\pi(g) \in G$, including the tangent space at the identity.
+
+For the proper orthochronous Lorentz group, the universal cover is the spin group, which is isomorphic to $SL(2;\C)$.
+
+\begin{definition}[Compact space]\label{def:compact}
+    A topological space $X$ is \emph{compact} if every open cover of $X$ has a finite subcover. Roughly speaking, a Lie group is compact if its parameter space is bounded.
+\end{definition}
+
+\begin{theorem}
+    Every compact Lie group is isomorphic to a matrix group.
+\end{theorem}
+
+Due to the presence of boosts, the Lorentz group is \emph{non}-compact, which implies that its unitary representations must be infinite-dimensional, as we'll shortly see. This property directs us toward studying representations on one-particle Hilbert spaces.
+
+We now introduce the exponential map, a key tool for obtaining elements of $G$ from its Lie algebra $\g$.
+
+\begin{definition}[Exponential map]\label{def:exponential-map}
+    Let $G$ be a Lie group and $\g$ be its Lie algebra. The \emph{exponential map} is defined as
+    \begin{equation}\label{eq:exp-map}
+        \exp\colon \g \to G ,
+    \end{equation}
+    where for $X \in \g$, $\exp(X) = \gamma(1)$, with $\gamma\colon \R \to G$ the unique one-parameter subgroup of $G$ (see def.~\ref{def:one-parameter}) whose tangent vector at the identity is equal to $X$.
+\end{definition}
+
+The exponential map, putting into correspondence a Lie algebra and the associated Lie group, allows one to simplify the study of the Lie group itself, since the Lie algebra is a linearised version of the latter. In this sense, the Lie group can be reconstructed from its Lie algebra via the exponential map. However, there are some limitations on the information that are encoded in the Lie algebra. This can be more easily understood by looking at the path description: if one considers a curve on the Lie group passing through the identity, such a path is differentiable (and, hence, continuous) as long as it does not encounter discontinuities. The presence of these discontinuities involves a substantial distinction between the various submanifolds that can be defined on a Lie group. In particular, since the objective is to reconstruct a Lie group and not just a submanifold, it is necessary to identify the region that contains the neutral element, i.e., a neighbourhood of the identity, with the additional requirement that on this part of the Lie group the exponential map is a differentiable curve. The submanifold that satisfies these properties corresponds to the component connected with the identity, which is a Lie subgroup of the original Lie group. This implies that, given a Lie algebra, it is possible to reconstruct only the component of the Lie group that is connected with the identity.
+
+Without delving too deeply into the details, let's note that, in general, the image of the exponential map, $\Im(\exp) \subseteq G$, is a \emph{neighbourhood} of $e$, and the map itself is \emph{not} necessary surjective. However, for a group $G$ that is both \emph{connected} (def.~\ref{def:connected}) and \emph{compact} (def.~\ref{def:compact}), the exponential map \emph{is} surjective, i.e., $\Im(\exp) = G$. The issue with the Lorentz group is that, even when considering only the connected component, specifically the proper orthochronous Lorentz group, it is non-compact, due to the presence of boosts. Therefore, a priori, one can't be sure that exponentiating the Lie algebra elements will allow us to reach all the elements of the group. Demonstrating the surjectivity of the exponential map
+\begin{equation}
+    \exp \colon \mathfrak{so}(1,d) \to SO^+(1,d)
+\end{equation}
+for the proper orthochronous Lorentz group in general spacetime dimensions $D = d + 1$ is a rather technical and challenging subject. We'll simply assume this property, so that for the cases of interest in this document, we can safely affirm that through the exponential map we can obtain each element of the connected component of $G$ from its Lie algebra $\g$. 
+
+The Lie algebra multiplication, called \emph{Lie bracket} or \emph{commutator}, is denoted by
+\begin{equation}
+    \comm{\cdot}{\cdot} \colon \g \times \g \to \g, \quad (X,Y) \mapsto \comm{X}{Y}.
+\end{equation}
+It is an antisymmetric multiplication
+\begin{equation}
+    \comm{\alpha X + \beta Y}{Z} = -\comm{Z}{\alpha X + \beta Y} = \alpha \comm{X}{Z} + \beta \comm{Y}{Z},
+\end{equation}
+and satisfies the \emph{Jacobi identity}
+\begin{equation}
+    \comm{X}{\comm{Y}{Z}} + \comm{Y}{\comm{Z}{X}} + \comm{Z}{\comm{X}{Y}} = 0.
+\end{equation}
+
+Further, for the connected component, the \emph{Baker-Campbell-Hausdorff} (BCH) formula relates the group composition with the Lie algebra multiplication,
+\begin{equation}\label{eq:BCH-formula}
+    \exp(X) \circ \exp(Y) = \exp\left( X + Y + \frac{1}{2}\comm{X}{Y} + \frac{1}{12} \comm{X}{\comm{X}{Y}} - \frac{1}{12} \comm{Y}{\comm{X}{Y}} + \dots \right).
+\end{equation}
+
+Given a vector space basis $\{T_a\}$ of a Lie algebra $\g$, the Lie bracket structure can be encoded in terms of the \emph{structure constants} $\tensor{f}{_a_b^c}$, where,
+\begin{equation}\label{eq:structure-contants}
+   \comm{T_a}{T_b} = i \tensor{f}{_a_b^c} T_c.
+\end{equation}
+Any consistent set of structure constants then define a Lie algebra. Through the exponential map and the BCH formula, we can express elements of the Lie group in terms of exponentials of linear combinations of the basis elements $\{T_a\}$, called \emph{generators} of the Lie algebra. In particular, for any $g \in G$, we have
+\begin{equation}\label{eq:temp-7}
+    g(\theta) = e^{i \theta^a T_a},
+\end{equation}
+
+It is a standard exercise to start from $g(\alpha) g(\beta) g^{-1}(\alpha) g^{-1}(\beta) \equiv g(\theta)$ and expand it near the identity up to the second order, to obtain
+
+\begin{equation}
+    g(\alpha) g(\beta) g^{-1}(\alpha) g^{-1}(\beta) \simeq \1 - \alpha_a \beta_b \comm{T^a}{T^b} = \1 + i \theta_a T^a.
+\end{equation}
+
+\begin{mdframed}
+\begin{innerproof}
+    Using eq.~\eqref{eq:temp-7} and expanding the exponential up to the second order, we obtain
+\begin{equation*}
+\begin{split}
+    &\left( \1 + i \alpha_i T^i - \frac{1}{2} (\alpha_i T^i) (\alpha_j T^j)\right)
+    \left( \1 + i \beta_i T^i - \frac{1}{2} (\beta_i T^i) (\beta_j T^j)\right) \\
+    &\left( \1 - i \alpha_i T^i - \frac{1}{2} (\alpha_i T^i) (\alpha_j T^j)\right)
+    \left( \1 - i \beta_i T^i - \frac{1}{2} (\beta_i T^i) (\beta_j T^j)\right) \\
+    &\simeq \left( \1 + i (\beta T) - \frac{1}{2}(\beta T) (\beta T) + i (\alpha T) - (\alpha T) (\beta T) - \frac{1}{2} (\alpha T)(\alpha T) \right) \\
+    & \quad \left( \1 - i (\beta T) - \frac{1}{2}(\beta T) (\beta T) - i (\alpha T) - (\alpha T) (\beta T) - \frac{1}{2} (\alpha T)(\alpha T) \right) \\
+    &\simeq \1 - i(\beta T) - \frac{1}{2} (\beta T) (\beta T) - i (\alpha T) - (\alpha T)(\beta T) - \frac{1}{2}(\alpha T)(\alpha T) + i (\beta T) + (\beta T)(\beta T) + \\ &(\beta T)(\alpha T) - \frac{1}{2} (\beta T)(\beta T) - i (\alpha T) + (\alpha T)(\beta T) + (\alpha T)(\alpha T) - (\alpha T)(\beta T) - \frac{1}{2}(\alpha T)(\alpha T) \\
+    &\simeq \1 - \alpha_i \beta_j (T^i T^j - T^j T^i) = \1 - \alpha_i \beta_j \comm{T^i}{T^j} = \1 + i \theta_k T^k , \qedhere
+\end{split}
+\end{equation*}
+\end{innerproof}
+\end{mdframed}
+where, by means of~\eqref{eq:structure-contants}, we defined $\alpha_a \beta_b \tensor{f}{^a^b_c} = -\theta_c$. So, a group is \emph{abelian} if all its \emph{generators commute}, i.e., $\comm{T^a}{T^b} = 0$, or rather, $\theta_a = 0$.
+
+To conclude this section, let us provide a few definitions to clarify what is meant by an
+isomorphism between Lie algebras. This will help to better grasp in what sense the universal cover of a group and the group itself share “the same algebra”.
+
+\begin{definition}[Lie algebra homomorphism]\label{def:algebra-homomorphism}
+    Let $\g$ and $\h$ be two Lie algebras. A \emph{Lie algebra homomorphism} from $\g$ to $\h$ is a linear map $\phi \colon \g \to \h$ that preserves the Lie bracket, meaning
+    \begin{equation}
+        \comm{\phi(X)}{\phi(Y)}_\h = \phi(\comm{X}{Y}_\g), \quad \forall X,Y \in \g.
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Lie algebra isomorphism]
+    A \emph{Lie algebra isomorphism} is a Lie algebra homomorphism which is also a vector space isomorphism.
+\end{definition}
+
+Recall that we defined the Lie algebra of a Lie group as the tangent space at the identity, which makes it a vector space as well. If two algebras are isomorphic, we write $\g \cong \h$, and in this case, they have the same dimension, $\dim \g = \dim \h$. Choosing bases $\{X_a\}$ for $X$ and $\{Y_a\}$ for $Y$, the structure constants must be match, so we have
+\begin{gather*}
+    \comm{X_a}{X_b}_\g = i \tensor{f}{_a_b^c} X_c ,\\
+    \comm{Y_a}{Y_b}_\h = i \tensor{f}{_a_b^c} Y_c .
+\end{gather*}
+
+\begin{mdframed}
+\begin{innerproof}
+    \color{red} \dots \color{black}
+\end{innerproof}
+\end{mdframed}
+
+Therefore, theorem~\ref{th:universal-cover} implies that a non-simply connected Lie group $G$ and its universal cover $\tilde{G}$ have isomorphic algebras, $\tilde{\g} \cong \g$, sharing the same structure constants.
+
+    
+
+%%%%%%%%%%%%%%%% GROUP REPRESENTATIONS%%%%%%%%%%%%%%%%%%%%%%
+\section{Group Representations}\label{sec:group-representation}
+So far, we've treated groups and algebras as abstract entities. To apply these concepts and interpret them as symmetry transformations, we need to “represent” them concretely.
+
+\begin{definition}[Group representation]\label{def:representation}
+    A \emph{(linear) representation} of a group $G$ is a group homomorphism (see def.~\ref{def:group-homomorphism}), $\rho \colon G \to \Aut(V)$, mapping $G$ to the group of automorphisms\footnote{An \emph{automorphism} is an isomorphism from an object into itself. Here, the group of automorphisms is the set of invertible linear maps on a vector space.} on a vector space $V$. Formally
+    \begin{equation}\label{eq:representation-property}
+        \forall g, h \in G: \rho(e) = \id_V, \quad \rho(g \circ h) = \rho(g)\rho(h), \quad \rho(g^{-1}) = {\rho(g)}^{-1} .
+    \end{equation}
+\end{definition}
+For finite-dimensional vector spaces, where $\dim(V) = n < \infty$, we have $\Aut(V) \cong GL(n;K)$, so elements of the group are represented by $n \times n$ matrices with multiplication defined by matrix group law. The \emph{dimension of a representation} $(\rho, V)$ is the same as the dimension of $V$.
+
+\begin{remark}
+    The dimension of a representation differs from the dimension of the group itself.
+\end{remark}
+
+From now on, we focus on finite-dimensional representations. For a given representation $(\rho, V)$, the group acts on the vectors of $V$ as linear transformations. For each $g \in G$ and $v \in V$, we have
+\begin{equation}\label{eq:representation-transformation}
+    v \mapsto \rho(g) v .
+\end{equation}
+
+\begin{definition}[Reducible representation]\label{def:reducible-rep}
+    A representation is called \emph{reducible} if there exists a non-zero subspace $\{0\} \neq U \subseteq V$ such that
+\begin{equation}
+    \forall u \in U \colon \rho(g)u \in U.
+\end{equation}
+If no such subspace exists, $\rho$ is called an \emph{irreducible representation}.
+\end{definition}
+
+ Given a reducible representation $\rho$, we can always find a basis for $V$ such that
+\begin{equation}
+    \rho(g) = 
+    \begin{pmatrix}
+        \tilde{\rho}(g) & \beta(g) \\
+        0 & \rho'(g)
+    \end{pmatrix}
+\end{equation}
+where $U = \{ \icol{u \\ 0} \in V \}$ is the invariant subspace. This structure gives rise to a representation $\tilde{\rho}$ of smaller dimension. 
+
+\begin{definition}[Completely reducible representation]
+    A reducible representation is called \emph{completely reducible} if $\beta(g) = 0$. In this case, $\rho$ decomposes into the direct sum of two representations,
+\begin{equation}
+    \rho \cong \tilde{\rho} \oplus \rho' .
+\end{equation}
+\end{definition}
+
+In other words, in a completely reducible representation, the basis vectors of $V$ can be chosen to split into subsets that remain independent under the transformation.~\eqref{eq:representation-transformation}
+
+\begin{definition}[Equivalent representations]
+    Two representations $\rho_1$ and $\rho_2$ of the same dimension $n$ are called \emph{equivalent} if there exists an invertible $n \times n$ matrix $S$ such that
+    \begin{equation}
+         \forall g \in G: \rho_2(g) = S^{-1} \rho_1(g) S,
+    \end{equation}
+    Thus, if there exists a change of basis $S$ on $V$ relating the representations, they are equivalent.
+\end{definition}
+
+\begin{definition}[Faithful representation]
+    A representation $\rho$ is called \emph{faithful} if 
+\begin{equation}
+    g_1 \neq g_2 \implies \rho(g_1) \neq \rho(g_2) .
+\end{equation}
+For a \emph{non-faithful} representation, there exists a subset $H \subset G$ for which $\rho(h) = 1$ for $h \in H$.
+\end{definition}
+
+\begin{definition}[Unitary representation]
+    A \emph{unitary representation} is a complex representation, $\rho \colon G \to GL(n;\C)$, where $\rho(g)$ is a unitary matrix, meaning,
+\begin{equation}
+    \rho(g^{-1}) = {\rho(g)}^{-1} = {\rho(g)}^\dagger .
+\end{equation}
+\end{definition}
+
+
+To conclude this section, we introduce specific types of representations that will be used in the following.
+
+\begin{definition}[Matrix representation]
+    Let $(\rho, V)$ be a representation. In a \emph{matrix representation}, $V$ is a finite-dimensional vector space $(\textup{dim} V = n)$, and each group element $g \in G$ is represented by an $n \times n$ matrix $\tensor{\rho(g)}{^i_j}$, where $i,j = 1, \dots, n$. For any vector $v = (v^1, \dots, v^n) \in V$, the action of $g$ on $V$ is given by
+    \begin{equation}
+        v^i \mapsto \tensor{\rho(g)}{^i_j} v^j .
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Fundamental representation]
+    The \emph{fundamental representation} of a group $G$ is the representation $D$ such that, for any $v \in V$,
+    \begin{equation}
+        \quad D(g) v = g v, \quad D(T^a) = T^a.
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Conjugate representation]
+    The \emph{conjugate representation} $\bar{D}$ is defined by
+    \begin{equation}
+        \forall v \in V, \quad \bar{D}(g)v = g^* v, \quad g^* = {\left(e^{i {\theta}_a T^a}\right)}^* = e^{-i \theta_a {(T^a)}^*} \implies \bar{D}(T^a) = - (T^a)^* .
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Adjoint representation]
+    \color{red} The generators are \dots \color{black}
+\end{definition}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%% ALGEBRA REPRESENTATIONS %%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algebra Representations}
+We can similarly define a representation for a Lie algebra $\g$. Note that a Lie algebra can be defined independently of any associated Lie group, simply as a vector space $\g$ with an antisymmetric product, the Lie bracket $\comm{\cdot}{\cdot}$.
+
+\begin{definition}[Algebra representation]
+    Given an algebra $\g$, a representation of $\g$ is a vector space $V$ with an algebra homomorphism (see def.~\ref{def:algebra-homomorphism})
+    \begin{equation}
+        \rho_\g \colon \g \to \textup{End}(V),
+    \end{equation}
+    where $\textup{End}(V)$ denotes the set of endomorphisms of $V$.\footnote{An \emph{endomorphism} is a linear map from $V$ to $V$, not necessarily invertible.}
+\end{definition}
+
+The space of endomorphisms, $\textup{End}(V)$, has a natural vector space structure defined by the addition of linear maps and a non-necessarily invertible product defined by composition. With a chosen basis for $V$, $\textup{End}(V)$ becomes a space of matrices, with matrix multiplication as the product.
+
+For compatibility with the Lie algebra structure, the representation $\rho_\g$ must satisfy
+\begin{equation}
+    \rho_\g \left( \comm{X}{Y}  \right) = \rho_\g (X) \rho_\g (Y) - \rho_\g (Y) \rho_\g (X) ,
+\end{equation}
+where the product on the right-hand side represents matrix multiplication. Given a set of generators $\{T_a\}$, with structure constants $\tensor{f}{_a_b^c}$, we have
+\begin{equation}
+    \rho_\g \left( \comm{T_a}{T_b} \right)  = \tensor{f}{_a_b^c} \rho_\g (T_c) .
+\end{equation}
+
+We can now demonstrate that \emph{any representation} $(\rho, V)$ \emph{of a Lie group} $G$ \emph{induces a representation of its Lie algebra} $\g$. If $G \ni g = \exp(tX)$, for $t\in \R$ and $X \in \g$, then $\rho \left(exp(tX)\right)$ defines a “path” of transformations on the representation space $V$. We can then define a representation of $\g$ on the \emph{same} space $V$, via
+\begin{equation}
+    \forall v \in V : \rho_\g(X)(v) \coloneq \left. \left[ \frac{\ud}{\ud t} \rho \left( \exp(tX)(v) \right) \right] \right|_{t=0} .
+\end{equation}
+Hence, $\rho_\g(X)$ is a matrix of the same size as $\rho(g)$, and it also acts on $V$. One can show explicitly, using the BCH formula, that $\rho_\g$ respects the bracket structure. Thus, $(\rho_\g, V)$ is a representation of the Lie algebra.
+\begin{mdframed}
+\begin{innerproof}
+    \color{red} Using BCH formula \dots \dots, then by definition \dots we have a representation \color{black}
+\end{innerproof}
+\end{mdframed}
+
+Let's then consider a presentation of the Lie group $G$, $\rho(g(\theta)) \coloneq \rho(\theta)$ and denote the generators of the group in the representation $\rho$ as $\rho_\g (T^a) \coloneq T^a_\rho$. By assumption of smoothness, in the neighbourhood of the identity,
+\begin{equation}\label{eq:generators-rep}
+    \rho(\theta) \simeq \1 + i \theta_a T_\rho^a,
+\end{equation}
+with 
+\begin{equation}
+    T_\rho^a \equiv \left. -i \frac{\partial \rho}{\partial \theta_a}\right|_{\theta=0}.
+\end{equation}
+For the component of the group manifold connected to the identity, a generic group element $g(\theta)$ can always be represented by
+\begin{equation}\label{eq:exp-map-rep}
+    \rho(g(\theta)) = e^{i \theta_a T_\rho^a} .
+\end{equation}
+
+\begin{remark}
+    While the explicit form of the generators, $T_\rho^a$, depends on the representation, the structure constants $\tensor{f}{_a_b^c}$ of eq.~\eqref{eq:structure-contants} are independent of the representation.
+\end{remark}
+
+Conversely, not all Lie algebra representations $\rho_\g$ necessarily extend to representations of the corresponding group $G$.  This discrepancy arises from the \emph{global topology} of $G$. In particular, all representations of the Lie algebra extend to group representations if $G$ is \emph{simply connected} (see def.~\ref{def:simply-connected}). According to theorem~\ref{th:universal-cover}, if $G$ is not simply connected, there exists a universal cover $\tilde{G}$ that is simply connected and has an isomorphic algebra, $\tilde{\g} \cong \g$. Consequently, knowing the structure constant of the algebras $\tilde{\g}$ or $\g$, which are the same, we can construct representations of the algebras, which will be extended to representation of the covering group $\tilde{G}$.
+
+As an example, the Lorentz group is \emph{not} simply connected, and its universal cover is $SL(2;\C)$. Theregore, not all representations of its Lie algebra extend to representations of the group.
+
+We now state two important theorems that will be essential in identifying physical observables in quantum mechanics.
+\begin{theorem}\label{th:unitary-rep}
+    \emph{All} unitary projective representations of a group $G$ arises from a unitary \emph{linear} representation of the universal covering group $\tilde{G}$. These, in turn, come from representations of the Lie algebra.
+\end{theorem}
+
+
+\begin{theorem}\label{th:non-compact-group-rep}
+    Non-compact groups have no unitary representations of finite dimension, except for representations in which non-compact generators are represented trivially, i.e., as zero.
+\end{theorem}
+
+\color{red} Are those valid in infinite dimension?\color{black}
+
+The physical relevance of this second theorem is due to the fact that in a unitary representation, the generators are Hermitian operators. According to the principles of quantum mechanics, only Hermitian operators correspond to observables. Therefore, for a non-compact group, in order to identify its generators with physical observables we need an infinite-dimensional representation. This requirement leads us to consider representations on the Hilbert space of one-particle states, as we will explore.
+
+
+
+%%%%%%%%%%%%%%%% CASIMIR OPERATORS %%%%%%%%%%%%%%%
+\section{Casimir Operators}\label{sec:casimir}
+Casimir operators play a significant role in the study of representations. These operators are constructed from the generators Ta of a Lie algebra and commute with all generators themselves. In each irreducible representation, Casimir operators are proportional to the identity matrix, with the proportionality constant used to label the representation.

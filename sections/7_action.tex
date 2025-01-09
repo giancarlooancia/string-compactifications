@@ -1,0 +1,164 @@
+%%%%%%% GAUSS THEOREM
+\section{Hypersurfaces and Gauss Theorem}
+\begin{comment}
+The purpose of this chapter is to introduce \emph{non-null hypersurfaces} within $\M$ and their \emph{induced metric}. Understanding these concepts is essential for grasping \emph{Gauss' theorem}, which is crucial for integrating the action by parts. Additionally, we aim to introduce the notion of \emph{extrinsic curvature} of hypersurfaces, which plays a crucial role in constructing the Gibbons-Hawking-York boundary term.
+
+We take for granted that given any smooth oriented coordinates $\phi = \{x^i\}$ on $\V \subseteq \M$, the \emph{metric volume form} has the local coordinate expression
+\begin{equation}\label{eq:volume-metric-form}
+   \ud V_g = \sg \, \ud x^1 \wedge \dots \wedge \ud x^4 ,
+\end{equation}
+and can be used to integrate a function $f$ over $\V$ by
+\begin{equation}\label{eq:integration-metric-manifold}
+    \int_{\V} f \ud V_g = \int_{\phi(\V)} (\phi^{-1})^* (f \ud V_g) = \int_{\phi(\V)} f(x) \sg \,\udq x .
+\end{equation}
+
+The derivation of the previous formulas can be found in any standard textbooks like~\cite[Lee]{lee:smooth} or~\cite[Poisson]{poisson:relativity}. Henceforth, we adopt a simplified notation, integrating over $\V$ for both the differential forms and their coordinate representation, without explicit reference to the chart $\phi$.
+
+
+\subsection{Hypersurfaces on a Manifold} 
+A \emph{hypersurface} $\Sigma$ is a three-dimensional submanifold embedded in $\M$, which can be either spacelike or timelike. We omit the consideration of the null case due to its increased technical complexity. The hypersurface can be described either by a scalar function $\Phi(x^\mu) = 0$ or by a parametric equation $x^\mu = x^\mu (y^a)$, where $y^a$ are intrinsic coordinates of the hypersurface. The coordinate basis vectors related to $y^a$, and their dual forms, are given by\footnote{In particular, $\frac{\de}{\de y^a} = \frac{\de x^\mu}{\de y^a} \frac{\de}{\de x^\mu} = \e{\mu}{a} \frac{\de}{\de x^\mu}$. Referring to “\emph{vectors}”, we understand their coordinates with respect to the coordinate basis of $x^\mu$.}
+\begin{equation}
+    \e{\mu}{a} = \frac{\de x^\mu}{\de y^a}, \quad \due{\mu}{a} = \frac{\de y^a}{\de x^\mu} ,
+\end{equation}
+with respect to the basis $\de_\mu$. They are related by $\e{\mu}{b} \due{\mu}{a} = \delta^a_b$.
+
+Since $\e{\mu}{a}$ form a basis for the tangent space to $\Sigma$, which is a subspace of the tangent space to $\M$, in order to construct a basis for the latter, we need to add the orthogonal complement to the former, by means of the \emph{bulk metric} $g_{\mu\nu}$. This complement is spanned by a vector $n^\mu$ orthogonal to $\e{\mu}{a}$. Assuming a normalization suitable for both spacelike and timelike hypersurfaces, we have
+\begin{equation}\label{eq:definition-normal-vector}
+    g_{\mu\nu} \e{\mu}{a} n^\nu = 0, \quad g_{\mu\nu} n^\mu n^\nu = \epsilon ,
+\end{equation}
+where $\epsilon$ is defined as
+\begin{equation}
+    \epsilon = n^\mu n_\mu \equiv
+    \begin{cases}
+        -1, \quad \textup{if $\Sigma$ is spacelike},  \\
+        +1, \quad \textup{if $\Sigma$ is timelike}. 
+    \end{cases}
+\end{equation}
+
+Explicitly, the \emph{unit normal vector} $n^\mu$, pointing in the direction of increasing $\Phi$, can be expressed as
+\begin{equation}
+    n_\mu = \frac{\epsilon \, \de_\mu \Phi}{\abs{g^{\alpha\beta} \de_\alpha \Phi \de_\beta \Phi}^{\frac{1}{2}}} ,
+\end{equation}
+
+Note that, because of the normalization, the dual form associated to $n^\mu$ is not $n_\mu = g_{\mu\nu} n^\nu$, but rather $\n_\mu = \epsilon n_\mu$. It satisfies
+\begin{equation}\label{eq:relation-e-n}
+n^\mu \n_\mu = 1, \quad n^\mu \due{\mu}{a} = \e{\mu}{a} \n_\mu = 0, \quad n^\mu \n_\nu + \e{\mu}{a} \due{\nu}{a} = \delta^\mu_\nu .
+\end{equation}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Projector onto the Hypersurface} 
+The relations~\eqref{eq:relation-e-n} lead us to define a \emph{projector} $\tensor{P}{^\mu_\nu}$ as
+\begin{equation}\label{eq:projector-on-hypersurface}
+    \tensor{P}{^\mu_\nu} = \delta^\mu_\nu - n^\mu \n_\nu = \e{\mu}{a} \due{\nu}{a}.
+\end{equation}
+Using~\eqref{eq:definition-normal-vector} and~\eqref{eq:projector-on-hypersurface}, we can show the following properties
+\begin{subequations}\label{eq:properties-projector}
+\begin{gather}
+    \tensor{P}{^\mu_\lambda} \tensor{P}{^\lambda_\nu} = \tensor{P}{^\mu_\nu} , \\
+    \tensor{P}{^\mu_\nu} \e{\nu}{a} = \e{\mu}{a}, \quad \tensor{P}{^\mu_\nu} n^\nu = 0, \\
+    \tensor{P}{^\mu_\nu} \due{\mu}{a} = \due{\nu}{a}, \quad \tensor{P}{^\mu_\nu} \n_\mu = 0,
+\end{gather}
+\end{subequations}
+which define $\tensor{P}{^\mu_\lambda}$ as a projector of $\M$ onto the tangent space of $\Sigma$.
+
+A vector field $A^\mu$ and a form $A_\mu$ are said to be \emph{parallel} to the hypersurface if they can be written as
+\begin{subequations}
+\begin{align}
+    \tensor{P}{^\mu_\nu} A^\nu &= A^\mu = A^a \e{\mu}{a} \implies A^\mu n_\mu = 0, \\
+    \tensor{P}{^\nu_\mu} A_\nu &= A_\mu = A_a \due{\mu}{a} \implies A_\mu n^\mu = 0 ,
+\end{align}
+\end{subequations}
+respectively. The generalization to generic tensors is straightforward.
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Induced Metric} 
+To define a metric on $\Sigma$, we can project the bulk metric $\g$ on it, using the projector~\eqref{eq:projector-on-hypersurface}. This gives us
+\begin{subequations}\label{eq:induced-metric-expressions}
+\begin{gather}
+    h_{\mu\nu} = \tensor{P}{^\alpha_\mu} \tensor{P}{^\beta_\nu} g_{\alpha\beta} = h_{ab} \due{\mu}{a} \due{\nu}{b}, \label{eq:induced-metric-def} \\
+     h_{ab} = \e{\mu}{a} \e{\nu}{b} h_{\mu\nu} = \e{\mu}{a} \e{\nu}{b} g_{\mu\nu}, \label{eq:induced-metric-comp} 
+\end{gather}
+\end{subequations}
+which is called \emph{induced metric} on $\Sigma$, and can be used to raise or lower submanifold's indices. In eq.~\eqref{eq:induced-metric-def} we've written $\bf{h}$ as a parallel tensor, while the first equality in eq.~\eqref{eq:induced-metric-comp} is a consequence of the duality relation between $\e{\mu}{a}$ and $\due{\mu}{a}$ and the second one comes from~\eqref{eq:properties-projector}.
+
+By a substitution of~\eqref{eq:projector-on-hypersurface} into~\eqref{eq:induced-metric-def}, one can show that the bulk metric $g_{\mu\nu}$ can be decomposed as
+\begin{equation}\label{eq:decomposion-bulk-metric}
+    g_{\mu\nu} =  h_{\mu\nu} + \epsilon n_\mu n_\nu
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gauss' Theorem}
+Using the induced metric on the hypersurface, we can introduce a surface element which allows us to integrate over $\Sigma$. Without delving too deeply into technical details, we present the results, which are proved in~\cite[Poisson]{poisson:relativity}.
+
+Similar to~\eqref{eq:volume-metric-form}, the invariant three-dimensional volume element on $\Sigma$, referred to as the \emph{surface element} for simplicity, is given by
+\begin{equation}\label{eq:surface-element}
+    \ud \Sigma \equiv \sh \, \udt y,
+\end{equation}
+where $h = \det(h_{ab})$. Furthermore, the \emph{directed surface element}, which points in the direction of increasing $\Phi$, is $n_\alpha \ud \Sigma$, and it's useful to define
+\begin{equation}\label{eq:directed-surface-element}
+    \ud \Sigma_\alpha = \epsilon n_\alpha \ud \Sigma.
+\end{equation}
+
+\begin{namedtheorem}[Gauss]
+Let $\V$ denote a finite region of the spacetime manifold, bounded by a closed hypersurface $\de \V$. For any vector field $A^\alpha$ defined within $\V$,
+    \begin{equation}\label{eq:gauss-theorem}
+        \int_\V \cov_\alpha A^\alpha \sg \, \udq x = \oint_{\de \V} A^\alpha \ud \Sigma_\alpha ,
+    \end{equation}
+where $\ud \Sigma_\alpha$ is the surface element defined by~\eqref{eq:directed-surface-element}.
+\end{namedtheorem}
+\end{comment}
+
+%%%%%%%% ACTION
+\section{Poincaré Invariant Action}
+In order to build a quantum relativistic invariant theory, we usually write down a Poincaré invariant action and then quantise it. To do so, the action $S$ must be a scalar with respect to Poincaré group, and this global symmetry gives rise, classically, to conserved charges via Noether's theorem. Those will be functions of the fields which defines the theory, as so, after quantisation, both the fields and the charges becomes operators acting on the quantum state space of the system.
+
+Those charges, will furnish a representation of the Poincaré group, in that they satisfy the algebra commutation relations, and they will generate infinitesimal Poincaré transformations. To see how this is the case, one should go to Hamilton formalism, and promote the Poisson brackets to commutators, via the Dirac quantisation prescription\footnote{This prescription is somewhat vacuous, since it's a shortcut to go to the right answer. We won't go into those details here, settling for this depth of details.}. 
+
+However, it's not necessarily true that a classical symmetry must be a quantum symmetry too. Indeed, in the quantum theory, there may be anomalies. This means that the invariance of the classical action doesn't necessarily imply invariance of the path integral. One example of such anomalies for the Poincaré symmetry is given by the \emph{Weyl anomaly} in string theory, where the Lorentz symmetry of the target space in the light-cone quantisation is broken, and can only be re-established in the critical setting.
+
+To make the situation worse, recall that Noether theorem doesn't straightforwardly generalise to quantum systems. Indeed, its quantum version is provided by the \emph{Ward-Takahashi identity}, where only the expectation value of a Noether current is conserved, and only up to contact terms, in general.
+
+Keeping those details in mind, let's start from a classical Poincaré invariant action, and discuss what may happen after quantisation.
+
+
+
+One way to study and quantise a theory is starting from the classical action $S$. In order for it to be invariant, it must be a Poincaré scalar. Further, by Noether's theorem, associated to the Poincaré invariance there are some conserved charges. In particular, using eq.~\eqref{eq:total-functional-variation}, we may write
+\begin{equation}
+    \delta S = \int \udq x \, \delta_0 \L + \int \udq x \, \de_\mu \L \delta x^\mu
+\end{equation}
+
+
+
+To construct a Poincaré invariant theory, we start from a \emph{classical} action which has the same property. We can then apply Noether theorem to find out the conserved charges related to the Poincaré symmetry. 
+\dots
+\dots
+
+It turns out that the currents associated to the Poincaré symmetry of a classical action are
+\begin{subequations}
+\begin{gather}
+T^{\mu\alpha} = -i \frac{\de \L}{\de(\de_\mu \Phi_i)} P^\alpha \Phi_j - g^{\mu\alpha} \L , \\
+m^{\mu,\alpha\beta} = -i \frac{\de \L}{\de (\de_\mu \Phi_i)} M^{\alpha\beta}_{ij} \Phi_j + (x^\alpha g^{\mu\beta} - x^\beta g^{\mu\alpha}) \L .
+\end{gather}
+\end{subequations}
+
+The corresponding charges are
+\begin{subequations}\label{eq:const-motion}
+\begin{align}
+    \hat{P}^\alpha &= \int \udt x \, T^{0\alpha} , \\
+   \hat{M}^{\alpha\beta} &= \int \udt x \, m^{0 ,\alpha\beta} .
+\end{align}
+\end{subequations}
+
+Those, after quantization, will form a representation of the Poincaré group that acts on the state space.
+
+Further, in the quantum setting, Wigner's theorem states that continuous symmetries must be implemented by unitary operators on the state space. The Lorentz group is not compact because it contains boosts, hence all unitary representations must be infinite-dimensional. 
+
+This is realized in the quantum field theory: the fields $\Phi_i(x)$ become operators on the Fock space, and the constants of motion in eq.~\eqref{eq:const-motion} are hermitian operators that define a unitary representation of the Poincaré algebra on the state space:
+\begin{equation}
+    U(\Lambda,a) = e^{\frac{i}{2} \omega_{\mu\nu} \hat{M}^{\mu\nu} + i \epsilon_\mu \hat{P}^\mu} \simeq 1 + \frac{i}{2} \omega_{\mu\nu} \hat{M}^{\mu\nu} + i \epsilon_\mu \hat{P}^\mu .
+\end{equation}
+
+The irreducible state space those operators act on is the one-particle state space we constructed above, using Casimir operators and so on.
+
+\color{red} How, from this, we get to $U(\Lambda,a) \Phi_i(x) U(\Lambda,a)^{-1} = D(\Lambda)^{-1}_ij \Phi_j (\Lambda x + a)$
+\color{black}

@@ -1,0 +1,34 @@
+\thispagestyle {empty}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Group Theory Basics}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Lie Groups and Algebra}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Group Representations}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Algebra Representations}{8}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Casimir Operators}{10}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Symmetries in Quantum Mechanics}{11}{chapter.3}%
+\contentsline {chapter}{\numberline {4}The Groups $SO(3)$ and $SU(2)$ and their Representations}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}The Group $SO(3)$}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}The Group $SU(2)$}{14}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Representation of the Algebra $\mathfrak {so}(3) \cong \mathfrak {su}(2)$}{15}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Half-integer spin irreducible representation.}{17}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Relation between $SO(3)$ and $SU(2)$ and Proof of Double Coverness}{17}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Lorentz Group and its Representations}{18}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Lorentz Group}{18}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Lorentz Algebra}{19}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Trivial Representation}{21}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Vector Representation}{21}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Tensor Representation}{22}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Decomposition of Lorentz tensors under SO(3)}{24}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Spinorial Representation}{24}{subsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.2.6}Field Representation}{24}{subsection.5.2.6}%
+\contentsline {chapter}{\numberline {6}Poincaré Group and its Representations}{27}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Poincaré Group}{27}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Poincaré Algebra}{28}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Field Representation}{32}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Unitary Representations of the Poincaré Group}{33}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Action}{37}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Hypersurfaces and Gauss Theorem}{37}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Poincaré Invariant Action}{37}{section.7.2}%
+\contentsline {chapter}{\numberline {8}Gigi Bellissimo}{39}{chapter.8}%
+\contentsline {chapter}{\numberline {A}Conventions}{41}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Levi-Civita Symbol}{41}{section.A.1}%

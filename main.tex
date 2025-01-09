@@ -1,0 +1,102 @@
+\documentclass[a4paper,11pt]{report}
+\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have
+             % images in pdf, png or jpg format)
+
+\usepackage{jheppub} % for details on the use of the package, please
+                     % see the JHEP-author-manual
+
+\usepackage[T1]{fontenc} % if needed
+
+%**************** Utilities **************
+\usepackage{lipsum}
+\usepackage{comment}
+\usepackage{enumitem}
+\usepackage{color}
+
+% *************** Math and Physics *************
+\usepackage{mathtools} % per valore assoluto e norma
+\usepackage{braket} % per i comandi \Set e \Bra e simili
+\usepackage{amsthm} % per teoremi e dimostrazioni
+\usepackage{tensor} % per tensori e indici alto/basso
+\usepackage{physics}
+\usepackage{braket}
+\usepackage{dsfont}
+% ******************************************
+\input{settings.tex}
+
+% **************** PROOF BACKGROUND *************
+\usepackage[dvipsnames]{xcolor}
+\usepackage{mdframed}
+\mdfsetup{%
+linecolor=black,
+backgroundcolor=gray!6,
+}
+
+
+%%%%%%%%%%%%%%%%%%% JHEP SETTINGS %%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{jhep}
+
+\title{Representations of Poincaré Group}
+
+\author[a]{Giancarlo Oancia}
+\author[a]{Gian Luigi Paganini}
+\affiliation[a]{University of Bologna}
+
+\emailAdd{giancarlo.oancia@studio.unibo.it} 
+\emailAdd{gianluigi.paganini@studio.unibo.it}
+
+\dedicated{Dedicated to students: \\ 
+to their sweat and toil, \\
+to the incomprehensibility of physics, \\ 
+and to the profound beauty of symmetries.}
+
+\abstract{This document discusses the finite and infinite dimensional representations of the Poincaré Group. In particular, it gives special attention to the relationship between one-particle states and fields, both before and after quantisation.}
+
+\keywords{Lorentz group, Poincaré group}
+
+%%%%%%%%%%%%%%%% CHAPTER GRAPHICS %%%%%%%%%%%%
+\usepackage{titlesec}
+\titleformat{\chapter}{}{}{0em}{\bf\LARGE}
+
+
+
+%%%%%%%%%%%%%%%% DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\flushbottom
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+\chapter{Introduction}
+\pagenumbering{arabic}
+\input{sections/1_introduction.tex}
+
+\chapter{Group Theory Basics}
+\input{sections/2_group-theory.tex}
+
+\chapter{Symmetries in Quantum Mechanics}\label{sec:symmetries-qm}
+\input{sections/3_quantum-mechanics.tex}
+
+\chapter{The Groups \texorpdfstring{$SO(3)$}{SO(3)} and \texorpdfstring{$SU(2)$}{SU(2)} and their Representations}
+\input{sections/4_SO(3)-SU(2).tex}
+
+\chapter{Lorentz Group and its Representations}
+\input{sections/5_lorentz-group.tex}
+
+\chapter{Poincaré Group and its Representations}
+\input{sections/6_poincare-group.tex}
+
+\chapter{Action}
+\input{sections/7_action.tex}
+
+\input{temporary/gigi.tex}
+%\input{temporary/temp.tex}
+%\input{temporary/chat.tex}
+
+
+\appendix
+\chapter{Conventions}
+\input{sections/8_appendix.tex}
+\bibliography{bibliography.bib}
+
+\end{document}

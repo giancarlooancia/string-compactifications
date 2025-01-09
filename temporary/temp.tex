@@ -1,0 +1,39 @@
+\section{Still to be finished}
+\paragraph{Field representations.}
+
+
+
+
+\section{Questions}
+\paragraph{Why do we study representations of the algebra and not directly of the group, whatever it means? Even more so, considering that not all irreps of the algebra fit to irreps of the group, if the latter is not simply connected.}
+\begin{enumerate}
+    \item First, we sometimes know the algebra. Indeed, in SUSY we started constructing the algebra adding some fermionic generators, with no reference to a group or manifold. So, at least it's useful to do so.
+    \item Then, as we've seen at the end of section~\ref{sec:symmetries-qm}, in quantum mechanics we're interested in \emph{unitary projective representations} of a group, rather than linear representations, and theorem~\ref{th:unitary-rep} tells us that \emph{all} unitary projective representations of a group $G$ arises from a unitary \emph{linear} representation of the universal covering group $\tilde{G}$. \color{red} As far as I know this is true for finite dimensional representations, is it still true in infinite dimensions? \color{black}
+\end{enumerate}
+
+\paragraph{Is it correct to say that the eigenvalues of the Casimir operators do \emph{not} uniquely characterise an irreducible representation. For example, the Casimirs vanish for all massless (helicity) representations?}
+
+Even if this is true, we can still make use of the usual considerations, by simply noticing that helicity is Lorentz invariant. So, we can consider states with different helicities as states of different particles type, since I can't go from one helicity to another using a Lorentz transformation.
+
+\paragraph{I can see a field in classical theory as an infinite dimensional representation of Poicaré. Further, in the quantum theory, a field becomes an operator on the Fock space, and the representation of the group is given by the Noether charges associated to the Poincaré invariance of the action. How do these pictures reconcile?}
+
+\paragraph{A generic Poincare transformation can be written how?}
+Some references write 
+\begin{equation}
+    U(\Lambda,a) = e^{\frac{i}{2}\omega_{\mu\nu}M^{\mu\nu}-i\epsilon_{\sigma} P^{\sigma}},
+\end{equation}
+while others
+\begin{equation}
+    U(\Lambda,a) = e^{\frac{i}{2}\omega_{\mu\nu}M^{\mu\nu}}  e^{-i\epsilon_{\sigma} P^{\sigma}} .
+\end{equation}
+They should not  be equivalent, due to the BCH formula
+\begin{equation}
+    \exp(X) \circ \exp(Y) = \exp\left( X + Y + \frac{1}{2}\comm{X}{Y} + \frac{1}{12} \comm{X}{\comm{X}{Y}} - \frac{1}{12} \comm{Y}{\comm{X}{Y}} + \dots \right),
+\end{equation}
+and the commutator
+\begin{equation}
+    i \comm{P^\mu}{M^{\rho\sigma}} = \eta^{\mu\rho} P^\sigma - \eta^{\mu\sigma} P^\rho .
+\end{equation}
+Then? Further, is it surjective, as for Lorentz group, as discussed above?
+
+\color{black}

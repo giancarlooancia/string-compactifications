@@ -1,0 +1,42 @@
+\section{Levi-Civita Symbol}\label{app:levi-civita}
+In this appendix we fix the conventions for the \emph{Levi-Civita} symbol. We mainly refer to the Wikipedia page~\cite{wikipedia}. In these notes we're interested only in the Levi-Civita symbol in three dimensions, therefore we'll stick to it. We define the Levi-Civita symbol
+\begin{equation}
+    \epsilon_{ijk} = 
+    \begin{cases}
+        +1, \textup{if $(i,j,k)$ is an even permutation of $(1,2,3)$}, \\
+        -1, \textup{if $(i,j,k)$ is an odd permutation of $(1,2,3)$},\\
+        0, \textup{otherwise} ,
+    \end{cases}
+\end{equation}
+and adopt the convention
+\begin{equation*}
+    \epsilon^{ijk} = \epsilon_{ijk}.
+\end{equation*}
+Pay attention to what convention the sources you're referring use. Indeed, this is not always the most convenient choice, in particular when dealing with the Levi-Civita tensor. Without dealing these details, in our case, just recall that when to contiguous indices are permuted, we get a minus sign.
+
+Using Einstein's summation convention, some useful relations are
+\begin{subequations}
+\begin{align}
+    \epsilon_{ijk} \epsilon^{pqk} &= \delta^p_i \delta^q_j - \delta^q_i \delta^p_j \label{appeq:levi-civita-delta} \\
+    \epsilon_{jmn} \epsilon^{imn} &= 2 \delta^i_j \\
+    \epsilon_{ijk} \epsilon^{ijk} &= 6 .
+\end{align}
+\end{subequations}
+
+Let's then show that
+\begin{equation*}
+    J^i = \frac{1}{2} \epsilon^{ijk} M^{jk} \iff M^{ij} = \epsilon^{ijk} J^k, \quad \textup{if $M^{ij} = -M^{ji}$.}
+\end{equation*}
+
+\begin{mdframed}
+\begin{innerproof}
+    Multiplying both sides by $\epsilon_{iln}$ and using eq.~\eqref{appeq:levi-civita-delta} and the antisymmetry:
+    \begin{equation*}
+        \epsilon_{iln} J^i = \frac{1}{2} \epsilon_{iln} \epsilon^{ijk} \omega^{jk} = \frac{1}{2} ( \delta^j_l \delta^k_n - \delta^k_l \delta^j_n ) \omega^{jk} = \frac{1}{2} (\omega^{ln} - \omega^{nl}) = \omega^{ln} .
+    \end{equation*}
+    Relabelling dummy indices and using $\epsilon_{ijk} = \epsilon_{kij}$, we finally obtain
+    \begin{equation*}
+        \omega^{ij} = \epsilon_{ijk} \theta^k = \epsilon^{ijk} \theta^k \qedhere
+    \end{equation*}
+\end{innerproof}
+\end{mdframed}
