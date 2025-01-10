@@ -1,0 +1,177 @@
+\section{Kaluza-Klein Compactification in Field Theory}
+Consider a field theory in $D$ dimensions propagating in a background spacetime of the form $\chi_D = \M_d \times S^1$, where $D = d+1$. Let's call the coordinates in $\chi_D$ $x^{\hat{\mu}} = (x^\mu, y)$, where $\hat{\mu} = 0, \dots, D-1 = d$, $\mu = 0, \dots, d-1$ and on the internal space $S^1$ we identify $y \simeq y = 2\pi R$.
+
+In particular, consider a $D$-dimensional Einstein theory, with metric $G_{\hat{\mu} \hat{\nu}} (x^{\hat{\mu}})$.
+
+Exploiting the periodicity in the internal space, we may expand the metric in Fourier modes as
+\begin{equation}
+    G_{\hat{\mu} \hat{\nu}} (x^{\hat{\mu}}) = G_{\hat{\mu} \hat{\nu}} (x^\mu, y) = G^{(0)}_{\hat{\mu} \hat{\nu}} (x^\mu)+ \sum_{k \neq 0} G^{(k)}_{\hat{\mu} \hat{\nu}} (x^\mu) e^{ik y / R}.
+\end{equation}
+
+However, we're interested in the $(D-1)$-dimensional theory, so it's more convenient to first decompose $SO(1,D-1)$'s representations into representations of $SO(1,d-1)$. After the decomposition, we can exploit the periodicity of the internal space and Fourier expand as usual. In particular, recalling that we defined $x^{D-1} = x^d = y$, the graviton decomposes as
+\begin{align}
+    G_{\hat{\mu}\hat{\nu}} (x^mu, y) 
+    &\to G_{\mu\nu}(x^\mu, y) = G^{(0)}_{{\mu} {\nu}} (x^\mu)+ \sum_{k \neq 0} G^{(k)}_{{\mu} {\nu}} (x^\mu) e^{ik y / R} \\
+    &\to G_{\mu d} (x^\mu, y) = G^{(0)}_{{\mu} {d}} (x^\mu)+ \sum_{k \neq 0} G^{(k)}_{{\mu} {d}} (x^\mu) e^{ik y / R} \\
+    &\to G_{dd} (x^\mu, y) = G^{(0)}_{{d} {d}} (x^\mu)+ \sum_{k \neq 0} G^{(k)}_{{d} {d}} (x^\mu) e^{ik y / R} \\.
+\end{align}
+
+It's straightforward to observe that the massless modes are a $d$-dimensional graviton, a $d$-dimensional scalar and a $d$-dimensional $U(1)$ gauge boson. To be more precise, if we call the zero-modes fields $g_{\mu\nu}(x^\mu), A_\mu(x^\mu), \sigma(x^\mu)$, then, they're related with the zero-mode five-dimensional metric by
+\begin{equation}
+    G^{(0)}_{\hat{\mu}\hat{\nu}} = 
+    \begin{pmatrix}
+        e^{2\alpha_d} g_{\mu\nu} + e^{-2(d-2)\alpha_d \phi} A_\mu A_\nu & e^{-2(d-2)\alpha_d \phi} A_\mu \\
+        e^{-2(d-2)\alpha_d \phi} A_\nu & e^{-2(d-2)\alpha_d \phi}
+    \end{pmatrix} ,
+\end{equation}
+where we defined $\alpha_d$ in such a way that the action in dimenison $D-1 = d$ is canonically normalized, in particular
+\begin{equation}
+    \alpha_d = \sqrt{\frac{1}{2(d-1)(d-2)}} .
+\end{equation}
+
+From a zero Kaluza-Klein point of view, this leads to the metric
+\begin{equation}
+    \ud s^2 = G^{(0)}_{\hat{\mu}\hat{\nu}} \ud x^{\hat{\mu}} \ud x^{\hat{\nu}} = e^{2\alpha_d \phi} g_{\mu\nu} \ud x^\mu \ud x^\nu + e^{-2(d-2)\alpha_d \phi} (\ud y + A_\mu \ud x^\mu)^2 , 
+\end{equation}
+which is the most general metric invariant under $y$ translations. In particular, it allows for $d$-dimensional reparametrizations $x'^\mu(x^\nu)$ and for reparametrizations of the internal space coordinates $y' = y + \lambda(x^\mu)$. To make the action invariant under the latter transformations, the field $A_\mu$ must transform under the $U(1)$ transformation $A'_\mu = A_\mu - \de_\mu \lambda$.
+
+Therefore, we observe that the gauge transformations of the vector boson follow from coordinate reparametrization in the internal dimension. At the end, gauge invariant after dimensional reduction follows from diffeomorphism invariance in higher dimensions. This was the original motivation of Kaluza-Klein, to unify gravity with gauge theories. However, this way we can't obtain charges chiral fermions, so this attempt failed.
+
+To fix the idea, let's consider the case $D=5$, $d=1$. The theory is represented by the action
+\begin{equation}
+    S_5 = \frac{M^3_5}{2} \int \ud^5 x \sqrt{-G} R_5,
+\end{equation}
+where $G_5 = \det(G_{\hat{\mu} \hat{\nu}})$, and $R_5$ is the Ricci scalar. Substituting the above metric for the zero-modes, after working out the Ricci scalar, we get a $4$ dimensional action which reads
+\begin{equation}
+    S_4 = M^3_5 \pi R \int \udq x \sqrt{-g} \left( R_4 -\frac{1}{5} \de_\mu \sigma \de^\mu \sigma - \frac{1}{4 e^\sigma} F_{\mu\nu} F^{\mu\nu} + \textup{KK tower \dots} \right),
+\end{equation}
+where the constants are related by
+\begin{equation}\label{eq:relation-plank-masses}
+    M^2_p = 16 \pi^2 M^3_5 R,
+\end{equation}
+and gauge coupling $g^2 = e^\sigma$.
+
+\paragraph{Physical Insight}
+\begin{itemize}
+    \item The masses of the Kaluza-Klein modes are integer multiples of the compactification scale $M_c = 1 / R$, so, we can ignore it in the limit
+    \begin{equation}
+        E \ll M_c = 1/R
+    \end{equation}
+    \item The field $\sigma$ is a \emph{modulus}, called \emph{radion}. It's massless and it has no potential. It parametrizes the $S^1$ radius via $e^{-2\alpha_d} \simeq \sqrt{G_{44}}$.
+    \item The relation~\eqref{eq:relation-plank-masses} suggests us that there's the possibility to have a low fundamental gravity scale $M_5$, if we take $R$ large enough. However, following the idea of Kaluza-Klein, this approach fails if we try to couple with the standard model, since we know that the KK-masses are proportional to the scale $M_c = 1/R$, so, for large $R$ we'd get too light KK modes, which should've been observed. This leads to the idea of a \emph{brane-world scenario}.
+\end{itemize}
+
+\paragraph{Brane-World scenario}
+Even if in the first years people focused on type I string theories since they contain gauge theories, there had been a revival of type II theories after the discovery of branes. In particular, the idea is that \emph{closed strings}, which contains the graviton, propagates on the bulk of the theory, which is $10$-dimensional for the superstring. Further, open strings are attached to branes, which are submanifolds of the bulk on which Standard Model fields live in, considering that stack of branes could lead to non-abelian gauge theories. 
+
+One simple example is considering the standard model fields localized on a $3$-brane, which exists for a type IIB theory (double check it), so that the action splits inot a $4$ dimensional piece for the $3$-brane worldvolume, and a bulk piece in the larger $10$-dimensional spacetime
+\begin{equation}
+    S_\textup{brane-world} = S_\textup{brane} + S_\textup{bulk} = \int \udq x \L_\textup{brane} + \int d^{10} x \L_\textup{bulk} .
+\end{equation}
+Then, gravity is compactified as discussed earlier, while gauge and matter fields are insensitive of the compactification procedure, and then they don't have massive KK modes. This allows for \emph{large extra dimensions}, whose size is in principle detectable only through the effect on gravity. Looking again at~\eqref{eq:relation-plank-masses}, we can even have $M_5 \simeq \tev$, so that there would be no hierarchy between the EW and the gravitational scale. However, this is not a fully satisfactory resolution, since we've moved the problem into a hierarchy problem between the large size $1/R$ of the extra dimension, and the fundamental scale $1/M_5$. Another possibility is provided by the \emph{Randall-Sundrum Scenario}
+
+\paragraph{Randall-Sundrum Scenario}
+Still to be written, look at Quevedo and Ibanez.
+
+
+\section{Compactification of the Bosonic String on a Circle}
+\paragraph{Review of the bosonic string} Let's briefly review the bosonic string and fix the conventions. 
+
+The worldsheet coordinates are $\xi^a = (t, \sigma)$, $a= 1,2$. Taking as a background the flat $26$-dimensional Minkowski spacetime $\M_{26}$, the string is described by the worldsheet fields $X^{\hat{\mu}}$, with $\hat{\mu} = 0, \dots, 25$. Considering the $2d$ metric $\gamma_{ab}(\xi^a)$, the Polyakov action reads
+\begin{equation}
+    S_P= -\frac{1}{4\pi\alpha'} \int_\Sigma \ud^2 \xi \sqrt{-\gamma} \, \gamma^{ab} \de_a X^{\hat{\mu}} \de_b X^{\hat{\nu}} \eta_{\hat{\mu}\hat{\nu}} .
+\end{equation}
+
+Exploiting the reparametrisation invariance and the Weyl symmetry, we can go to \emph{conformal gauge}, in which $\gamma_{ab} = \eta_{ab}$, such that Polyakov action becomes
+\begin{equation}\label{eq:polyakov-conformal-gauge}
+    S_P= -\frac{1}{4\pi\alpha'} \int_\Sigma \ud^2 \xi \sqrt{-\gamma} \, \eta^{ab} \de_a X^{\hat{\mu}} \de_b X^{\hat{\nu}} \eta_{\hat{\mu}\hat{\nu}} .
+\end{equation}
+
+Its equations of motions are wave equations for which the following mode expansion is possible
+\begin{equation}\label{eq:left-right-movers-def}
+    X^{\hat{\mu}}(\xi^a) = X^{\hat{\mu}}_L(\xi^+) + X^{\hat{\mu}}_R(\xi^-) ,
+\end{equation}
+where $\xi^\pm \equiv t \pm \sigma$.
+
+In lightcone quantization procedure, we define the spacetime lightcone coordinates
+\begin{equation}
+    X^\pm = \frac{1}{\sqrt{2}}(X^0 \pm X^{1}),
+\end{equation}
+and use the index $i = 2, \dots, 25$ for the remaining coordinates. We impose the Virasoro constraints $T_{ab}=0$ on the classical theory. These ensure that the reparametrizations.
+\begin{equation}
+    \xi^+ \to \tilde{\xi}^+(\xi^+), \quad \xi^- \to \tilde{\xi}^-(\xi^-),
+\end{equation}
+which induce a conformal transformation, is a gauge symmetry of the classical theory. They can be used to identify
+\begin{equation}
+    X^+(t,\sigma) = t .
+\end{equation}
+Then, one can verify that the Virasoro constraints fix $X^-$ in terms of the $X^i$, such that the only remaining degree of freedom of $X^-$ is the centre of mass term,
+\begin{equation}
+    x^-(t) = \frac{1}{l} \int_0^l \ud \sigma X^-(t,\sigma).
+\end{equation}
+
+The lagrangian, from eq.~\eqref{eq:polyakov-conformal-gauge}, becomes
+\begin{equation}
+\begin{split}
+    L &= -\frac{1}{4\pi \alpha'} \int_0^l \ud \sigma \left( 2 \de_t X^- - \de_t X^i \de_t X^i + \de_\sigma X^i \de_\sigma X^i \right) \\ &= -\frac{l}{2\pi \alpha'} \de_t x^-(t) - \frac{1}{4\pi \alpha'} \int_0^l \ud \sigma \left( - \de_t X^i \de_t X^i + \de_\sigma X^i \de_\sigma X^i \right) .
+\end{split}
+\end{equation}
+
+Actually, $x^-(t)$ evolves linearly, with constant momentum
+\begin{equation}
+    p_- = - p^+ = \frac{\de L}{\de (\de_t x^-)} = - \frac{l}{2\pi \alpha'},
+\end{equation}
+and the conjugate momenta to $X^i(t,\sigma)$ are
+\begin{equation}
+    \Pi^i(t,\sigma) = \frac{\de \L}{\de(\de_t X^i)} = \frac{1}{2 \pi \alpha'} \de_t X^i(t,\sigma),
+\end{equation}
+and the Hamiltonian reads
+\begin{equation}
+\begin{split}
+    H &= p_- \de_t x^-(t) + \int_0^l \ud \sigma \Pi_i(t,\sigma) \de_t X^i(t,\sigma) - L \\
+      &= \frac{1}{4\pi\alpha'} \int_0^l \ud \sigma \left( \de_t X^i \de_t X^i + \de_\sigma X^i \de_\sigma X^i\right) \\
+      &= \frac{1}{2} \int_0^l \ud \sigma \left( 2\pi\alpha' \Pi_i \Pi_i + \frac{1}{2\pi\alpha'} \de_\sigma X^i \de_\sigma X^i \right)
+\end{split}
+\end{equation}
+
+Looking at the mode expansion for the \emph{closed string}, we can expand the functions $X^i_{L,R}$, defined by~\eqref{eq:left-right-movers-def}, in modes. In particular, for the \emph{closed string}, we consider the boundary condition
+\begin{equation}
+    X^i (t, \sigma + l) = X^i(t,\sigma) ,
+\end{equation}
+and the appropriate oscillator expansion reads
+\begin{align}
+    X^i_L (\xi^+) &= \frac{x^i}{2} + \frac{p_i}{2p^+} \, \xi^+ + i \frac{\alpha'}{2} \sum_{n \in \Z \setminus {0}} \frac{\alpha^i_n}{n} e^{-2\pi i n \xi^+ / l } \\
+    X^i_R (\xi^-) &= \frac{x^i}{2} + \frac{p_i}{2p^+} \, \xi^- + i \frac{\alpha'}{2} \sum_{n \in \Z \setminus {0}} \frac{\tilde{\alpha}^i_n}{n} e^{-2\pi i n \xi^- / l }\\
+    X^i (t,\sigma) &= x^i + \frac{p^i}{p^+} t + i \frac{\alpha'}{2} \sum_{n \neq 0} \left[ \frac{\alpha^i_n}{n} e^{-2\pi i n \xi^+ l } + \frac{\tilde{\alpha}^i_n}{n} e^{-2\pi i n \xi^- l} \right] \\ .
+\end{align}
+
+In terms of the oscillation modes, the Hamiltonian reads
+\begin{equation}\label{eq:hamitlonian-modes}
+    H = \sum_{i=2}^{25} \frac{p^2_i}{2p^+} + \frac{1}{\alpha' p^+} \left[ \sum_i \sum_{n>0} \left( \alpha^i_{-n} \alpha^i_n + \tilde{\alpha}^i_{-n} \tilde{\alpha}^i_n \right) + E_0 + \tilde{E}_0 \right] .
+\end{equation}
+
+
+\paragraph{Compactification}
+Let's, now, compactify in $\M_{25} \times S^1$ in the \emph{large volume approximation}, i.e.,
+\begin{equation}
+    E \ll \frac{1}{L} \ll M_s, \quad \frac{\alpha'}{L^2} \ll 1,
+\end{equation}
+where the KK modes are more relevant than the stringy mode excitations. In particular, we focus on \emph{closed strings}.
+
+The dynamics of the strings oscillations is \emph{locally} identical for the theory on $\M_{26}$ and $\M_{25} \times S^1$. Indeed, the difference is in a global effect, i.e., the identification $x^{25} = y \simeq y + 2\pi R$. Therefore, while the local dynamics is the same, still described by the action
+\begin{equation}
+    S_P= -\frac{1}{4\pi\alpha'} \int_\Sigma \ud^2 \xi \sqrt{-\gamma} \, \gamma^{ab} \de_a X^{\hat{\mu}} \de_b X^{\hat{\nu}} \eta_{\hat{\mu}\hat{\nu}} ,
+\end{equation}
+there's a difference concerning the boundary conditions for the worldsheet fields. Then, in lightcone quantization, the relevant degrees of freedom are still the $2d$ bosons $X^i(t,\sigma)$, $i = 2, \dots, 25$, with Hamiltonian
+\begin{equation}
+    H = \frac{1}{2} \int_0^l \ud \sigma \left( 2\pi\alpha' \Pi_i \Pi_i + \frac{1}{2\pi\alpha'} \de_\sigma X^i \de_\sigma X^i \right).
+\end{equation}
+
+To express it in terms of the oscillator modes, similarly to~\eqref{eq:hamitlonian-modes}, we need first to specify the boundary conditions. In particular, we have the usual periodic boundary condition for the $X^i$ with $i = 2, \dots, 24$, while $X^{25}$ can have a more general boundary condition due to the periodicity $x^{25} = y \simeq y + 2\pi R$ in the internal space. Specifically,
+\begin{subequations}
+\begin{align}
+    X^i(t,\sigma + l) &= X^i(t,\sigma), \quad i = 2, \dots, 24\\
+    X^{25}(t,\sigma + l) &= X^{25}(t,\sigma) + 2\pi R \omega, \quad \omega \in \Z.
+\end{align}
+\end{subequations}
+For $\omega = 0$, it describes the usual boundary condition, while for $\omega \neq 0$ it describes a closed string winding around $S^1$ $\omega$-times, as showed in figure.
