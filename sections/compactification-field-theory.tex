@@ -1,6 +1,8 @@
-\section{Kaluza-Klein Compactification in Field Theory}
 Consider a field theory in $D$ dimensions propagating in a background spacetime of the form $\chi_D = \M_d \times S^1$, where $D = d+1$. Let's call the coordinates in $\chi_D$ $x^{\hat{\mu}} = (x^\mu, y)$, where $\hat{\mu} = 0, \dots, D-1 = d$, $\mu = 0, \dots, d-1$ and on the internal space $S^1$ we identify $y \simeq y = 2\pi R$.
 
+\section{KK Reduction of a Scalar Field on \texorpdfstring{$S^1$}{S1}}
+
+\section{KK Reduction of Einstein Theory on \texorpdfstring{$S^1$}{S1}}
 In particular, consider a $D$-dimensional Einstein theory, with metric $G_{\hat{\mu} \hat{\nu}} (x^{\hat{\mu}})$.
 
 Exploiting the periodicity in the internal space, we may expand the metric in Fourier modes as
@@ -72,106 +74,3 @@ Then, gravity is compactified as discussed earlier, while gauge and matter field
 
 \paragraph{Randall-Sundrum Scenario}
 Still to be written, look at Quevedo and Ibanez.
-
-
-\section{Compactification of the Bosonic String on a Circle}
-\paragraph{Review of the bosonic string} Let's briefly review the bosonic string and fix the conventions. 
-
-The worldsheet coordinates are $\xi^a = (t, \sigma)$, $a= 1,2$. Taking as a background the flat $26$-dimensional Minkowski spacetime $\M_{26}$, the string is described by the worldsheet fields $X^{\hat{\mu}}$, with $\hat{\mu} = 0, \dots, 25$. Considering the $2d$ metric $\gamma_{ab}(\xi^a)$, the Polyakov action reads
-\begin{equation}
-    S_P= -\frac{1}{4\pi\alpha'} \int_\Sigma \ud^2 \xi \sqrt{-\gamma} \, \gamma^{ab} \de_a X^{\hat{\mu}} \de_b X^{\hat{\nu}} \eta_{\hat{\mu}\hat{\nu}} .
-\end{equation}
-
-Exploiting the reparametrisation invariance and the Weyl symmetry, we can go to \emph{conformal gauge}, in which $\gamma_{ab} = \eta_{ab}$, such that Polyakov action becomes
-\begin{equation}\label{eq:polyakov-conformal-gauge}
-    S_P= -\frac{1}{4\pi\alpha'} \int_\Sigma \ud^2 \xi \sqrt{-\gamma} \, \eta^{ab} \de_a X^{\hat{\mu}} \de_b X^{\hat{\nu}} \eta_{\hat{\mu}\hat{\nu}} .
-\end{equation}
-
-Its equations of motions are wave equations for which the following mode expansion is possible
-\begin{equation}\label{eq:left-right-movers-def}
-    X^{\hat{\mu}}(\xi^a) = X^{\hat{\mu}}_L(\xi^+) + X^{\hat{\mu}}_R(\xi^-) ,
-\end{equation}
-where $\xi^\pm \equiv t \pm \sigma$.
-
-In lightcone quantization procedure, we define the spacetime lightcone coordinates
-\begin{equation}
-    X^\pm = \frac{1}{\sqrt{2}}(X^0 \pm X^{1}),
-\end{equation}
-and use the index $i = 2, \dots, 25$ for the remaining coordinates. We impose the Virasoro constraints $T_{ab}=0$ on the classical theory. These ensure that the reparametrizations.
-\begin{equation}
-    \xi^+ \to \tilde{\xi}^+(\xi^+), \quad \xi^- \to \tilde{\xi}^-(\xi^-),
-\end{equation}
-which induce a conformal transformation, is a gauge symmetry of the classical theory. They can be used to identify
-\begin{equation}
-    X^+(t,\sigma) = t .
-\end{equation}
-Then, one can verify that the Virasoro constraints fix $X^-$ in terms of the $X^i$, such that the only remaining degree of freedom of $X^-$ is the centre of mass term,
-\begin{equation}
-    x^-(t) = \frac{1}{l} \int_0^l \ud \sigma X^-(t,\sigma).
-\end{equation}
-
-The lagrangian, from eq.~\eqref{eq:polyakov-conformal-gauge}, becomes
-\begin{equation}
-\begin{split}
-    L &= -\frac{1}{4\pi \alpha'} \int_0^l \ud \sigma \left( 2 \de_t X^- - \de_t X^i \de_t X^i + \de_\sigma X^i \de_\sigma X^i \right) \\ &= -\frac{l}{2\pi \alpha'} \de_t x^-(t) - \frac{1}{4\pi \alpha'} \int_0^l \ud \sigma \left( - \de_t X^i \de_t X^i + \de_\sigma X^i \de_\sigma X^i \right) .
-\end{split}
-\end{equation}
-
-Actually, $x^-(t)$ evolves linearly, with constant momentum
-\begin{equation}
-    p_- = - p^+ = \frac{\de L}{\de (\de_t x^-)} = - \frac{l}{2\pi \alpha'},
-\end{equation}
-and the conjugate momenta to $X^i(t,\sigma)$ are
-\begin{equation}
-    \Pi^i(t,\sigma) = \frac{\de \L}{\de(\de_t X^i)} = \frac{1}{2 \pi \alpha'} \de_t X^i(t,\sigma),
-\end{equation}
-and the Hamiltonian reads
-\begin{equation}
-\begin{split}
-    H &= p_- \de_t x^-(t) + \int_0^l \ud \sigma \Pi_i(t,\sigma) \de_t X^i(t,\sigma) - L \\
-      &= \frac{1}{4\pi\alpha'} \int_0^l \ud \sigma \left( \de_t X^i \de_t X^i + \de_\sigma X^i \de_\sigma X^i\right) \\
-      &= \frac{1}{2} \int_0^l \ud \sigma \left( 2\pi\alpha' \Pi_i \Pi_i + \frac{1}{2\pi\alpha'} \de_\sigma X^i \de_\sigma X^i \right)
-\end{split}
-\end{equation}
-
-Looking at the mode expansion for the \emph{closed string}, we can expand the functions $X^i_{L,R}$, defined by~\eqref{eq:left-right-movers-def}, in modes. In particular, for the \emph{closed string}, we consider the boundary condition
-\begin{equation}
-    X^i (t, \sigma + l) = X^i(t,\sigma) ,
-\end{equation}
-and the appropriate oscillator expansion reads
-\begin{align}
-    X^i_L (\xi^+) &= \frac{x^i}{2} + \frac{p_i}{2p^+} \, \xi^+ + i \frac{\alpha'}{2} \sum_{n \in \Z \setminus {0}} \frac{\alpha^i_n}{n} e^{-2\pi i n \xi^+ / l } \\
-    X^i_R (\xi^-) &= \frac{x^i}{2} + \frac{p_i}{2p^+} \, \xi^- + i \frac{\alpha'}{2} \sum_{n \in \Z \setminus {0}} \frac{\tilde{\alpha}^i_n}{n} e^{-2\pi i n \xi^- / l }\\
-    X^i (t,\sigma) &= x^i + \frac{p^i}{p^+} t + i \frac{\alpha'}{2} \sum_{n \neq 0} \left[ \frac{\alpha^i_n}{n} e^{-2\pi i n \xi^+ l } + \frac{\tilde{\alpha}^i_n}{n} e^{-2\pi i n \xi^- l} \right] \\ .
-\end{align}
-
-In terms of the oscillation modes, the Hamiltonian reads
-\begin{equation}\label{eq:hamitlonian-modes}
-    H = \sum_{i=2}^{25} \frac{p^2_i}{2p^+} + \frac{1}{\alpha' p^+} \left[ \sum_i \sum_{n>0} \left( \alpha^i_{-n} \alpha^i_n + \tilde{\alpha}^i_{-n} \tilde{\alpha}^i_n \right) + E_0 + \tilde{E}_0 \right] .
-\end{equation}
-
-
-\paragraph{Compactification}
-Let's, now, compactify in $\M_{25} \times S^1$ in the \emph{large volume approximation}, i.e.,
-\begin{equation}
-    E \ll \frac{1}{L} \ll M_s, \quad \frac{\alpha'}{L^2} \ll 1,
-\end{equation}
-where the KK modes are more relevant than the stringy mode excitations. In particular, we focus on \emph{closed strings}.
-
-The dynamics of the strings oscillations is \emph{locally} identical for the theory on $\M_{26}$ and $\M_{25} \times S^1$. Indeed, the difference is in a global effect, i.e., the identification $x^{25} = y \simeq y + 2\pi R$. Therefore, while the local dynamics is the same, still described by the action
-\begin{equation}
-    S_P= -\frac{1}{4\pi\alpha'} \int_\Sigma \ud^2 \xi \sqrt{-\gamma} \, \gamma^{ab} \de_a X^{\hat{\mu}} \de_b X^{\hat{\nu}} \eta_{\hat{\mu}\hat{\nu}} ,
-\end{equation}
-there's a difference concerning the boundary conditions for the worldsheet fields. Then, in lightcone quantization, the relevant degrees of freedom are still the $2d$ bosons $X^i(t,\sigma)$, $i = 2, \dots, 25$, with Hamiltonian
-\begin{equation}
-    H = \frac{1}{2} \int_0^l \ud \sigma \left( 2\pi\alpha' \Pi_i \Pi_i + \frac{1}{2\pi\alpha'} \de_\sigma X^i \de_\sigma X^i \right).
-\end{equation}
-
-To express it in terms of the oscillator modes, similarly to~\eqref{eq:hamitlonian-modes}, we need first to specify the boundary conditions. In particular, we have the usual periodic boundary condition for the $X^i$ with $i = 2, \dots, 24$, while $X^{25}$ can have a more general boundary condition due to the periodicity $x^{25} = y \simeq y + 2\pi R$ in the internal space. Specifically,
-\begin{subequations}
-\begin{align}
-    X^i(t,\sigma + l) &= X^i(t,\sigma), \quad i = 2, \dots, 24\\
-    X^{25}(t,\sigma + l) &= X^{25}(t,\sigma) + 2\pi R \omega, \quad \omega \in \Z.
-\end{align}
-\end{subequations}
-For $\omega = 0$, it describes the usual boundary condition, while for $\omega \neq 0$ it describes a closed string winding around $S^1$ $\omega$-times, as showed in figure.
