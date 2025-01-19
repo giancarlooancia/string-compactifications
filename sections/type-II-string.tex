@@ -1,0 +1,196 @@
+%**************** RNS SUPERSTRING *********************
+\section{Ramond-Neveu-Schwarz Superstring}
+We use mostly plus metric $\eta = \textup{diag}(-, +, \dots, +)$ and focus on closed strings. We already focus on the critical string, considering as a background the flat $10$d Minkowski spacetime $\M_{10}$. The worldsheet coordinates are $\xi^a$, $a = 1,2$, where $\sigma \in (0,l)$.
+
+The supersymmetric extension of Polyakov action~\eqref{eq:polyakov-action} is reached by enlarge the field content of the theory. In particular, the idea is to supersymmetrize and couple the $10$ bosonic fields on the worldsheet, $X^\mu (\xi^a)$, $\mu = 0, \dots, 9$, to two-dimensional supergravity. The result are additional worldsheet spinors, which are the superpartners of the $X^\mu$, and will be denoted by $\psi^\mu (\xi^a)$, where the spinorial indices are suppressed. They are taken to be \emph{Majorana-Weyl spinors}.
+
+In particular, in dimension $d=2$ the Clifford algebra reads
+\begin{equation}
+    \{ \gamma^a, \gamma^b \}_{AB} = 2 \eta^{ab} \1_{AB},
+\end{equation}
+with $\alpha,\beta = 0, 1$ are the worldsheet indices, while $A,B = 1,2$ the spinorial representation indices. Indeed, in $d=2$, the spinor representation turns out to be two-dimensional as well. A basis for the $\gamma$-matrices is
+\begin{equation}
+    \gamma^0 = \begin{pmatrix}
+        0 & 1 \\
+        -1 & 0
+    \end{pmatrix}, \quad \gamma^1 = \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{pmatrix}
+\end{equation}
+Further, in $d=2$, the Majorana condition is equivalent to the requirement that the spinors are real i.e.,
+\begin{equation}
+    \psi = \begin{pmatrix}
+        \psi_+ \\ \psi_-
+    \end{pmatrix} = \begin{pmatrix}
+        \psi^*_+ \\ \psi^*_-
+    \end{pmatrix} = \psi^*,
+\end{equation}
+while the chirality distinguishes between the two inequivalent Weyl representations. In particular, defining the chirality operator $\gamma = \gamma^0 \gamma^1$, we have
+\begin{equation}
+    \gamma \begin{pmatrix}
+        \psi_+ \\ 0
+    \end{pmatrix} = \begin{pmatrix}
+        \psi_+ \\ 0
+    \end{pmatrix}, \quad \gamma \begin{pmatrix}
+        0 \\ \psi_-
+    \end{pmatrix} = - \begin{pmatrix}
+        0 \\ \psi_-
+    \end{pmatrix}.
+\end{equation}
+The two condition are compatible for $d = 2 \mod 8$, dimensions in which Majorana-Weyl spinors exist.
+
+Skipping the details, the classical RNS action adds a Majorana-Weyl spinor for each scalar field. After gauge-fixing the superconformal symmetry to $\gamma_{ab} = \eta_{ab}$, and considering a flat spacetime metric $g_{\mu\nu} = \eta_{\mu\nu}$, it reads
+\begin{equation}\label{eq:superstring-action}
+    S = -\frac{1}{4\pi} \int_\Sigma \ud^2 \xi \left( \frac{1}{\alpha'} \de_a X^\mu \de^a X_\mu + i \bar{\psi}^\mu_A \gamma^a_{AB} \de_a \psi_\mu \right),
+\end{equation}
+where the spinor conjugate is defined by
+\begin{equation}
+    \bar{\psi} \equiv \psi^\dagger \gamma^0 = \psi^T \gamma^0 = (-\psi_-, \psi_+).
+\end{equation}
+
+Looking at the mass dimensions, we have
+\begin{equation}
+     [\psi] = \frac{1}{2}, \quad [X] = -1 .
+\end{equation}
+It's equations of motion are
+\begin{equation}\label{eq:supestring-eom}
+    \de_a \de^a X^\mu = 0, \quad \gamma^a \de_a \psi^\mu = 0.
+\end{equation}
+
+Taking \emph{worldsheet lightcone coordinates}, $\xi^\pm = \tau \pm \sigma$, the action~\eqref{eq:superstring-action} reads
+\begin{equation}
+    S = \frac{1}{\pi} \int \ud^2 \xi \left( \frac{1}{\alpha'} \de_+ X \cdot \de_- X + \frac{i}{2} (\psi_+ \cdot \de_- \psi_+ + \psi_- \cdot \de_+ \psi_-) \right) ,
+\end{equation}
+while the equations of motion~\eqref{eq:supestring-eom} become
+\begin{equation}\label{eq:superstring-lightcone-eom}
+    \de_+ \de_- X^\mu = 0, \quad \de_- \psi^\mu_+ = \de_+ \psi^\mu_- = 0 .
+\end{equation}
+This means that in lightcone coordinates we have 
+\begin{equation}\label{eq:ligthcone-coordinates-split}
+    X^\mu (\xi^\pm) = X^\mu_L (\xi^+) + X^\mu_R(\xi^-), \quad \psi^\mu_+ (\xi^\pm) = \psi^\mu_+ (\xi^+), \quad \psi^\mu_- (\xi^\pm) = \psi^\mu_- (\xi^-) .
+\end{equation}
+
+The residual symmetries after gauge fixing the superconformal symmetry have conserved currents
+\begin{equation}
+\begin{aligned}
+    T_{\pm\pm} = -\frac{1}{\alpha'} \de_\pm X \cdot \de_\pm X - \frac{i}{2} (\psi^\mu)_\pm \de_\pm (\psi_\mu)_\pm , \\
+    J_\pm = - \sqrt{\frac{1}{2\alpha'}} (\psi^\mu)_\pm \de_\pm X_\mu.
+\end{aligned}
+\end{equation}
+Then, \emph{gauge-fixing} is achieved by imposing the \emph{superconformal Virasoro constraints}
+\begin{equation}
+    T_{\pm\pm} = , \quad J_{\pm} = 0
+\end{equation}
+on the equations of motion. 
+
+Let's turn to the mode expansion. Because of~\eqref{eq:ligthcone-coordinates-split}, for the bosonic sector the analysis is the same as before. However, while finding the equations of motion~\eqref{eq:supestring-eom} from~\eqref{eq:superstring-action}, other than the conditino $\delta \psi^\mu (\tau_0) = \delta \psi^\mu (\tau_1) = 0$, which is what we impose in a variational principle, we must be sure that the following boundary term vanishes
+\begin{equation}
+    \delta S = \frac{1}{2\pi} \int_{\tau_0}^{\tau_1} \ud \tau \left( \psi_+ \cdot \delta \psi_+ - \psi_- \cdot \delta \psi_- \right) \Big|_{\sigma = 0}^{\sigma = l}\overset{\mathrm{!}}{=} 0.
+\end{equation}
+For the closed string, in which we have periodicity $\sigma \sim \sigma + l$, the above condition is satisfied for
+\begin{equation}
+\begin{aligned}
+    \psi^\mu_+ (\sigma) &= \pm \psi^\mu_+ (\sigma + l) ,\\
+    \psi^\mu_- (\sigma) &= \pm \psi^\mu_- (\sigma + l) ,
+\end{aligned}
+\end{equation}
+with the same conditions on $\delta \psi_\pm$. Indeed, anti-periodic boundary conditions for $\psi_\pm$ are possible since observables are built as fermion bilinears. In particular, periodic boundary conditions are referred as \emph{Ramond} (R) boundary conditions, while anti-periodic ones are called \emph{Neveu-Schwartz} (NS). Therefore, fermions on the worldsheet satisfy
+\begin{equation}
+    \psi (\sigma +l) = e^{2\pi i \phi} \psi(\sigma), \quad \psi = \begin{cases}
+        0, \quad \textup{for R-sector} \\ \frac{1}{2}, \quad \textup{for NS-sector}
+    \end{cases}
+\end{equation}
+where more general phases are not allowed since $\psi$ are real.
+
+The conditions for the two spinor components $\psi_+$ and $\psi_-$ can be chosen independently, but Lorentz invariance requires that in a given sector, fermions fields $\psi^\mu$ have the same boundary condition for all $\mu$. This leads to a total of four possibilities: (R,R), (NS,NS), (NS,R) and (R,NS). One can see that, after quantization, modular invariance requires these different boundary conditions to cohexist within the same theory. Roughly speaking, as we have to sum over different topologies to get a consistent string theory, we need to sum over different topological sectors, i.e., boundary conditions, as well. We won't focus on such details and take them for granted.
+
+The mode expansion for the bosonic coordinates is the same as in section~\ref{sec:bosonic-mode-expansion}, while for the fermions we get
+\begin{equation}
+\begin{aligned}
+    \psi^\mu_+ (\xi^+) = \sqrt{\frac{2\pi}{l}} \sum_{r \in \Z + \phi} \tilde{b}^\mu_r e ^{-\frac{2\pi i}{l} r \xi^+} , \\
+    \psi^\mu_- (\xi^-) = \sqrt{\frac{2\pi}{l}} \sum_{r \in \Z + \phi} {b}^\mu_r e ^{-\frac{2\pi i}{l} r \xi^-} ,
+\end{aligned}
+\end{equation}
+where
+\begin{equation}\label{eq:phi-sectors}
+    \phi = \begin{cases}
+        0, \quad \textup{for R-sector} \\
+        \frac{1}{2}, \quad \textup{for NS-sector} .
+    \end{cases}
+\end{equation}
+
+Here, $\phi$ can be chosen independently for the left- and right- movers, and the reality of the Majorana-Weyl spinors translates into
+\begin{equation}
+    (b^\mu_r)^* = b^\mu_{-r}, \quad (\tilde{b}^\mu_r)^* = \tilde{b}^\mu_{-r}.
+\end{equation}
+
+%**************** QUANTUM SUPERSTRING *********************
+\section{Quantum Superstring}
+We quantize the usual way, by finding the canonical conjugate variables, compute their equal-time Poisson brackets and promoting the latter to commutators and anti-commutators on a Hilbert space. Then, we consider the mode expansions and work out the commutators and anti-commutators of the modes operators. The result is
+\begin{subequations}
+\begin{align}
+    \comm{\alpha^\mu_m}{\alpha^\nu_n} = \comm{\tilde{\alpha}^\mu_m}{\tilde{\alpha}^\nu_n} &= m \delta_{m+n} \eta^{\mu\nu} , \\
+    \comm{\alpha^\mu_m}{\tilde{\alpha}^\nu_n} &= 0, \\
+    \{ b^\mu_m, b^\nu_n \} = \{ \tilde{b}^\mu_m, \tilde{b}^\nu_n \} &= \delta_{m+n} \eta^{\mu\nu} \\
+    \{ b^\mu_m, \tilde{b}^\nu_n \} &= 0 \\
+    \comm{\alpha^\mu_m}{b^\nu_n} &= 0 .
+\end{align}
+\end{subequations}
+Furter, the reality condition of the fermions, $\psi^*_\pm = \psi_\pm$, translates into
+\begin{equation}
+    (b^\mu_n)^\dagger = b^\mu_{-n} .
+\end{equation}
+
+Without delving into the details, let's consider lightcone quantization, where we define the \emph{spacetime lightcone coordinates}
+\begin{equation}
+    X^\pm = \frac{1}{\sqrt{2}} (X^0 \pm X^1), \quad \psi^\pm = \frac{1}{\sqrt{2}} (\psi^0 \pm \psi^1),
+\end{equation}
+and the remaining fields are $X^i_L(\xi^+)$, $X^i_R(\xi^-)$, $\psi^i_+(\xi^+)$ and $\psi^i_-(\xi^-)$, with $i = 2, \dots 9$ in spacetime dimension $D = 10$. As in the bosonic case, we can quantize independently the left- and the right-moving sectors and glue them together at then end. Other than the level-matching condition, there will be additional constraints to be imposed here.
+
+The quantization can be carried independently for the left- and right-moving sectors. If there aren't two options, we suppose to be focusing on the right-moving sector, and that the formulas for the left-moving one are the same up to the substitution of the operators with the tilde ones.
+
+One finds the usual normal ordering constants, which are a priori different for (R) and (NS) sectors. After renormalization, and in the critical setting, we find
+\begin{equation}
+    a_R = \tilde{a}_R = 0, \quad a_{NS} = \tilde{a}_{NS} = \frac{1}{2} .
+\end{equation}
+Similarly to~\eqref{eq:def-transverse-number-op}, the transverse number operators read
+\begin{equation}\label{eq:superstring-transverse-number-op}
+\begin{aligned}
+    N_\perp = \sum_{n > 0} \alpha_{-n}^i \alpha^i_n + \sum_{k \geq 0 + \phi} k b^i_{-k} b^i_k , \\
+    \tilde{N}_\perp = \sum_{n > 0} \tilde{\alpha}_{-n}^i \tilde{\alpha}^i_n + \sum_{k \geq 0 + \phi} k \tilde{b}^i_{-k} \tilde{b}^i_k ,
+\end{aligned}
+\end{equation}
+with $\phi$ given by~\eqref{eq:phi-sectors}, different in (R) and (NS) sectors.
+
+
+For the mass-shell condition, we have a formula similar to~\eqref{eq:left-right-mass-shell}\footnote{Here we aren't considering compactifications yet, so $s = \omega = 0$, and $p_{L/R} = 0$.}, with two independent contributions, $M^2_L$ for the left-moving sector and $M^2_R$ for the right-moving one. Since the normal ordering constants enter the mass-shell\footnote{Via the normal-ordering of $L_0$ in old covariant quantization, or of the hamiltonian in lightcone quantization.}, we should distinguish between the two sectors. In both cases, the \emph{level-matching condition} reads
+\begin{equation}
+    M^2_L = M^2_R.
+\end{equation}
+
+%**************** ns sector *********************
+\subsection{NS Sector.}
+Since $a_{NS} = \tilde{a}_{NS} = 1/2$, the \emph{mass-shell condition} reads
+\begin{equation}\label{eq:NS-mass-shell}
+    \frac{\alpha' M^2_L}{2} = \tilde{N}_\perp - \frac{1}{2},\quad
+    \frac{\alpha' M^2_R}{2} = N_\perp - \frac{1}{2},
+\end{equation}
+with number operators given by~\eqref{eq:superstring-transverse-number-op}.
+
+%**************** r sector *********************
+\subsection{R Sector.}
+Since $a_R = \tilde{a}_R = 0$, the mass-shell condition reads
+\begin{equation}\label{eq:R-mass-shell}
+    \frac{\alpha' M^2_L}{2} = \tilde{N}_\perp,\quad
+    \frac{\alpha' M^2_R}{2} = N_\perp,
+\end{equation}
+with number operators given by~\eqref{eq:superstring-transverse-number-op}.
+
+
+
+
+
+
+\section{Type IIA Compactified on \texorpdfstring{$S^1$}{S1}}
+\section{Type IIB Compactified on \texorpdfstring{$S^1$}{S1}}

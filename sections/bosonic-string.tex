@@ -1,9 +1,9 @@
 %******************** MODE EXPANSION *********************
-\section{Mode Expansion}
+\section{Mode Expansion}\label{sec:bosonic-mode-expansion}
 We use mostly plus metric $\eta = \textup{diag}(-,+,\dots,+)$ and focus on \emph{closed strings}. We already focus on the \emph{critical string}, considering as a background the flat $26d$ Minkowski spacetime $\M_{26}$.
 
 The worldsheet coordinates are $\xi^a = (\tau, \sigma)$, $a= 1,2$, where $\sigma \in (0,l)$. Taking as a background the flat $26$-dimensional Minkowski spacetime $\M_{26}$, the string is described by the worldsheet fields $X^{{\mu}}$, with ${\mu} = 0, \dots, 25$. Considering the $2d$ metric $\gamma_{ab}(\xi^a)$, the Polyakov action reads
-\begin{equation}
+\begin{equation}\label{eq:polyakov-action}
     S_P= -\frac{1}{4\pi\alpha'} \int_\Sigma \ud^2 \xi \sqrt{-\gamma} \, \gamma^{ab} \de_a X^{{\mu}} \de_b X^{{\nu}} \eta_{{\mu}{\nu}} ,
 \end{equation}
 where the string tension is
@@ -163,7 +163,7 @@ where we used~\eqref{eq:conjugate-momenta} and, looking at~\eqref{eq:lightcone-p
 
 
 %******************** LIGHTCONE QUANTIZATION *********************
-\section{Lightcone Quantization}
+\section{Lightcone Quantization}\label{sec:bosonic-quant}
 Observing that the conjugate variables $(X^i, \Pi_i)$ and $(q^-,p_- = - p^+)$ satisfy canonical Poisson bracket relations, we can promote them to operators acting on a Hilbert space, with commutation relations
 \begin{gather}
     \comm{\alpha^i_m}{\alpha^j_n} = \comm{\tilde{\alpha}^i_m}{\tilde{\alpha}^j_n} = m \delta_{n+m,0} \delta^{ij} \\
@@ -224,11 +224,9 @@ and to the \emph{mass-shell condition}
 
 %**************** COMPACTIFICATION ON S^1 *****************+ 
 \section{Compactification on \texorpdfstring{$S^1$}{S1}}
-Let's, now, compactify in $\M_{25} \times S^1$ in the \emph{large volume approximation}, i.e.,
-\begin{equation}\label{eq:large-volume-approx}
-    E \ll \frac{1}{R} \ll M_s, \quad \frac{\alpha'}{R^2} \ll 1,
-\end{equation}
-where the KK modes are more relevant than the stringy mode excitations. In particular, we focus on \emph{closed strings}. We'll refer to lightcone quantization, with the only difference being the name of the indices. In particular, we'll denote with $\hat{\mu}$ the indices of $\M_{26}$, with $\hat{\mu} = 0, \dots, 25$, and with $\mu$ the indices of $\M_{25}$, with $\mu = 0, \dots , 24$. This means that we can write $X^{\hat{\mu}} = (X^\mu, X^{25})$. Similarly, the transversal indices will be called $\hat{i}$ in the following, with $\hat{i} = 2, \dots 25$, while $i$ will denote the transversal indices in the non-compact space $\M_{25}$, with $i = 2, \dots 24$. Therefore, in spacetime lightcone coordinates, we have $X^{\hat{\mu}} \to (X^\pm, X^{\hat{i}}) = (X^\pm, X^i, X^{25})$.
+Let's now focus on \emph{closed strings} and compactify $\M_{26}$ on $\M_{25} \times S^1$.
+
+We'll refer to lightcone quantization, with the only difference being the name of the indices. In particular, we'll denote with $\hat{\mu}$ the indices of $\M_{26}$, with $\hat{\mu} = 0, \dots, 25$, and with $\mu$ the indices of $\M_{25}$, with $\mu = 0, \dots , 24$. This means that we can write $X^{\hat{\mu}} = (X^\mu, X^{25})$. Similarly, the transversal indices will be called $\hat{i}$ in the following, with $\hat{i} = 2, \dots 25$, while $i$ will denote the transversal indices in the non-compact space $\M_{25}$, with $i = 2, \dots 24$. Therefore, in spacetime lightcone coordinates, we have $X^{\hat{\mu}} \to (X^\pm, X^{\hat{i}}) = (X^\pm, X^i, X^{25})$.
 
 The dynamics of the strings oscillations is \emph{locally} identical for the theory on $\M_{26}$ and $\M_{25} \times S^1$. Indeed, the difference is in a global effect, i.e., the identification $x^{25} = y \simeq y + 2\pi R$. Therefore, the local dynamics is still described by the action~\eqref{eq:lightcone-polyakov}, i.e.,
 \begin{equation}
@@ -297,7 +295,7 @@ where the transverse number operators~\eqref{eq:def-transverse-number-op} are de
 
 Further, \emph{mass-shell} condition in \emph{the $25d$ space $\M_{25}$} reads\footnote{Pay attention to the fact that we're only focusing on $\M_{25}$. Indeed, we compute $-p_\mu p^\mu$, with $\mu = 0, \dots, 24$, \emph{not} $-p_{\hat{\mu}}p^{\hat{\mu}}$, with $\hat{\mu} = 0, \dots, 25$.}
 \begin{equation}\label{eq:comp-mass-shell}
-    M^2 = - p_\mu p^\mu = \frac{s^2}{R^2} + \frac{\omega^2 R^2}{\alpha'^2} + \frac{2}{\alpha'} (N + \tilde{N} - 2) .
+    M^2 = - p_\mu p^\mu = \frac{s^2}{R^2} + \frac{\omega^2 R^2}{\alpha'^2} + \frac{2}{\alpha'} (N_\perp + \tilde{N}_\perp - 2) .
 \end{equation}
 
 \begin{mdframed}
@@ -316,42 +314,53 @@ Further, \emph{mass-shell} condition in \emph{the $25d$ space $\M_{25}$} reads\f
     we get
     \begin{equation*}
     \begin{aligned}
-        p^+p^- &= \frac{1}{2} p^i p^i + \frac{1}{2} \left( \frac{s}{R} - \frac{\omega R}{\alpha'} \right)^2 + \frac{2}{\alpha'} N - \frac{2}{\alpha'} ,\\
-        p^+p^- &= \frac{1}{2} p^i p^i + \frac{1}{2} \left( \frac{s}{R} + \frac{\omega R}{\alpha'} \right)^2 + \frac{2}{\alpha'} \tilde{N} - \frac{2}{\alpha'} .
+        p^+p^- &= \frac{1}{2} p^i p^i + \frac{1}{2} \left( \frac{s}{R} - \frac{\omega R}{\alpha'} \right)^2 + \frac{2}{\alpha'} N_\perp - \frac{2}{\alpha'} ,\\
+        p^+p^- &= \frac{1}{2} p^i p^i + \frac{1}{2} \left( \frac{s}{R} + \frac{\omega R}{\alpha'} \right)^2 + \frac{2}{\alpha'} \tilde{N}_\perp - \frac{2}{\alpha'} .
     \end{aligned}
     \end{equation*}
     Then, by comparison, the new level-matching condition is
     \begin{equation*}
-        \frac{1}{2} \left( \frac{s}{R} - \frac{\omega R}{\alpha'} \right)^2 + \frac{2}{\alpha'} N = \frac{1}{2} \left( \frac{s}{R} + \frac{\omega R}{\alpha'} \right)^2 + \frac{2}{\alpha'} \tilde{N} \iff \tilde{N} - N + s \omega  = 0,
+        \frac{1}{2} \left( \frac{s}{R} - \frac{\omega R}{\alpha'} \right)^2 + \frac{2}{\alpha'} N_\perp = \frac{1}{2} \left( \frac{s}{R} + \frac{\omega R}{\alpha'} \right)^2 + \frac{2}{\alpha'} \tilde{N}_\perp \iff \tilde{N}_\perp - N_\perp + s \omega  = 0,
     \end{equation*}
     in agreement with~\eqref{eq:comp-level-matrching}. Finally, to find the mass-shell condition, we sum the above relations to obtain
     \begin{equation*}
-        2p^+p^- = p^i p^i + \frac{1}{2} \left( \frac{s}{R} + \frac{\omega R}{\alpha'} \right)^2 + \frac{1}{2} \left( \frac{s}{R} - \frac{\omega R}{\alpha'} \right)^2 + \frac{2}{\alpha'} (N + \tilde{N} - 2),
+        2p^+p^- = p^i p^i + \frac{1}{2} \left( \frac{s}{R} + \frac{\omega R}{\alpha'} \right)^2 + \frac{1}{2} \left( \frac{s}{R} - \frac{\omega R}{\alpha'} \right)^2 + \frac{2}{\alpha'} (N_\perp + \tilde{N}_\perp - 2),
     \end{equation*}
     so that
     \begin{equation}
-        M^2 = -p_\mu p^\mu = 2 p^+ p^- - p^i p^i = \frac{s^2}{R^2} + \frac{\omega^2 R^2}{\alpha'^2} + \frac{2}{\alpha'} (N + \tilde{N} - 2),
+        M^2 = -p_\mu p^\mu = 2 p^+ p^- - p^i p^i = \frac{s^2}{R^2} + \frac{\omega^2 R^2}{\alpha'^2} + \frac{2}{\alpha'} (N_\perp + \tilde{N}_\perp - 2),
     \end{equation}
     in agreement with~\eqref{eq:comp-mass-shell}
 \end{innerproof}
 \end{mdframed}
 
-For future convenience, let's define
+Notice that in old covariant quantization, those results would have been related to Virasoro constaints, with $N$ and $\tilde{N}$ the usual operators. In particular, recall that the first constraint for a physical state is $(L_0 -a) \ket{\phi}$, $(\tilde{L}_0 - \tilde{a}) \ket{\phi} = 0$, while the level matching condition reads $(L_0 - \tilde{L}_0) \ket{\phi} = 0$, with $L_0 = \frac{\alpha^2_0}{2} + N$ and $\tilde{L}_0 = \frac{\tilde{\alpha}^2_0}{2} + \tilde{N}$.
+
+From the mass formula~\eqref{eq:comp-mass-shell} we observe that for $s = \omega = 0$ we recover the previous formula~\eqref{eq:mass-shell}. This is compatible with the \emph{decompactification limit} $R \to \infty$, where the \emph{winding modes} become infinitely massive and decouple, while the \emph{Kaluza-Klein} modes can have continuous momentum values. 
+
+For $\omega = 0$, $s\neq 0$, we have the usual KK tower of massive excitations, with
 \begin{equation}
+    m_s^2 = M^2 + \left(\frac{s}{R}\right)^2, \quad M^2 = \frac{2}{\alpha'} (N_\perp + \tilde{N}_\perp - 2) .
+\end{equation}
+
+However, there's a new feature here with respect to the field theory compactification, that is, the \emph{winding sector} $\omega \neq 0$, $s = 0$. Here, the winding states have mass $\frac{\omega^2 R^2}{2}$, which reflects the physical intuition that winding costs energy due to the string tension. This is a purely string effect. Indeed, taking the limit $R \to 0$, the KK modes decouples, and for a field theory compactification we'd recover the $d$ dimensional theory. However, here we have the winding states too, which become light in the limit, and contribute to the low-energy spectrum.
+
+For future convenience, let's define
+\begin{equation}\label{eq:pl-pr-def}
     \tilde{\alpha}^{25}_0 \equiv \sqrt{\frac{\alpha'}{2}} p_L, \quad {\alpha}^{25}_0 \equiv \sqrt{\frac{\alpha'}{2}} p_R, \quad p_L \equiv \left( \frac{s}{R} + \frac{\omega R}{\alpha'} \right), \quad p_R \equiv \left( \frac{s}{R} - \frac{\omega R}{\alpha'} \right) ,
 \end{equation}
 so that we can divide the expansion of $X^{25}$ into a left- and a right- moving part, i.e,
-\begin{subequations}
+\begin{subequations}\label{eq:expansion-x-25}
 \begin{align}
     X^{25}(\tau,\sigma) &= X^{25}_L(\xi^+) + X^{25}_R(\xi^-) \\
     X^{25}_L(\xi^+)     &= \frac{x^{25}}{2} + \frac{\alpha' \pi}{l} p_L \xi^+ + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{\tilde{\alpha}^{25}_n}{n}e^{-\frac{2\pi i}{l}n \xi^+} \\
-    X^{25}_R(\xi^-)     &= \frac{x^{25}}{2} + \frac{\alpha' \pi}{l} p_R \xi^- + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{{\alpha}{25}_n}{n}e^{-\frac{2\pi i}{l}n \xi^-}.
+    X^{25}_R(\xi^-)     &= \frac{x^{25}}{2} + \frac{\alpha' \pi}{l} p_R \xi^- + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{{\alpha}^{25}_n}{n}e^{-\frac{2\pi i}{l}n \xi^-}.
 \end{align}
 \end{subequations}
 
 Without delving into the details, the Hamiltonian of the system splits into a left and a right part, which are completely independent. So, we can carry out the quantization of the left and right moving coordinates independently, with mass-shell conditions
-\begin{equation}
-    M^2_L = \frac{p_L}{2} + \frac{2}{\alpha'}(\tilde{N}-1), \quad M^2_R = \frac{p_R}{2} + \frac{2}{\alpha'}({N}-1)
+\begin{equation}\label{eq:left-right-mass-shell}
+    M^2_L = \frac{{p_L}^2}{2} + \frac{2}{\alpha'}(\tilde{N}_\perp-1), \quad M^2_R = \frac{{p_R}^2}{2} + \frac{2}{\alpha'}({N}_\perp-1)
 \end{equation}
 and only at the end combine the two sectors using the level-matching condition
 \begin{equation}
@@ -359,25 +368,116 @@ and only at the end combine the two sectors using the level-matching condition
 \end{equation}
 This implies that the $2d$ field theory of purely left-moving and purely right-moving fields make sense independently.
 
-Finally, the spectrum is built from the vacuum defined as
+Let's finally study the spectrum. The vacuum for $\M_{26}$ was $\ket{0,\tilde{0}; k^{\hat{\mu}}}$, with $k^{\hat{\mu}} \in \M_{26}$, $\hat{\mu} = 0, \dots 25$. In our case, it is $\ket{0,\tilde{0}; k^\mu, s, \omega}$, with $k^\mu \in \M_{25}$, $\mu = 0, \dots, 24$, and $s,\omega \in \Z$. In particular
 \begin{equation}
-    ,
+\begin{aligned}
+    \hat{p}^\mu \ket{0,\tilde{0}; k^\mu, s, \omega} &= k^\mu \ket{0,\tilde{0}; k^\mu, s, \omega} \\ 
+    p_{L/R}\ket{0,\tilde{0}; k^\mu, s, \omega} &= \left( \frac{s}{R} \pm \frac{\omega R}{\alpha'} \right) \ket{0,\tilde{0}; k^\mu, s, \omega}
+\end{aligned}
 \end{equation}
-by acting with $.$ in all possible ways.
 
+Then, the spectrum is built by acting in all possible ways with $\alpha^{\hat{i}}_{n<0}$ and $\alpha^{\hat{i}}_{n<0}$. In particular, the massless spectrum corresponds to $s \overset{\mathrm{!}}{=} 0$, $\omega \overset{\mathrm{!}}{=} 0$, $N = \tilde{N} \overset{\mathrm{!}}{=} 1$. The massless states are, then, 
+\begin{equation}\label{eq:states0}
+    \alpha^{\hat{i}}_{-1} \tilde{\alpha}^{\hat{j}}_{-1} \ket{0,\tilde{0}; k^\mu, s = 0, \omega = 0} .
+\end{equation}
+To simplify the notation, let's denote the vacuum simply by $\ket{s,\omega}$. Before compactification, the symmetry group of $\M_{26}$ is $SO(1,25)$, and its little group for massless representations is $SO(24)$\footnote{Indeed, $\hat{i} = 2, \dots, 25$ can take $24$ different values.}. The states~\eqref{eq:states0} transform under the representation $24 \otimes 24$ of $SO(24)$. This is reducible into $24 \otimes 24 \simeq (24) \oplus [24] \oplus 1$. These correspond to $g_{\hat{\mu}\hat{\nu}}(x^{\hat{\mu}})$, $b_{\hat{\mu}\hat{\nu}}(x^{\hat{\mu}})$, and $\phi(x^{\hat{\mu}})$, respectively. We use the indices $\hat{\mu}$ instead of $\hat{i}$ because of the presence of gauge symmetries, which allow preserving manifest gauge invariance of the fields.
 
+After compactification, the index $\hat{i}$ can be either $i$ or $25$, so we get, for example,
+\begin{equation}\label{eq:eq:comp-vectors}
+    \alpha^{i}_{-1} \tilde{\alpha}^{j}_{-1} \ket{0,0},
+\end{equation}
+which correspond to the graviton, Kalb-Ramond and scalar fields in the non-compact $\M_{25}$ space. Similarly than before, the symmetry group is $SO(1,24)$, the massless little group is $SO(23)$\footnote{Indeed, ${i} = 2, \dots, 24$ can take $23$ different values.} and the above state transforms under the representation $23 \otimes 23 \simeq (23) \oplus [23] \oplus 1$ of $SO(23)$, which correspond to the \emph{graviton} $g_{\mu\nu}(x^\mu)$, the \emph{Kalb-Ramond} $b_{\mu\nu}(x^\mu)$ and the \emph{dilaton} $\phi(x^\mu)$, respectively. Recall that we're looking at massless Kaluza-Klein modes here.
+
+Further, we can have the states
+\begin{equation}\label{eq:comp-vectors}
+    \alpha^{i}_{-1} \tilde{\alpha}^{25}_{-1}\ket{0,0}, \quad \alpha^{25}_{-1} \tilde{\alpha}^{i}_{-1} \ket{0,0},
+\end{equation}
+which represents $25d$ gauge bosons. In particular, the symmetric combination $(\alpha^{i}_{-1} \tilde{\alpha}^{25}_{-1}+ \alpha^{25}_{-1} \tilde{\alpha}^{i}_{-1}) \ket{0,0}$ corresponds to the decomposition of the $26d$ metric, that is, to $g_{\mu 25}$, which is the same gauge vector we found after compactification of the Einstein theory and is called \emph{graviphoton}. On the other hand, the antisymmetric combination $(\alpha^{i}_{-1} \tilde{\alpha}^{25}_{-1} - \alpha^{25}_{-1} \tilde{\alpha}^{i}_{-1}) \ket{0,0}$ corresponds to the decomposition of the $26d$ Kalb-Ramond, that is, to $b_{\mu 25}$, and is called \emph{Kalb-Ramond photon}.
+
+Finally, we get a scalar
+\begin{equation}\label{eq:comp-scalar}
+    \alpha^{25}_{-1} \tilde{\alpha}^{25}_{-1} \ket{0},
+\end{equation}
+which corresponds to the scalar component $g_{25 \, 25}$ after compactification. It is related to the radius of the extra-dimension, as discussed before.
+
+To sum up, everything is coherent with the expected decomposition of the fields under $\M_{26} \to \M_{25} \times S^1$,
+\begin{equation}
+\begin{aligned}
+    G_{\hat{\mu}\hat{\nu}} (X^{\hat{\mu}}) &\to \{ g_{\mu\nu}(X^\mu), g_{\mu 25} (X^\mu), g_{25 \, 25}(X^i) \},\\
+    b_{\hat{\mu}\hat{\nu}} (X^{\hat{\mu}}) &\to \{ b_{\mu\nu}(X^\mu), b_{\mu 25}(X^\mu) \},\\
+    \phi (X^{\hat{\mu}}) &\to \phi(X^\mu),
+\end{aligned}
+\end{equation}
+where we only focused on the massless Kaluza-Klein modes.
+
+Withoud delving into the technical details, let's just mention a few words about a purely stringy effect, which is \emph{enhancement}.
+
+%******************** ENHANCEMENT *********************
+\section{Enhancement}
+Looking at the vector bosons
+\begin{equation}
+    (\alpha^{i}_{-1} \tilde{\alpha}^{25}_{-1}+ \alpha^{25}_{-1} \tilde{\alpha}^{i}_{-1}) \ket{0,0}, \quad (\alpha^{i}_{-1} \tilde{\alpha}^{25}_{-1} - \alpha^{25}_{-1} \tilde{\alpha}^{i}_{-1}) \ket{0,0},
+\end{equation}
+their $U(1)$ gauge symmetry is a consequence of the compactification. This was previously discussed for the metric in Hilbert-Einstein theory and can be generalized for a two-form. 
+
+One can verify that for the particular value $R = \sqrt{\alpha'}$, there are $4$ additional gauge bosons, which can \emph{enhance} the $U(1) \times U(1)$ gauge symmetry, up to $SU(2) \times SU(2)$, together with $8$ additional scalar fields coupled to them. This can be checked at the level of interactions and it's beyond our purposes. Let's just observe that~\eqref{eq:comp-mass-shell} and~\eqref{eq:comp-level-matrching} can be simultaneously satified with $M^2=0$ for the following values, which lead to the above mentioned additional fields,
+\begin{subequations}
+\begin{align}
+    s=\omega = \pm 1, N_\perp = 0, \tilde{N}_\perp = 1 &\implies \tilde{\alpha}^i_{-1} \ket{\pm 1, \pm 1}, \quad \tilde{\alpha}^{25}_{-1}\ket{\pm 1, \pm 1} \\
+    s= -\omega = \pm 1, N_\perp = 1, \tilde{N}_\perp = 0 &\implies \alpha^i_{-1} \ket{\pm 1, \mp 1}, \quad \alpha^{25}_{-1}\ket{\pm 1, \mp 1} \\
+    s = \pm 2, \omega = 0, N_\perp = \tilde{N}_\perp = 0 &\implies \ket{\pm 2, 0} \\
+    s = 0, \omega = \pm 2, N_\perp = \tilde{N}_\perp = 0 &\implies \ket{0, \pm 2}. 
+\end{align}
+\end{subequations}
+
+One can show that the four additional massless vector, together with~\eqref{eq:comp-vectors} are in the adjoint representation of $SU(2) \times SU(2)$, while the eight scalars, together with~\eqref{eq:comp-scalar}, form the $(3,3)$ representation of the same group.
+
+We could've started from the $26d$ effective field theory of the bosonic string on $\M_{26}$ and then compactify it on $\M_{25} \times S^1$. However, this would've been a good approximation only in the \emph{large volume approximation}, i.e.,
+\begin{equation}\label{eq:large-volume-approx}
+    E \ll \frac{1}{R} \ll M_s, \quad \frac{\alpha'}{R^2} \ll 1.
+\end{equation}
+
+Indeed, the latter would've missed the feature of winding states, since for large $R$ they decouple, as can be seen by the mass-shell~\eqref{eq:comp-mass-shell}. Then, we can write down another effective field theory which is a good approximation for $R \simeq \sqrt{\alpha'}$ by considering the massless spectrum we found for $R = \sqrt{\alpha'}$. This theory includes gravity, non-abelian $SU(2) \times SU(2)$ interactions and $9$ scalars, coupled to the gauge bosons. However, we should pay attention in doing so. Indeed, as $R$ varies away from $\sqrt{\alpha'}$, some gauge bosons and scalars get masses, leading to a sort of \emph{stringy Higgs mechanism}. In particular, we have the breaking of the gauge symmetry $SU(2) \times SU(2) \to U(1) \times U(1)$, triggered by the radius of the extra dimension, given by the V.E.V of the modulus~\eqref{eq:comp-scalar}.
+
+Without focusing on those details, let's study another interesting, purely stringy, effect, which is T-duality.
+
+%******************** T-DUALITY *********************
 \section{T-duality}
-In the \emph{large volume approx}~\eqref{eq:large-volume-approx}, the non-zero winding states are very massive and decouple. Further, for the remaining zero-winding states, with $\omega = 0$, We recover the Kaluza-Klein description,
-\begin{equation}
-    m_s^2 = M^2 + \left(\frac{s}{R}\right)^2, \quad M^2 = \frac{2}{\alpha'} (N + \tilde{N} - 2)
+From the discussion above, it could seem that the space of physically inequivalent $S^1$ compactifications is parametrized by $R/\alpha' \in (0,\infty)$. However, inspection of the mass formula~\eqref{eq:comp-mass-shell} reveals that the spectrum is invariant under the so-called \emph{T-duality transformation}
+\begin{equation}\label{eq:t-duality-transf}
+    R \to R' = \frac{\alpha'}{R}, \quad (s,\omega) \to (s',\omega') = (\omega, s) ,
+\end{equation}
+which has fixed point $R = \sqrt{\alpha'}$. Then, the spectrum is completely characterized by the values $R \geq \sqrt{\alpha'}$, or equivalently, by $0 < R \leq \sqrt{\alpha'}$.
+
+A consequence of T-duality is that the $R \to 0$ limit corresponds to a decompactification limit of the T-dual theory, in which $R' \to \infty$, so the infinite tower of winding states becoming light in the $R \to 0$ limit are interpreted as an infinite tower of Kaluza-Klein modes becoming light in the $R' \to \infty$ limit.
+
+
+One could wonder if T-duality is an accidental property of the spectrum, rather than a symmetry of the full theory. One can show that the T-dual theories are described by the very same worldsheet theory, so they're physically equivalent. To see this, recall that it's possible to describe the left-movers and the right-movers indipendently, through the coordinates $X^{\hat{i}}_L(\xi^+)$ and $X^{\hat{i}}_R(\xi^-)$. Out of them, there are two different, but at the end physically equivalent, ways of constructing spacetime coordinates $X^{\hat{i}}(\tau,\sigma)$ out of them. 
+
+Indeed, looking at the T-duality transformation~\eqref{eq:t-duality-transf}, it acts on the momenta $p_{L/R}$ as
+\begin{equation}\label{eq:t-duality-momenta}
+\begin{aligned}
+    p_L &= \frac{n}{R} + \frac{\omega R}{\alpha'} \to \frac{\omega R}{\alpha'} + \frac{n}{R} = p_L \; \; \; \implies \tilde{\alpha}^{25}_0 \to \tilde{\alpha}^{25}_0 ,\\
+    p_R &= \frac{n}{R} - \frac{\omega R}{\alpha'} \to \frac{\omega R}{\alpha'} - \frac{n}{R} = - p_R \implies {\alpha}^{25}_0 \to -{\alpha}^{25}_0 .
+\end{aligned}
 \end{equation}
 
-Moreover, one can easily see that the mass-formula~\eqref{eq:comp-mass-shell} is invariant under the so-called \emph{T-duality transformation}
+This suggests us to define a new set of coordinate fields
 \begin{equation}
-    R \to \frac{\alpha'}{R}, \quad s \leftrightarrow \omega .
+\begin{aligned}
+    Y^i &= X^i, \quad i = 2 \dots, 24, \\
+    Y^{25} &= X^{25}_L(\xi^+) - X^{25}_R(\xi^-) ,
+\end{aligned}
 \end{equation}
-Then, the complete spectrum of the theory at radius $R$ is the same as the spectrum of the theory at radius $R' = \frac{\alpha'}{R}$, up to a relabelling of $s$ and $\omega$.
+so that the mode expansion of $Y^{25}$ differs from the one of $X^{25}$,~\eqref{eq:expansion-x-25}, by the transformation~\eqref{eq:t-duality-momenta}. Then, looking again at~\eqref{eq:expansion-x-25} and using~\eqref{eq:pl-pr-def} and~\eqref{eq:t-duality-transf}, after a transformation $\sigma \to \sigma + l$, we get
+\begin{equation}
+\begin{aligned}
+    Y^{25}(\tau, \sigma) \to Y^{25}(\tau, \sigma + l) &= X^{25}_L (\xi^+ + l) - X^{25}_R(\xi^- - l) = Y^{25}(\tau,\sigma) + \alpha' \pi (p_L + p_R) \\
+    &= Y^{25}(\tau,\sigma) + \frac{2\pi\alpha' s}{R} = Y^{25}(\tau,\sigma) + 2\pi R' s ,
+\end{aligned}
+\end{equation}
+So that we can treat $Y^{25}$ exactly as before, which means that $X^{25}$ and $Y^{25}$ describe string compactifications on radii $R$ and $R' = \alpha'/R$, respectively.
 
-An important consequence of T-duality is that the $R \to 0$ limit corresponds to a decompactification limit of the T-dual theory, in which $R' \to \infty$, so the infinite tower of winding states becoming light in the $R \to 0$ limit are interpreted as an infinite tower of Kaluza-Klein modes becoming light in the $R' \to \infty$ limit.
+One can show that $X$ and $Y$ have the same energy-momentum tensor and the same operator product expansions, so that the conformal field theories of $X$ and $Y$ are identical. This proves that T-duality is a symmetry of the bosonic string theory and not just of its spectrum.
 
-From the point of view of the coordinates, we can define a T-duality operation as a \emph{parity operation on right movers}. In particular, one can show that T-duality is \emph{not} an accidental property of the spectrum, since the t-dual theories are described by exactly the same wordsheet theory, and differ on how the spacetime geometry is recovered from it. In particular, turning back to the quantized theory in lightcone gauge, we observe that 
+This construction suggests that somehow spacetime is a secondary concept in string theory, and that it's derived from more fundamental concepts like the worldsheet theory. As argued by Uranga, what this tells us about the nature of spacetime is still unclear.
