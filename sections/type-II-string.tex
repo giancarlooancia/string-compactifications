@@ -192,7 +192,6 @@ The spectrum is built by defining a groundstate $\ket{0;k}_{NS}$ with spacetime 
 \end{equation}
 
 Then, we apply negative mode operators in all possible ways. Note that there's no zero mode $b^i_0$. Taking for simplicity zero spacetime momentum, the lightest right-moving states are
-
 \begin{equation}\label{eq:table-NS}
 \begin{tabular}{c|c|c} % Vertical lines only between columns
     State & $\alpha' M^2_R / 2$ & $SO(8)$ \\ \hline
@@ -468,18 +467,77 @@ In order to obtain consistent spacetime theories, one should combine the above d
 \end{aligned}
 \end{equation}
 where we could exchange $\text{R}_\pm \to \text{R}_\mp$ in type IIA, and $\text{R}_+\to \text{R}_-$ in type IIB, obtaining equivalent theories in spacetime. The field content from the massless spectrum is the following:
-
-\begin{equation}
-        \begin{tabular}{|cc|cc|}
+\begin{equation*}
+        \begin{tabular}{|ccc|ccc|}
         \hline
-        \multicolumn{2}{|c|}{\textbf{Type IIA}} & \multicolumn{2}{c|}{\textbf{Type IIB}} \\ \hline
-        \multicolumn{1}{|c|}{Sector}  & Fields  & \multicolumn{1}{l|}{Sector}  & Fields  \\ \hline
-        \multicolumn{1}{|c|}{$(\text{NS}_+, \text{NS}_+)$}        &    $\Phi$, $B_{[\mu\nu]}$, $G_{(\mu\nu)}$     & \multicolumn{1}{c|}{$(\text{NS}_+, \text{NS}_+)$}        &      $\Phi$, $B_{[\mu\nu]}$, $G_{(\mu\nu)}$   \\ \hline
-        \multicolumn{1}{|c|}{$(\text{R}_+, \text{R}_-)$}        &     $C_1$, $C_3$    & \multicolumn{1}{c|}{$(\text{R}_+, \text{R}_+)$}        &    $C_0$, $C_2$, $C_4^+$     \\ \hline
-        \multicolumn{1}{|c|}{$(\text{NS}_+,\text{R}_-)$}        &     $\tilde{\lambda}_a$, $\tilde{\psi}^\mu_a$    & \multicolumn{1}{c|}{$(\text{NS}_+,\text{R}_+)$}        &     ${\lambda}_a$, ${\psi}^\mu_a$    \\ \hline
-        \multicolumn{1}{|c|}{$(\text{R}_+, \text{NS}_+)$}        &     ${\lambda}_a$, ${\psi}^\mu_a$    & \multicolumn{1}{c|}{$(\text{R}_+, \text{NS}_+)$}        &     ${\lambda}_a$, ${\psi}^\mu_a$    \\ \hline
+        \multicolumn{3}{|c|}{\textbf{Type IIA}} & \multicolumn{3}{c|}{\textbf{Type IIB}} \\ \hline
+        \multicolumn{1}{|c|}{Sector}  & Fields & \multicolumn{1}{|c|}{$SO(8)$} & \multicolumn{1}{l|}{Sector}  & Fields & \multicolumn{1}{|c|}{$SO(8)$}  \\ \hline
+        \multicolumn{1}{|c|}{$(\text{NS}_+, \text{NS}_+)$} & $\Phi$, $B_{[\mu\nu]}$, $G_{(\mu\nu)}$ & \multicolumn{1}{|c|}{$\v \otimes \v$} & \multicolumn{1}{c|}{$(\text{NS}_+, \text{NS}_+)$}        &      $\Phi$, $B_{[\mu\nu]}$, $G_{(\mu\nu)}$  & \multicolumn{1}{|c|}{$\v \otimes \v$} \\ \hline
+        \multicolumn{1}{|c|}{$(\text{R}_+, \text{R}_-)$} &$C_1$, $C_3$  & \multicolumn{1}{|c|}{$\s\otimes\c$} & \multicolumn{1}{c|}{$(\text{R}_+, \text{R}_+)$}        &    $C_0$, $C_2$, $C_4^+$   & \multicolumn{1}{|c|}{$\s\otimes\s$}  \\ \hline
+        \multicolumn{1}{|c|}{$(\text{NS}_+,\text{R}_-)$}        &     $\tilde{\lambda}_a$, $\tilde{\psi}^\mu_a$  & \multicolumn{1}{|c|}{$\v\otimes\c$}  & \multicolumn{1}{c|}{$(\text{NS}_+,\text{R}_+)$}        &     ${\lambda}^{(1)}_a$, ${\psi}^{(1)\mu}_a$  & \multicolumn{1}{|c|}{$\v\otimes\s$}  \\ \hline
+
+
+        \multicolumn{1}{|c|}{$(\text{R}_+, \text{NS}_+)$}        &     ${\lambda}_a$, ${\psi}^\mu_a$ & \multicolumn{1}{|c|}{$\s\otimes\v$}   & \multicolumn{1}{c|}{$(\text{R}_+, \text{NS}_+)$}        &     ${\lambda}^{(2)}_a$, ${\psi}^{(2)\mu}_a$  & \multicolumn{1}{|c|}{$\s\otimes\v$}  \\ \hline
         \end{tabular}
-\end{equation}
+\end{equation*}
 
 %******************* COMPACTIFICATION OF TYPE II THEORIES
-\section{Compactification of Type II on \texorpdfstring{$S^1$}{S1}}
+\section{T-duality for Type II Superstrings}
+We're now able to generalize the T-duality discussion of section~\ref{sec:t-duality} to Type IIA/IIB superstrings. We focus on the \emph{closed string} and compactify $\M_{10}$ on $\M_{9} \times S^1$. Differently than above, we change the notation for the indices. In particular, we'll denote with $\hat{\mu}$ the indices of $\M_{10}$, with $\hat{\mu} = 0, \dots, 9$, and with $\mu$ the indices of $\M_{9}$, with $\mu = 0, \dots , 8$. This means that we can write $X^{\hat{\mu}} = (X^\mu, X^{9})$. Similarly, the transversal indices will be called $\hat{i}$ in the following, with $\hat{i} = 2, \dots 9$, while $i$ will denote the transversal indices in the non-compact space $\M_{9}$, with $i = 2, \dots 8$. Therefore, in spacetime lightcone coordinates, we have $X^{\hat{\mu}} \to (X^\pm, X^{\hat{i}}) = (X^\pm, X^i, X^{9})$. The same conventions will be used for the fermions on the worldsheet.
+
+An important detail is that the $2$d fermion sector on the worldsheet is completely unchanged by the compactification. Indeed, we suppose that the only effect of the compactification is on the bosonic fields, which describe how the string in embedded in spacetime, while the fermionic fields are added to guarantee worldsheet supersymmetry. Therefore, the fermions will have the usual (R) or (NS) boundary conditions, with no change due to the compactification. For what concerns the bosons, the analysis is parallel to the bosonic string.
+
+Due to the identification $X^9 \simeq X^9 + 2\pi R$, the possible boundary conditions for the bosonic fields are
+\begin{equation}
+\begin{aligned}
+    X^i (\tau, \sigma +l) = X^i(\tau,\sigma), \quad i = 2, \dots, 8, \\
+    X^9(\tau,\sigma + l) = X^9(\tau,\sigma) + 2\pi R \omega, \quad \omega \in \Z .
+\end{aligned}
+\end{equation}
+Further, the momentum along $X^9$ is quantized, i.e.,
+\begin{equation}
+    p_9 = \frac{s}{R}, \quad s \in \Z.
+\end{equation}
+
+Regarding the mode decompositions, for $X^i_{L/R}$ it's given by~\eqref{eq:lightcone-mode-decomposition}, with $i = 2, dots, 8$, while for $X^9 (\tau, \sigma) = X^9_L (\xi^+) + X^9_R (\xi^-)$, it reads
+\begin{subequations}
+\begin{align}
+    X^{9}_L(\xi^+)     &= \frac{x^{9}}{2} + \frac{\alpha' \pi}{l} p_{\!_L} \xi^+ + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{\tilde{\alpha}^{9}_n}{n}e^{-\frac{2\pi i}{l}n \xi^+} \\
+    X^{9}_R(\xi^-)     &= \frac{x^{9}}{2} + \frac{\alpha' \pi}{l} p_{\!_R} \xi^- + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{{\alpha}^{9}_n}{n}e^{-\frac{2\pi i}{l}n \xi^-},
+\end{align}
+\end{subequations}
+with
+\begin{equation}
+    p_{\!_L} \equiv \left( \frac{s}{R} + \frac{\omega R}{\alpha'} \right), \quad p_{\!_R} \equiv \left( \frac{s}{R} - \frac{\omega R}{\alpha'} \right) .
+\end{equation}
+
+From~\eqref{eq:left-right-mass-shell},~\eqref{eq:NS-mass-shell} and~\eqref{eq:R-mass-shell}, since the fermions don't enter this analysis, we easily see that the \emph{mass-shell condition} on $\M_9$ reads
+\begin{equation}
+    M^2_L = \frac{p^2_L}{2} + \frac{2}{\alpha'} \left( \tilde{N}_\perp - \tilde{a}_\phi \right), \quad M^2_R = \frac{p^2_R}{2} + \frac{2}{\alpha'} \left( {N}_\perp - {a}_\phi \right).
+\end{equation}
+The number operators are given by~\eqref{eq:superstring-transverse-number-op}, i.e.,
+\begin{equation}
+    \begin{aligned}
+        \tilde{N}_\perp = \sum_{n > 0} \tilde{\alpha}_{-n}^i \tilde{\alpha}^i_n + \sum_{k \geq 0 + \phi} k \tilde{b}^i_{-k} \tilde{b}^i_k , \\
+        N_\perp = \sum_{n > 0} \alpha_{-n}^i \alpha^i_n + \sum_{k \geq 0 + \phi} k b^i_{-k} b^i_k ,
+\end{aligned}
+\end{equation}
+and $a_\phi$ and $\tilde{a}_\phi$ the ordering constants for the (R) or (NS) sector. In particular, for $\phi = 0$, we have $a_0 = \tilde{a}_0 = a_{R} = 0$, while for $\phi = 1/2$, we get $a_{1/2} = \tilde{a}_{1/2} = a_{NS} = 1/2$.
+
+For a generic $R$, the only massless states are in the sector $(s=0,\omega=0)$. These states correspond to zero modes of the Kaluza-Klein reduction of the effective field theory of $10$d massless modes. Indeed, the internal momentum is zero and there's no winding. Therefore, in order to perform the Kaluza-Klein reduction to $9$d, keeping just the zero-modes, is equivalent to decoupling representations with respect $SO(8)$, the little group for massless representations of $SO(1,9)$ in $\M_{10}$, into representations of $SO(7)$, which is the little group for massless representations of $SO(1,8)$ in $\M_9$.
+
+In particular, looking at (N) and (NS) sectors for left or right movers, separately, we get
+\begin{equation}
+        \begin{tabular}{|c|c|c|}
+     \hline   sector & $SO(8)$ rep. & $SO(7)$ rep.    \\ \hline
+        NS$_+$ & $\v$ & $\boldsymbol{7} \oplus \boldsymbol{1}$ \\ \hline
+        R$_+$  & $\s$ &$ \boldsymbol{8}  $  \\ \hline
+        R$_-$  & $\c$ & $\boldsymbol{8} $ \\\hline                                                
+        \end{tabular}
+\end{equation}
+where $\boldsymbol{1}$ is the scalar representation of $SO(7)$, $\boldsymbol{7}$ is the vector one and $\boldsymbol{8}$ the spinor representation. Notice that, looking at $SO(d)$, for $d = 7 \mod 8$ we can impose the reality condition, but \emph{not} the Weyl one, since there's no chirality in odd dimensions. Therefore, there's a real, non-chiral, spinor representation of $SO(7)$ of dimension $8$ and both $\s$ and $\c$ are decomposed into this $\boldsymbol{8}$.
+
+Then, we have to glue together the left and right movers. To do so, we can decompose the left and right movers with respect to $SO(7)$, separately, and then tensor them\footnote{An equivalent procedure would be to tensor the representations of $SO(8)$ and then decompose them with respect to $SO(7)$. Both methods give the same result.}.
+\begin{equation*}
+\input{tables/type-II-decomposition.tex}
+\end{equation*}

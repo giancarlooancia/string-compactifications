@@ -228,7 +228,7 @@ Let's now focus on \emph{closed strings} and compactify $\M_{26}$ on $\M_{25} \t
 
 We'll refer to lightcone quantization, with the only difference being the name of the indices. In particular, we'll denote with $\hat{\mu}$ the indices of $\M_{26}$, with $\hat{\mu} = 0, \dots, 25$, and with $\mu$ the indices of $\M_{25}$, with $\mu = 0, \dots , 24$. This means that we can write $X^{\hat{\mu}} = (X^\mu, X^{25})$. Similarly, the transversal indices will be called $\hat{i}$ in the following, with $\hat{i} = 2, \dots 25$, while $i$ will denote the transversal indices in the non-compact space $\M_{25}$, with $i = 2, \dots 24$. Therefore, in spacetime lightcone coordinates, we have $X^{\hat{\mu}} \to (X^\pm, X^{\hat{i}}) = (X^\pm, X^i, X^{25})$.
 
-The dynamics of the strings oscillations is \emph{locally} identical for the theory on $\M_{26}$ and $\M_{25} \times S^1$. Indeed, the difference is in a global effect, i.e., the identification $x^{25} = y \simeq y + 2\pi R$. Therefore, the local dynamics is still described by the action~\eqref{eq:lightcone-polyakov}, i.e.,
+The dynamics of the strings oscillations is \emph{locally} identical for the theory on $\M_{26}$ and $\M_{25} \times S^1$. Indeed, the difference is in a global effect, i.e., the identification $X^{25} \simeq X^{25} + 2\pi R$. Therefore, the local dynamics is still described by the action~\eqref{eq:lightcone-polyakov}, i.e.,
 \begin{equation}
     S = \frac{1}{4\pi\alpha'} \int \ud \tau \ud \sigma \left( (\de_\tau X^{\hat{i}})^2 - (\de_\sigma X^{\hat{i}})^2 \right) - \int \ud \tau p^+ \de_\tau q^-,
 \end{equation}
@@ -244,11 +244,11 @@ with the difference being the boundary conditions of the worldsheet fields. Then
     \label{fig:winding}
 \end{figure}
 
-To express it in terms of the oscillator modes, we first need to specify the boundary conditions. In particular, writing $X^{\hat{i}} = (X^i, X^{25})$, we have the usual periodic boundary condition for the $X^i$ with $i = 2, \dots, 24$, while $X^{25}$ can have a more general boundary condition due to the periodicity $x^{25} = y \simeq y + 2\pi R$ in the internal space. Specifically,
+To express it in terms of the oscillator modes, we first need to specify the boundary conditions. In particular, writing $X^{\hat{i}} = (X^i, X^{25})$, we have the usual periodic boundary condition for the $X^i$ with $i = 2, \dots, 24$, while $X^{25}$ can have a more general boundary condition due to the periodicity $X^{25}\simeq X^{25} + 2\pi R$ in the internal space. Specifically,
 \begin{subequations}
 \begin{align}
-    X^i(t,\sigma + l) &= X^i(t,\sigma), \quad i = 2, \dots, 24\\
-    X^{25}(t,\sigma + l) &= X^{25}(t,\sigma) + 2\pi R \omega, \quad \omega \in \Z.
+    X^i(\tau,\sigma + l) &= X^i(\tau,\sigma), \quad i = 2, \dots, 24\\
+    X^{25}(\tau,\sigma + l) &= X^{25}(\tau,\sigma) + 2\pi R \omega, \quad \omega \in \Z.
 \end{align}
 \end{subequations}
 For $\omega = 0$, it describes the usual boundary condition, while for $\omega \neq 0$ it describes a closed string winding around $S^1$ $\omega$-times, as showed in figure~\ref{fig:winding}.
@@ -347,20 +347,20 @@ However, there's a new feature here with respect to the field theory compactific
 
 For future convenience, let's define
 \begin{equation}\label{eq:pl-pr-def}
-    \tilde{\alpha}^{25}_0 \equiv \sqrt{\frac{\alpha'}{2}} p_L, \quad {\alpha}^{25}_0 \equiv \sqrt{\frac{\alpha'}{2}} p_R, \quad p_L \equiv \left( \frac{s}{R} + \frac{\omega R}{\alpha'} \right), \quad p_R \equiv \left( \frac{s}{R} - \frac{\omega R}{\alpha'} \right) ,
+    \tilde{\alpha}^{25}_0 \equiv \sqrt{\frac{\alpha'}{2}} p_{\!_L}, \quad {\alpha}^{25}_0 \equiv \sqrt{\frac{\alpha'}{2}} p_R, \quad p_{\!_L} \equiv \left( \frac{s}{R} + \frac{\omega R}{\alpha'} \right), \quad p_R \equiv \left( \frac{s}{R} - \frac{\omega R}{\alpha'} \right) ,
 \end{equation}
 so that we can divide the expansion of $X^{25}$ into a left- and a right- moving part, i.e,
 \begin{subequations}\label{eq:expansion-x-25}
 \begin{align}
     X^{25}(\tau,\sigma) &= X^{25}_L(\xi^+) + X^{25}_R(\xi^-) \\
-    X^{25}_L(\xi^+)     &= \frac{x^{25}}{2} + \frac{\alpha' \pi}{l} p_L \xi^+ + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{\tilde{\alpha}^{25}_n}{n}e^{-\frac{2\pi i}{l}n \xi^+} \\
+    X^{25}_L(\xi^+)     &= \frac{x^{25}}{2} + \frac{\alpha' \pi}{l} p_{\!_L} \xi^+ + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{\tilde{\alpha}^{25}_n}{n}e^{-\frac{2\pi i}{l}n \xi^+} \\
     X^{25}_R(\xi^-)     &= \frac{x^{25}}{2} + \frac{\alpha' \pi}{l} p_R \xi^- + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{{\alpha}^{25}_n}{n}e^{-\frac{2\pi i}{l}n \xi^-}.
 \end{align}
 \end{subequations}
 
-Without delving into the details, the Hamiltonian of the system splits into a left and a right part, which are completely independent. So, we can carry out the quantization of the left and right moving coordinates independently, with mass-shell conditions
+Without delving into the details, the Hamiltonian of the system splits into a left and a right part, which are completely independent. So, we can carry out the quantization of the left and right moving coordinates independently, with mass-shell conditions on $\M_{25}$
 \begin{equation}\label{eq:left-right-mass-shell}
-    M^2_L = \frac{{p_L}^2}{2} + \frac{2}{\alpha'}(\tilde{N}_\perp-1), \quad M^2_R = \frac{{p_R}^2}{2} + \frac{2}{\alpha'}({N}_\perp-1)
+    M^2_L = \frac{{p_{\!_L}}^2}{2} + \frac{2}{\alpha'}(\tilde{N}_\perp-1), \quad M^2_R = \frac{{p_R}^2}{2} + \frac{2}{\alpha'}({N}_\perp-1)
 \end{equation}
 and only at the end combine the two sectors using the level-matching condition
 \begin{equation}
@@ -410,7 +410,7 @@ To sum up, everything is coherent with the expected decomposition of the fields 
 \end{equation}
 where we only focused on the massless Kaluza-Klein modes.
 
-Withoud delving into the technical details, let's just mention a few words about a purely stringy effect, which is \emph{enhancement}.
+Without delving into the technical details, let's just mention a few words about a purely stringy effect, which is \emph{enhancement}.
 
 %******************** ENHANCEMENT *********************
 \section{Enhancement}
@@ -442,7 +442,7 @@ Indeed, the latter would've missed the feature of winding states, since for larg
 Without focusing on those details, let's study another interesting, purely stringy, effect, which is T-duality.
 
 %******************** T-DUALITY *********************
-\section{T-duality}
+\section{T-duality}\label{sec:t-duality}
 From the discussion above, it could seem that the space of physically inequivalent $S^1$ compactifications is parametrized by $R/\alpha' \in (0,\infty)$. However, inspection of the mass formula~\eqref{eq:comp-mass-shell} reveals that the spectrum is invariant under the so-called \emph{T-duality transformation}
 \begin{equation}\label{eq:t-duality-transf}
     R \to R' = \frac{\alpha'}{R}, \quad (s,\omega) \to (s',\omega') = (\omega, s) ,
@@ -457,7 +457,7 @@ One could wonder if T-duality is an accidental property of the spectrum, rather 
 Indeed, looking at the T-duality transformation~\eqref{eq:t-duality-transf}, it acts on the momenta $p_{L/R}$ as
 \begin{equation}\label{eq:t-duality-momenta}
 \begin{aligned}
-    p_L &= \frac{n}{R} + \frac{\omega R}{\alpha'} \to \frac{\omega R}{\alpha'} + \frac{n}{R} = p_L \; \; \; \implies \tilde{\alpha}^{25}_0 \to \tilde{\alpha}^{25}_0 ,\\
+    p_{\!_L} &= \frac{n}{R} + \frac{\omega R}{\alpha'} \to \frac{\omega R}{\alpha'} + \frac{n}{R} = p_{\!_L} \; \; \; \implies \tilde{\alpha}^{25}_0 \to \tilde{\alpha}^{25}_0 ,\\
     p_R &= \frac{n}{R} - \frac{\omega R}{\alpha'} \to \frac{\omega R}{\alpha'} - \frac{n}{R} = - p_R \implies {\alpha}^{25}_0 \to -{\alpha}^{25}_0 .
 \end{aligned}
 \end{equation}
@@ -472,7 +472,7 @@ This suggests us to define a new set of coordinate fields
 so that the mode expansion of $Y^{25}$ differs from the one of $X^{25}$,~\eqref{eq:expansion-x-25}, by the transformation~\eqref{eq:t-duality-momenta}. Then, looking again at~\eqref{eq:expansion-x-25} and using~\eqref{eq:pl-pr-def} and~\eqref{eq:t-duality-transf}, after a transformation $\sigma \to \sigma + l$, we get
 \begin{equation}
 \begin{aligned}
-    Y^{25}(\tau, \sigma) \to Y^{25}(\tau, \sigma + l) &= X^{25}_L (\xi^+ + l) - X^{25}_R(\xi^- - l) = Y^{25}(\tau,\sigma) + \alpha' \pi (p_L + p_R) \\
+    Y^{25}(\tau, \sigma) \to Y^{25}(\tau, \sigma + l) &= X^{25}_L (\xi^+ + l) - X^{25}_R(\xi^- - l) = Y^{25}(\tau,\sigma) + \alpha' \pi (p_{\!_L} + p_R) \\
     &= Y^{25}(\tau,\sigma) + \frac{2\pi\alpha' s}{R} = Y^{25}(\tau,\sigma) + 2\pi R' s ,
 \end{aligned}
 \end{equation}
