@@ -173,7 +173,17 @@ For the mass-shell condition, we have a formula similar to~\eqref{eq:left-right-
 
 From now on, we'll focus only on the righ-moving part, the equations for the left-moving being the same but with tilde operators. We'll separately study the vacuum and the spectrum of the (NS) and (R) sectors, gluing them together to find the full spectrum of the closed string.
 
-At the end we will focus on the massless spectrum of the theory, so that they form representations of the little group $SO(8)$ of $SO(1,9)$. Let's denote by $\v$ the vector representation, by $\s$ the positive-chirality spinor representation and by $\c$ the negative-chirality co-spinor representation. Recall that, looking at spinors of $SO(1,D-1)$, we can have Majorana-Weyl spinors, with a number of real degrees of freedom equal to $2^{[\frac{D}{2}]-1}$, for $D = 2 \mod 8$. Moreover, looking at spinors of $SO(D)$, we can have real Weyl spinors for $D = 0 \mod 8$. Therefore, we denote the representations of $SO(8)$ by the number of its real degrees of freedom. 
+At the end we will focus on the massless spectrum of the theory, so that they form representations of the little group $SO(8)$ of $SO(1,9)$. Let's denote by $\v$ the vector representation, by $\s$ the positive-chirality spinor representation and by $\c$ the negative-chirality co-spinor representation. Recall that, looking at spinors of $SO(1,D-1)$, we can have Majorana-Weyl spinors, with a number of real degrees of freedom equal to $2^{[\frac{D}{2}]-1}$, for $D = 2 \mod 8$. Moreover, looking at spinors of $SO(D)$, we can have real Weyl spinors for $D = 0 \mod 8$. Therefore, we denote the representations of $SO(8)$ by the number of its real degrees of freedom.
+
+A detailed discussion can be found in the appendix of~\cite{polchisnki:superstrings}, from which we take only the summary tables.
+\begin{equation}
+    \input{tables/polchinski1.tex}
+\end{equation}
+\begin{equation}
+    \input{tables/polchinski2.tex}
+\end{equation}
+
+Let's now analyse the (NS) and (R) sectors.
 
 %**************** ns sector *********************
 \subsection{NS Sector.}
@@ -193,10 +203,10 @@ The spectrum is built by defining a groundstate $\ket{0;k}_{NS}$ with spacetime 
 
 Then, we apply negative mode operators in all possible ways. Note that there's no zero mode $b^i_0$. Taking for simplicity zero spacetime momentum, the lightest right-moving states are
 \begin{equation}\label{eq:table-NS}
-\begin{tabular}{c|c|c} % Vertical lines only between columns
+\begin{tabular}{|c|c|c|} \hline
     State & $\alpha' M^2_R / 2$ & $SO(8)$ \\ \hline
     $\ket{0}_{NS}$   & $-1/2$   & $\i$   \\ \hline
-    $b^i_{-1/2} \ket{0}_{NS}$   & $0$   & $\v$  % No \hline here to avoid the bottom horizontal line
+    $b^i_{-1/2} \ket{0}_{NS}$   & $0$   & $\v$  \\ \hline
 \end{tabular}
 \end{equation}
 
@@ -330,7 +340,7 @@ with
 
 Then, we obtain a $2^4 = 16$-dimensional real representation by application of the $B^+_a$ operators
 \begin{equation*}
-    \begin{tabular}{c|c|c}
+    \begin{tabular}{|c|c|c|} \hline
         state & eigenstate of $2S_a$ & number of states \\ \hline
         $\ket{0}_{R}$ & $\ket{-,-,-,-}$ & $\binom{4}{0} = 1$ \\ \hline
         \multirow{2}{*}{$B^+_{a_1} \ket{0}_{R}$} & $\ket{+,-,-,-}, \ket{-,+,-,-},$ & \multirow{2}{*}{$\binom{4}{1} = 4$} \\ 
@@ -339,7 +349,7 @@ Then, we obtain a $2^4 = 16$-dimensional real representation by application of t
         & $\ket{-,+,+,-}, \ket{-,+,-,+}, \ket{-,-,+,+}.$ & \\ \hline
         \multirow{2}{*}{$B^+_{a_1}B^+_{a_2}B^+_{a_3} \ket{0}_{R}$} & $\ket{-,+,+,+}, \ket{+,-,+,+},$ & \multirow{2}{*}{$\binom{4}{3} = 4$} \\ 
         & $\ket{+,+,-,+}, \ket{+,+,+,-}$ & \\ \hline
-        $B^+_{1}B^+_{2}B^+_{3}B^+_{4} \ket{0}_{R}$ & $\ket{+,+,+,+}$ & $\binom{4}{4} = 1$
+        $B^+_{1}B^+_{2}B^+_{3}B^+_{4} \ket{0}_{R}$ & $\ket{+,+,+,+}$ & $\binom{4}{4} = 1$ \\ \hline
     \end{tabular}
 \end{equation*}
 
@@ -347,14 +357,14 @@ The states $(\ket{0}_{R}, B^+_{a_1}B^+_{a_2}\ket{0}_{R},B^+_{1}B^+_{2}B^+_{3}B^+
 
 In conclusion, the massless modes of (R) sector are\footnote{Again, the R in the mass stands for right-movers, \emph{not} Ramond.}
 \begin{equation}\label{eq:table-R}
-    \begin{tabular}{c|c|c}
-        state & $\alpha' M^2_R / 2$ & $SO(8)$ \\ \hline
+    \begin{tabular}{|c|c|c|}
+        \hline    state & $\alpha' M^2_R / 2$ & $SO(8)$ \\ \hline
         \multirow{2}{*}{$\begin{array}{c} 
             \ket{0}_{R}, B^+_{a_1}B^+_{a_2}\ket{0}_{R}, \\ 
             B^+_{1}B^+_{2}B^+_{3}B^+_{4} \ket{0}_{R} 
         \end{array}$} & \multirow{2}{*}{$0$} & \multirow{2}{*}{$\s$} \\ 
         & & \\ \hline
-        $B^+_{a_1} \ket{0}_{R}, B^+_{a_1}B^+_{a_2}B^+_{a_3}\ket{0}_{R}$   & $0$   & $\c$
+        $B^+_{a_1} \ket{0}_{R}, B^+_{a_1}B^+_{a_2}B^+_{a_3}\ket{0}_{R}$   & $0$   & $\c$\\ \hline
     \end{tabular}
 \end{equation}
 
@@ -366,20 +376,20 @@ To obtain the closed string spectrum, we must glue together the left- and the ri
 
 To have a superstring which have spacetime supersymmetry, it's convenient to define $\emph{G-parity}$, and use it in the context of the \emph{GSO-projection}. We're not interested in those details, so we only say that G-parity essentially counts the even-/odd-ness of fermionic excitations. Gathering the information of~\eqref{eq:table-NS} and~\eqref{eq:table-R} into one table, and citing just the result for G-parity, we get the following table, for the right-movers.
 \begin{equation*}
-\begin{tabular}{c|c|c|c|c|c}
-    sector & G-parity & state & little group rep. & $\alpha' M^2_R /2$ & statistics \\ \hline
+\begin{tabular}{|c|c|c|c|c|c|}
+  \hline  sector & G-parity & state & little group rep. & $\alpha' M^2_R /2$ & statistics \\ \hline
         NS & $-$ & $\ket{0}_{NS}$   & $SO(9): \i \,$ & $-1/2$ & boson   \\ \hline
     NS & $+$ & $b^i_{-1/2} \ket{0}_{NS}$   & $SO(8): \v$  & 0 & boson \\ \hline 
         \multirow{2}{*}{R} & \multirow{2}{*}{$+$} & \multirow{2}{*}{$\begin{array}{c} 
             \ket{0}_{R}, B^+_{a_1}B^+_{a_2}\ket{0}_{R}, \\ 
             B^+_{1}B^+_{2}B^+_{3}B^+_{4} \ket{0}_{R} 
         \end{array}$} & \multirow{2}{*}{$SO(8): \, \s$} & \multirow{2}{*}{$0$} & \multirow{2}{*}{fermion} \\ 
-        & & & & \\ \hline
+        & & & & & \\ \hline
         \multirow{2}{*}{R} & \multirow{2}{*}{$-$} & \multirow{2}{*}{$\begin{array}{c} 
             B^+_{a_1} \ket{0}_{R}, \\ 
             B^+_{a_1}B^+_{a_2}B^+_{a_3}\ket{0}_{R}
-        \end{array}$} & \multirow{2}{*}{$SO(8): \, \c$} & \multirow{2}{*}{$0$} & \multirow{2}{*}{fermion} \\
-        & & & & \\ 
+        \end{array}$} & \multirow{2}{*}{$SO(8): \, \c$} & \multirow{2}{*}{$0$} & \multirow{2}{*}{fermion} \\ 
+        & & & & & \\ \hline
        
 \end{tabular}
 \end{equation*}
@@ -541,3 +551,19 @@ Then, we have to glue together the left and right movers. To do so, we can decom
 \begin{equation*}
 \input{tables/type-II-decomposition.tex}
 \end{equation*}
+
+Notice that, in decomposing in irreducible representations of $SO(7)$, each representation is labelled by its real dimension, which is equal to the \emph{on-shell} degrees of freedom of the corresponding field. 
+
+For the bosons it's enough to count the number of independent indices, taking into account the symmetry/antisymmetry property. For fermions, one can show that the handedness of the dilatini is opposite to that of the gravitini. Together, a gravitino and a dilatino form a reducible vector-spinor $\psi^\mu_a$ of $SO(1,9)$, where $\mu$ are the spacetime indices while $a$ the spinorial ones. Its traceless part, $\Gamma^\mu \psi_\mu = 0$ it the gravitino, while the trace is the dilatino. Lightcone quantization can be carefully carried over, obtaining, for the gravitino, a state like $\psi^i_a$, but with a constraint deriving from $\Gamma^\mu \psi_\mu = 0$. Without the derivation, we just remark that this constraint will impose $8$ conditions for $SO(8)$ and $SO(7)$, leading to the correct number of degrees of freedom on-shell.
+
+As usual, similarly to~\eqref{eq:radion-and-radius}, the scalar which arise from the metric, i.e., $G_{99}$, sets the volume of extra dimension, namely, the compactification radius in this case. There's, however, another scalar, arising from the R-R sector, which is $A_9$. Then, it would be interesting to describe the compactification for an arbitrary backgorund of this field. Unfortunately, it's not known how to couple R-R fields to the $2$d worldsheet theory.
+
+Recall that NS-NS fields are the same as the bosonic string. For them, we know how to couple the background to the $2$d theory. This is provided by the \emph{non-linear $\sigma$-model} action, which reads
+\begin{equation}
+    S_\sigma = \frac{1}{4\pi\alpha'} \int_\Sigma \ud^2 \xi \sqrt{-\det \gamma} \left[ \left( \gamma^{ab} G_{\mu\nu}(X) + i \epsilon^{ab} B_{\mu\nu}(X)  \right) \de_a X^\mu \de_b X^\nu + \alpha' \mathcal{R} \phi(X) \right],
+\end{equation}
+and it's usually exactly solvable. There's no analogue for R-R fields, to couple them directly to the $2$d worldsheet theory. Indeed, they must be coupled to the worldvolume of D-branes, through \emph{Cern-Simons} actions, rising many complications.
+
+The interesting thing to notice is that the $9$d massless spectrum for type IIA and IIB is the same. In particular, chirality of type IIB is lost after compactification, since there's no notion of chirality in odd dimensions. It's easy to see from the $9$d spectrum that the theory has $\mathcal{N} = 2$ susy, since there are two gravitini. The spectrum, indeed, corresponds to $9$d supergravity with $32$ supercharges, which is a unique theory.
+
+In general, \emph{toroidal compactifications} don't break any supersymmetry, and the \emph{number of supercharges is conserved}. Indeed, compactifying on $T^n$ presenrves the spinor degrees of freedom, since the representation of $SO(1,9)$ simply reorganizes under $SO(1,4)$, without loosing degrees of freedom. Then, compactifying type IIA and IIB on $T^6$ to obtain a $4$d spacetime theory, would lead to $\mathcal{N}=8$ $4$d supergravity, since the $32$ supercharges organize into $8$ independent Majorana spinors in $4$d. This is \emph{not} a chiral theory, and so it's useless for phenomenology.
