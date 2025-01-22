@@ -1,39 +1,75 @@
-Consider a field theory in $D$ dimensions propagating in a background spacetime of the form $\M_D = \M_d \times S^1$, where $D = d+1$. Let's call $x^{\hat{\mu}} = (x^\mu, y)$ the coordinates in $\M_D$, where $\hat{\mu} = 0, \dots, D-1 = d$, $\mu = 0, \dots, d-1$ and on the internal space $S^1$ we identify $y \simeq y = 2\pi R$.
+Consider a field theory in $D$ dimensions propagating in a spacetime $\M_D = \M_d \times S^1$, where $D = d+1$, with \emph{mostly plus metric} $\eta_{\hat{\mu}\hat{\nu}}= \textup{diag}(-,+,\dots,+)$. Let's call $x^{\hat{\mu}} = (x^\mu, y)$ the coordinates in $\M_D$, where $\hat{\mu} = 0, \dots, D-1$, $\mu = 0, \dots, d-1$. On the internal space $S^1$, we identify $y \simeq y + 2\pi R$. 
+
+The \emph{compactification scale} is $M_c = \frac{1}{R}$, and we're interested in the limit
+\begin{equation}
+    E \ll \frac{1}{R},
+\end{equation}
+to be able to ignore the Kaluza-Klein massive modes, as will be explained in the following sections.
 
 %***************** KK REDUCTION OF SCALAR FIELD ********************
-\section{KK Reduction of a Scalar Field on \texorpdfstring{$S^1$}{S1}}
-The masses of the Kaluza-Klein modes are integer multiples of the compactification scale $M_c = 1 / R$, so, we can ignore them in the limit
-    \begin{equation}
-        E \ll M_c = 1/R
-    \end{equation}
+\section{Kaluza-Klein Reduction of a Scalar Field on \texorpdfstring{$S^1$}{S1}.}
+Consider a real scalar field $\phi(x^{\hat{\mu}})$ propagating with action
+\begin{equation}
+    S_{5d} = \frac{\Lambda^{D-4}}{2} \int_{\M_{d} \times S^1} \ud^D x \,  \de_{\hat{\mu}} \phi(x^{\hat{\mu}}) \, \de^{\hat{\mu}} \phi(x^{\hat{\mu}}),
+\end{equation}
+where $\Lambda$ is some scale introduced for dimensional reasons. The equations of motion are
+\begin{equation}\label{eq:scalar-eq-motion}
+    \de_{\hat{\mu}} \de^{\hat{\mu}}  \phi(x^{\hat{\mu}}) = 0.
+\end{equation}
 
+Exploiting the periodicity in the internal space, we can decompose the field in Fourier modes as follows,
+\begin{equation}\label{eq:scalar-expansion}
+    \phi(x^{\hat{\mu}}) = \sum_{s \in \Z} e^{isy/R} \phi_s(x^\mu),
+\end{equation}
+with $\phi_0(x^\mu)$ real and $\phi_s(x^\mu)$ complex such that $\phi^*_s = \phi_{-s}$. The orthogonality condition is
+\begin{equation}\label{eq:orthogonality}
+    \int_0^{2\pi R} \ud y \, e^{-iny/R} e^{+imy/R} = 2\pi R \delta_{n,m} .
+\end{equation}
+
+Substituting the expansion~\eqref{eq:scalar-expansion} into the equations of motion~\eqref{eq:scalar-eq-motion}, we get
+\begin{equation*}
+       \de_{\hat{\mu}} \de^{\hat{\mu}} \phi(x^{\hat{\mu}}) = \left( \de_\mu \de^\mu + \de_y \de^y \right) \left( \sum_{s \in \Z} e^{isy/R} \phi_s(x^\mu) \right)
+       = \sum_{s \in\Z} \left( \de_\mu \de^\mu - \frac{s^2}{R^2} \right)\phi_s(x^\mu) e^{isy/R}.
+\end{equation*}
+It must vanish to satisfy~\eqref{eq:scalar-eq-motion}, and using the completeness of Fourier basis, we get
+\begin{equation}
+    \left( \de_\mu \de^\mu - \frac{s^2}{R^2} \right) \phi_s(x^\mu) = 0, \quad \forall s \in \Z,
+\end{equation}
+which is the Klein-Gordon equation for a scalar field in $d$ dimensions with mass
+\begin{equation}
+    m^2_s = \frac{s^2}{R^2} = s^2 M_c^2.
+\end{equation}
+
+Then, from a $d$-dimensional point of view, we observe one massless scalar and an infinite tower of massive Kaluza-Klein modes, which can be neglected for energies $E \ll 1/R$. Starting from a $5$d field with mass $M$, and applying the very same procedure, we'd have found
+\begin{equation}\label{eq:usual-KK-masses}
+    m^2_s = M^2 + \frac{s^2}{R^2} ,
+\end{equation}
+which is the same result as the compactification of a string in the zero-winding sector, as we'll see.
 
 %***************** KK REDUCTION OF GRAVITY ********************
-\section{KK Reduction of Einstein Theory on \texorpdfstring{$S^1$}{S1}}
-In particular, consider a $D$-dimensional Einstein theory, with metric $G_{\hat{\mu} \hat{\nu}} (x^{\hat{\mu}})$.
-
-Exploiting the periodicity in the internal space, we may expand the metric in Fourier modes as
+\section{Kaluza-Klein Reduction of Einstein Theory on \texorpdfstring{$S^1$}{S1}.}
+Consider now a $D$-dimensional Einstein theory, with metric $G_{\hat{\mu} \hat{\nu}} (x^{\hat{\mu}})$. Exploiting the periodicity in the internal space, we may expand the metric in Fourier modes as
 \begin{equation}
     G_{\hat{\mu} \hat{\nu}} (x^{\hat{\mu}}) = G_{\hat{\mu} \hat{\nu}} (x^\mu, y) = G^{(0)}_{\hat{\mu} \hat{\nu}} (x^\mu)+ \sum_{s \neq 0} G^{(s)}_{\hat{\mu} \hat{\nu}} (x^\mu) e^{i s y / R}.
 \end{equation}
 
-However, we're interested in the $(D-1)$-dimensional theory, so it's more convenient to first decompose $SO(1,D-1)$'s representations into representations of $SO(1,d-1)$. After the decomposition, we can exploit the periodicity of the internal space and Fourier expand as usual. In particular, recalling that we defined $x^{D-1} = x^d = y$, the graviton decomposes as
+However, we're interested in the $d$-dimensional theory, so it's more convenient to first decompose $SO(1,D-1)$'s representations into representations of $SO(1,d-1)$. After the decomposition, we can exploit the periodicity of the internal space and Fourier expand as usual. In particular, recalling that we defined $x^{D-1} = x^d = y$, the graviton decomposes as
 \begin{align}
     G_{\hat{\mu}\hat{\nu}} (x^\mu, y) 
     &\to G_{\mu\nu}(x^\mu, y) = G^{(0)}_{{\mu} {\nu}} (x^\mu)+ \sum_{s \neq 0} G^{(s)}_{{\mu} {\nu}} (x^\mu) e^{is y / R} ,\\
     &\to G_{\mu d} (x^\mu, y) = G^{(0)}_{{\mu} {d}} (x^\mu)+ \sum_{s \neq 0} G^{(s)}_{{\mu} {d}} (x^\mu) e^{is y / R} ,\\
-    &\to G_{dd} (x^\mu, y) = G^{(0)}_{{d} {d}} (x^\mu)+ \sum_{s \neq 0} G^{(s)}_{{d} {d}} (x^\mu) e^{is y / R} . \\
+    &\to G_{dd} (x^\mu, y) = G^{(0)}_{{d} {d}} (x^\mu)+ \sum_{s \neq 0} G^{(s)}_{{d} {d}} (x^\mu) e^{is y / R} .
 \end{align}
 
-It's straightforward to observe that the massless modes are a $d$-dimensional graviton, a $d$-dimensional scalar and a $d$-dimensional $U(1)$ gauge boson. To be more precise, if we call the zero-modes fields $g_{\mu\nu}(x^\mu), A_\mu(x^\mu), \phi(x^\mu)$, then, they're related to the zero-mode five-dimensional metric by
+It's straightforward to observe that the massless modes are a $d$-dimensional graviton, a $d$-dimensional $U(1)$ gauge boson and a $d$-dimensional scalar. To be more precise, if we call the zero-modes fields $g_{\mu\nu}(x^\mu)$, $A_\mu(x^\mu)$ and $\phi(x^\mu)$, then, they're related to the zero-mode five-dimensional metric by
 \begin{equation}
     G^{(0)}_{\hat{\mu}\hat{\nu}} = 
     \begin{pmatrix}
         e^{2\alpha_d} g_{\mu\nu} + e^{-2(d-2)\alpha_d \phi} A_\mu A_\nu & e^{-2(d-2)\alpha_d \phi} A_\mu \\
         e^{-2(d-2)\alpha_d \phi} A_\nu & e^{-2(d-2)\alpha_d \phi}
-    \end{pmatrix} ,
+    \end{pmatrix} .
 \end{equation}
-where we defined $\alpha_d$ in such a way that the action in dimension $D-1 = d$ is canonically normalized. In particular,
+We defined $\alpha_d$ in such a way that the action in dimension $D-1 = d$ is canonically normalized, that is,
 \begin{equation}
     \alpha_d = \sqrt{\frac{1}{2(d-1)(d-2)}} .
 \end{equation}
@@ -42,25 +78,25 @@ From a zero-mode Kaluza-Klein point of view, this leads to the metric
 \begin{equation}\label{eq:kk-metric-decomp}
     \ud s^2 = G^{(0)}_{\hat{\mu}\hat{\nu}} \ud x^{\hat{\mu}} \ud x^{\hat{\nu}} + \dots = e^{2\alpha_d \phi} g_{\mu\nu} \ud x^\mu \ud x^\nu + e^{-2(d-2)\alpha_d \phi} (\ud y + A_\mu \ud x^\mu)^2 + \dots.
 \end{equation}
-In particular, it allows for $d$-dimensional reparametrizations $x'^\mu(x^\nu)$ and for reparametrizations of the internal space coordinates $y' = y + \lambda(x^\mu)$. To make the theory invariant under the latter transformations, the field $A_\mu$ must transform under the $U(1)$ transformation $A'_\mu = A_\mu - \de_\mu \lambda$, which is straightforward, looking at~\eqref{eq:kk-metric-decomp}.
+In particular, the above theory allows for $d$-dimensional reparametrizations $x'^\mu(x^\nu)$ and for reparametrizations of the internal space coordinates $y' = y + \lambda(x^\mu)$. To make the theory invariant under the latter transformations, the field $A_\mu$ must transform under the $U(1)$ transformation $A'_\mu = A_\mu - \de_\mu \lambda$, which is straightforward if we look at~\eqref{eq:kk-metric-decomp}.
 
-Therefore, we observe that the gauge transformations of the vector boson follow from coordinate reparametrization in the internal dimension. At the end, gauge invariance after dimensional reduction follows from diffeomorphism invariance in higher dimensions. Baiscally, under the compactification ansatz $\M_D \to \M_d \times S^1$, the group of diffeomorphisms decomposes as
+Therefore, we observe that the gauge transformations of the vector boson follow from coordinate reparametrization in the internal dimension. At the end, gauge invariance after dimensional reduction follows from diffeomorphism invariance in higher dimensions. Basically, under the compactification ansatz $\M_D \to \M_d \times S^1$, the group of diffeomorphisms decomposes as
 \begin{equation}
     Gl(D, \R) \to Gl(d,\R) \times U(1).
 \end{equation}
 
-This was the original motivation of Kaluza-Klein, to unify gravity with gauge theories. However, this way we can't obtain charges chiral fermions, so this attempt failed.
+This was the original motivation of Kaluza-Klein, to unify gravity with gauge theories. However, this way we can't obtain charged chiral fermions, so this attempt failed, but the idea remained up to these days, as we shall see.
 
-Another interesting feature of Kaluza-Klein compactifications is the arising of \emph{moduli}, which are massless scalar fields in $d$-dimensions with no potential. In this example, this is achieved by the field $\phi$, called \emph{radion}. It sets the volume of the internal space, since
+Another interesting feature of Kaluza-Klein compactifications is the arising of \emph{moduli}, which are massless scalar fields in $d$-dimensions with no potential. In this example, this is represented by the field $\phi$, called \emph{radion}. It sets the volume of the internal space, since
 \begin{equation}\label{eq:radion-and-radius}
-    \textup{Vol} (S^1)  = \int_{0}^{2\pi R} \ud^d x \sqrt{G_{dd}} \cdot 2\pi R = e^{-2(d-2)\alpha_d \phi} \cdot 2\pi R .
+    \textup{Vol} (S^1)  = \int_{0}^{2\pi R} \ud y \, \sqrt{G^{(0)}_{yy}} = e^{-(d-2)\alpha_d \phi} \cdot 2\pi R .
 \end{equation}
 
 To observe that it isn't constraint by a potential, let's fix the ideas and consider the case $D=5$, $d=4$. The theory is represented by the action
 \begin{equation}
     S_5 = \frac{M^3_5}{2} \int \ud^5 x \sqrt{-G} R_5,
 \end{equation}
-where $G_5 = \det(G_{\hat{\mu} \hat{\nu}})$, and $R_5$ is the Ricci scalar. Substituting the above metric for the zero-modes, after working out the Ricci scalar, we get a $4$ dimensional action which reads
+where $G = \det(G_{\hat{\mu} \hat{\nu}})$, and $R_5$ is the Ricci scalar. Substituting the above metric for the zero-modes, after working out the Ricci scalar, we get a $4$ dimensional action which reads
 \begin{equation}
     S_4 = M^3_5 \pi R \int \udq x \sqrt{-g} \left( R_4 -\frac{1}{6} \de_\mu \phi \de^\mu \phi - \frac{1}{4 e^\phi} F_{\mu\nu} F^{\mu\nu} + \textup{KK tower \dots} \right),
 \end{equation}
@@ -72,16 +108,13 @@ if
 \begin{equation}\label{eq:relation-plank-masses}
     M^2_p = 16 \pi^2 M^3_5 R,
 \end{equation}
-and gauge coupling $g^2 = e^\phi$. The above relation~\eqref{eq:relation-plank-masses} suggests us that there's the possibility to have a low fundamental gravity scale $M_5$, if we take $R$ large enough. However, following the idea of Kaluza-Klein, this approach fails if we try to couple with the standard model, since we know that the KK-masses are proportional to the scale $M_c = 1/R$, so, for large $R$ we'd get too light KK modes, which should've been observed. This leads to the idea of a \emph{brane-world scenario}.
+and the gauge coupling is $g^2 = e^\phi$. The above relation~\eqref{eq:relation-plank-masses} suggests us that there's the possibility to have a low fundamental gravity scale $M_5$, if we take $R$ to be large enough. However, this approach would fail if we couple the theory with the Standard Model. Indeed, for large $R$, the Kaluza-Klein masses, proportional to $M_c = 1/R$, would be too light, and should've been already observed. This leads to the idea of a \emph{brane-world scenario}.
 
-\paragraph{Brane-World scenario}
+\paragraph{Brane-World scenario.}
 Even if in the first years people focused on type I string theories since they contain gauge theories, there had been a revival of type II theories after the discovery of branes. In particular, the idea is that \emph{closed strings}, which contains the graviton, propagates on the bulk of the theory, which is $10$-dimensional for the superstring. Further, open strings are attached to branes, which are submanifolds of the bulk on which Standard Model fields live in, considering that stack of branes could lead to non-abelian gauge theories. 
 
-One simple example is considering the standard model fields localized on a $3$-brane, which exists for a type IIB theory (double check it), so that the action splits into a $4$ dimensional piece for the $3$-brane worldvolume, and a bulk piece in the larger $10$-dimensional spacetime
+One simple example is considering the Standard Model fields localized on a $3$-brane, which exists for a type IIB theory, so that the action splits into a $4$ dimensional piece for the $3$-brane worldvolume, and a bulk piece in the larger $10$-dimensional spacetime
 \begin{equation}
-    S_\textup{brane-world} = S_\textup{brane} + S_\textup{bulk} = \int \udq x \L_\textup{brane} + \int d^{10} x \L_\textup{bulk} .
+    S_\textup{brane-world} = S_\textup{brane} + S_\textup{bulk} = \int \udq x \, \L_\textup{brane} + \int d^{10} x \, \L_\textup{bulk} .
 \end{equation}
-Then, gravity is compactified as discussed earlier, while gauge and matter fields are insensitive of the compactification procedure, and then they don't have massive KK modes. This allows for \emph{large extra dimensions}, whose size is in principle detectable only through the effect on gravity. Looking again at~\eqref{eq:relation-plank-masses}, we can even have $M_5 \simeq \tev$, so that there would be no hierarchy between the EW and the gravitational scale. However, this is not a fully satisfactory resolution, since we've moved the problem into a hierarchy problem between the large size $1/R$ of the extra dimension, and the fundamental scale $1/M_5$. Another possibility is provided by the \emph{Randall-Sundrum Scenario}
-
-\paragraph{Randall-Sundrum Scenario}
-Still to be written, look at Quevedo and Ibanez.
+Then, gravity is compactified as discussed earlier, while gauge and matter fields are insensitive of the compactification procedure, and then they don't have massive Kaluza-Klein modes. This allows for \emph{large extra dimensions}, whose size is in principle detectable only through the effect on gravity. Looking again at~\eqref{eq:relation-plank-masses}, we can even have $M_5 \simeq \tev$, so that there would be no hierarchy between the EW and the gravitational scale. However, this is not a fully satisfactory resolution, since we've moved the problem into a hierarchy problem between the size $1/R$ of the extra dimension, and the fundamental scale $1/M_5$.

@@ -1,14 +1,15 @@
-%**************** RNS SUPERSTRING *********************
-\section{Ramond-Neveu-Schwarz Superstring}
-We use mostly plus metric $\eta = \textup{diag}(-, +, \dots, +)$ and focus on closed strings. We already focus on the critical string, considering as a background the flat $10$d Minkowski spacetime $\M_{10}$. The worldsheet coordinates are $\xi^a$, $a = 1,2$, where $\sigma \in (0,l)$.
 
-The supersymmetric extension of Polyakov action~\eqref{eq:polyakov-action} is reached by enlarge the field content of the theory. In particular, the idea is to supersymmetrize and couple the $10$ bosonic fields on the worldsheet, $X^\mu (\xi^a)$, $\mu = 0, \dots, 9$, to two-dimensional supergravity. The result are additional worldsheet spinors, which are the superpartners of the $X^\mu$, and will be denoted by $\psi^\mu (\xi^a)$, where the spinorial indices are suppressed. They are taken to be \emph{Majorana-Weyl spinors}.
+We use mostly plus metric $\eta = \textup{diag}(-, +, \dots, +)$ and focus on closed strings. We consider the critical string, with background $\M_{10}$. The worldsheet coordinates are $\xi^a$, $a = 1,2$, where $\sigma \in (0,l)$.
+
+%**************** RNS SUPERSTRING *********************
+\section{Ramond-Neveu-Schwarz Superstring.}
+The supersymmetric extension of Polyakov action~\eqref{eq:polyakov-action} is reached by enlarging the field content of the theory. In particular, the idea is to supersymmetrise and couple the $10$ bosonic fields on the worldsheet, $X^\mu (\xi^a)$, $\mu = 0, \dots, 9$, to two-dimensional supergravity. As a result, we obtain additional worldsheet spinors, which are the superpartners of the $X^\mu$, and will be denoted by $\psi^\mu_\alpha (\xi^a)$, where $\alpha$ are the spinorial indices. They are \emph{Majorana-Weyl spinors}.
 
 In particular, in dimension $d=2$ the Clifford algebra reads
 \begin{equation}
-    \{ \gamma^a, \gamma^b \}_{AB} = 2 \eta^{ab} \1_{AB},
+    \{ \gamma^a, \gamma^b \}_{\alpha\beta} = 2 \eta^{ab} \1_{\alpha\beta},
 \end{equation}
-with $\alpha,\beta = 0, 1$ are the worldsheet indices, while $A,B = 1,2$ the spinorial representation indices. Indeed, in $d=2$, the spinor representation turns out to be two-dimensional as well. A basis for the $\gamma$-matrices is
+with $a,b = 0, 1$ are the worldsheet indices, while $\alpha,\beta = 1,2$ the spinorial indices. Indeed, in $d=2$, the spinor representation turns out to be two-dimensional as well. A basis for the $\gamma$-matrices is
 \begin{equation}
     \gamma^0 = \begin{pmatrix}
         0 & 1 \\
@@ -16,9 +17,9 @@ with $\alpha,\beta = 0, 1$ are the worldsheet indices, while $A,B = 1,2$ the spi
     \end{pmatrix}, \quad \gamma^1 = \begin{pmatrix}
         0 & 1 \\
         1 & 0
-    \end{pmatrix}
+    \end{pmatrix}.
 \end{equation}
-Further, in $d=2$, the Majorana condition is equivalent to the requirement that the spinors are real i.e.,
+Further, the Majorana condition is equivalent to the requirement that the spinors are real i.e.,
 \begin{equation}
     \psi = \begin{pmatrix}
         \psi_+ \\ \psi_-
@@ -40,18 +41,13 @@ while the chirality distinguishes between the two inequivalent Weyl representati
 \end{equation}
 The two condition are compatible for $d = 2 \mod 8$, dimensions in which Majorana-Weyl spinors exist.
 
-Skipping the details, the classical RNS action adds a Majorana-Weyl spinor for each scalar field. After gauge-fixing the superconformal symmetry to $\gamma_{ab} = \eta_{ab}$, and considering a flat spacetime metric $g_{\mu\nu} = \eta_{\mu\nu}$, it reads
+Skipping the details, the classical RNS action adds a Majorana-Weyl spinor for each scalar field. After gauge-fixing to $\gamma_{ab} = \eta_{ab}$, and considering a flat spacetime metric $g_{\mu\nu} = \eta_{\mu\nu}$, it reads
 \begin{equation}\label{eq:superstring-action}
     S = -\frac{1}{4\pi} \int_\Sigma \ud^2 \xi \left( \frac{1}{\alpha'} \de_a X^\mu \de^a X_\mu + i \bar{\psi}^\mu_A \gamma^a_{AB} \de_a \psi_\mu \right),
 \end{equation}
 where the spinor conjugate is defined by
 \begin{equation}
     \bar{\psi} \equiv \psi^\dagger \gamma^0 = \psi^T \gamma^0 = (-\psi_-, \psi_+).
-\end{equation}
-
-Looking at the mass dimensions, we have
-\begin{equation}
-     [\psi] = \frac{1}{2}, \quad [X] = -1 .
 \end{equation}
 It's equations of motion are
 \begin{equation}\label{eq:supestring-eom}
@@ -66,7 +62,7 @@ while the equations of motion~\eqref{eq:supestring-eom} become
 \begin{equation}\label{eq:superstring-lightcone-eom}
     \de_+ \de_- X^\mu = 0, \quad \de_- \psi^\mu_+ = \de_+ \psi^\mu_- = 0 .
 \end{equation}
-This means that in lightcone coordinates we have 
+This means that in \emph{spacetime lightcone coordinates} we have 
 \begin{equation}\label{eq:ligthcone-coordinates-split}
     X^\mu (\xi^\pm) = X^\mu_L (\xi^+) + X^\mu_R(\xi^-), \quad \psi^\mu_+ (\xi^\pm) = \psi^\mu_+ (\xi^+), \quad \psi^\mu_- (\xi^\pm) = \psi^\mu_- (\xi^-) .
 \end{equation}
@@ -74,39 +70,39 @@ This means that in lightcone coordinates we have
 The residual symmetries after gauge fixing the superconformal symmetry have conserved currents
 \begin{equation}
 \begin{aligned}
-    T_{\pm\pm} = -\frac{1}{\alpha'} \de_\pm X \cdot \de_\pm X - \frac{i}{2} (\psi^\mu)_\pm \de_\pm (\psi_\mu)_\pm , \\
-    J_\pm = - \sqrt{\frac{1}{2\alpha'}} (\psi^\mu)_\pm \de_\pm X_\mu.
+    T_{\pm\pm} &= -\frac{1}{\alpha'} \de_\pm X \cdot \de_\pm X - \frac{i}{2} (\psi^\mu)_\pm \de_\pm (\psi_\mu)_\pm , \\
+    J_\pm &= - \sqrt{\frac{1}{2\alpha'}} (\psi^\mu)_\pm \de_\pm X_\mu.
 \end{aligned}
 \end{equation}
 Then, \emph{gauge-fixing} is achieved by imposing the \emph{superconformal Virasoro constraints}
 \begin{equation}
-    T_{\pm\pm} = , \quad J_{\pm} = 0
+    T_{\pm\pm} = , \quad J_{\pm} = 0,
 \end{equation}
 on the equations of motion. 
 
-Let's turn to the mode expansion. Because of~\eqref{eq:ligthcone-coordinates-split}, for the bosonic sector the analysis is the same as before. However, while finding the equations of motion~\eqref{eq:supestring-eom} from~\eqref{eq:superstring-action}, other than the conditino $\delta \psi^\mu (\tau_0) = \delta \psi^\mu (\tau_1) = 0$, which is what we impose in a variational principle, we must be sure that the following boundary term vanishes
+Let's turn to the mode expansion. Because of~\eqref{eq:ligthcone-coordinates-split}, for the bosonic sector the analysis is the same as before. However, while finding the equations of motion~\eqref{eq:supestring-eom} from~\eqref{eq:superstring-action}, other than the condition $\delta \psi^\mu (\tau_0) = \delta \psi^\mu (\tau_1) = 0$, which is what we impose in a variational principle, we must be sure that the following boundary term vanishes,
 \begin{equation}
     \delta S = \frac{1}{2\pi} \int_{\tau_0}^{\tau_1} \ud \tau \left( \psi_+ \cdot \delta \psi_+ - \psi_- \cdot \delta \psi_- \right) \Big|_{\sigma = 0}^{\sigma = l}\overset{\mathrm{!}}{=} 0.
 \end{equation}
 For the closed string, in which we have periodicity $\sigma \sim \sigma + l$, the above condition is satisfied for
 \begin{equation}
 \begin{aligned}
-    \psi^\mu_+ (\sigma) &= \pm \psi^\mu_+ (\sigma + l) ,\\
-    \psi^\mu_- (\sigma) &= \pm \psi^\mu_- (\sigma + l) ,
+    \psi^\mu_+ (\tau,\sigma) &= \pm \psi^\mu_+ (\tau,\sigma + l) ,\\
+    \psi^\mu_- (\tau,\sigma) &= \pm \psi^\mu_- (\tau,\sigma + l) ,
 \end{aligned}
 \end{equation}
-with the same conditions on $\delta \psi_\pm$. Indeed, anti-periodic boundary conditions for $\psi_\pm$ are possible since observables are built as fermion bilinears. In particular, periodic boundary conditions are referred as \emph{Ramond} (R) boundary conditions, while anti-periodic ones are called \emph{Neveu-Schwartz} (NS). Therefore, fermions on the worldsheet satisfy
+with the same conditions on $\delta \psi_\pm$. Indeed, anti-periodic boundary conditions for $\psi_\pm$ are possible since observables are built out of fermion bilinears. In particular, periodic boundary conditions are referred as \emph{Ramond} (R) boundary conditions, while anti-periodic ones are called \emph{Neveu-Schwartz} (NS). Therefore, fermions on the worldsheet satisfy
 \begin{equation}
-    \psi (\sigma +l) = e^{2\pi i \phi} \psi(\sigma), \quad \psi = \begin{cases}
+    \psi (\tau,\sigma +l) = e^{2\pi i \phi} \psi(\tau,\sigma), \quad \phi = \begin{cases}
         0, \quad \textup{for R-sector} \\ \frac{1}{2}, \quad \textup{for NS-sector}
     \end{cases}
 \end{equation}
-where more general phases are not allowed since $\psi$ are real.
+where more general phases are not allowed since $\psi$ must be real.
 
-The conditions for the two spinor components $\psi_+$ and $\psi_-$ can be chosen independently, but Lorentz invariance requires that in a given sector, fermions fields $\psi^\mu$ have the same boundary condition for all $\mu$. This leads to a total of four possibilities: (R,R), (NS,NS), (NS,R) and (R,NS). One can see that, after quantization, modular invariance requires these different boundary conditions to cohexist within the same theory. Roughly speaking, as we have to sum over different topologies to get a consistent string theory, we need to sum over different topological sectors, i.e., boundary conditions, as well. We won't focus on such details and take them for granted.
+The conditions for the two spinor components $\psi_+$ and $\psi_-$ can be chosen independently, but Lorentz invariance requires that in a given sector, fermions fields $\psi^\mu$ have the same boundary condition for all $\mu$. This leads to a total of four possibilities: (R,R), (NS,NS), (NS,R) and (R,NS). One can see that, after quantization, modular invariance requires these different boundary conditions to coexist within the same theory. Roughly speaking, as we have to sum over different topologies to get a consistent string theory, we need to sum over different topological sectors, i.e., boundary conditions, as well. We won't focus on such details and take them for granted.
 
 The mode expansion for the bosonic coordinates is the same as in section~\ref{sec:bosonic-mode-expansion}, while for the fermions we get
-\begin{equation}
+\begin{equation}\label{eq:superstring-fermions-mode-expansion}
 \begin{aligned}
     \psi^\mu_+ (\xi^+) = \sqrt{\frac{2\pi}{l}} \sum_{r \in \Z + \phi} \tilde{b}^\mu_r e ^{-\frac{2\pi i}{l} r \xi^+} , \\
     \psi^\mu_- (\xi^-) = \sqrt{\frac{2\pi}{l}} \sum_{r \in \Z + \phi} {b}^\mu_r e ^{-\frac{2\pi i}{l} r \xi^-} ,
@@ -120,14 +116,14 @@ where
     \end{cases}
 \end{equation}
 
-Here, $\phi$ can be chosen independently for the left- and right- movers, and the reality of the Majorana-Weyl spinors translates into
+Here, $\phi$ can be chosen independently for the left and right movers, and the reality of the Majorana-Weyl spinors translates into
 \begin{equation}\label{eq:reality-condition}
     (b^\mu_r)^* = b^\mu_{-r}, \quad (\tilde{b}^\mu_r)^* = \tilde{b}^\mu_{-r}.
 \end{equation}
 
 %**************** QUANTUM SUPERSTRING *********************
-\section{Quantum Superstring}
-We quantize the usual way, by finding the canonical conjugate variables, compute their equal-time Poisson brackets and promoting the latter to commutators and anti-commutators on a Hilbert space. Then, we consider the mode expansions and work out the commutators and anti-commutators of the modes operators. The result is
+\section{Quantum Superstring.}
+We quantize as usual, by finding the canonical conjugate variables, compute their equal-time Poisson brackets and promoting the latter to commutators and anti-commutators on a Hilbert space. Then, we consider the mode expansions and work out the commutators and anti-commutators of the mode operators. The result is
 \begin{subequations}
 \begin{align}
     \comm{\alpha^\mu_m}{\alpha^\nu_n} = \comm{\tilde{\alpha}^\mu_m}{\tilde{\alpha}^\nu_n} &= m \delta_{m+n} \eta^{\mu\nu} , \\
@@ -137,18 +133,16 @@ We quantize the usual way, by finding the canonical conjugate variables, compute
     \comm{\alpha^\mu_m}{b^\nu_n} &= 0 .
 \end{align}
 \end{subequations}
-Furter, the reality condition of the fermions, $\psi^*_\pm = \psi_\pm$, translates into
+Further, the reality condition of the fermions, $\psi^*_\pm = \psi_\pm$, translates into
 \begin{equation}
-    (b^\mu_n)^\dagger = b^\mu_{-n} .
+    (b^\mu_n)^\dagger = b^\mu_{-n}, \quad (\tilde{b}^\mu_n)^\dagger = \tilde{b}^\mu_{-n}
 \end{equation}
 
 Without delving into the details, let's consider lightcone quantization, where we define the \emph{spacetime lightcone coordinates}
 \begin{equation}
     X^\pm = \frac{1}{\sqrt{2}} (X^0 \pm X^1), \quad \psi^\pm = \frac{1}{\sqrt{2}} (\psi^0 \pm \psi^1),
 \end{equation}
-and the remaining fields are $X^i_L(\xi^+)$, $X^i_R(\xi^-)$, $\psi^i_+(\xi^+)$ and $\psi^i_-(\xi^-)$, with $i = 2, \dots 9$ in spacetime dimension $D = 10$. As in the bosonic case, we can quantize independently the left- and the right-moving sectors and glue them together at then end. Other than the level-matching condition, there will be additional constraints to be imposed here.
-
-The quantization can be carried independently for the left- and right-moving sectors. If there aren't two options, we suppose to be focusing on the right-moving sector, and that the formulas for the left-moving one are the same up to the substitution of the operators with the tilde ones.
+and the remaining fields are $X^i_L(\xi^+)$, $X^i_R(\xi^-)$, $\psi^i_+(\xi^+)$ and $\psi^i_-(\xi^-)$, with $i = 2, \dots 9$ in spacetime dimension $D = 10$. As in the bosonic case, we can quantize independently the left and the right moving sectors and glue them together at the end. Other than the level-matching condition, there will be additional constraints to be imposed here.
 
 One finds the usual normal ordering constants, which are a priori different for (R) and (NS) sectors. After renormalization, and in the critical setting, we find
 \begin{equation}
@@ -159,21 +153,21 @@ In particular, $a$ is considered to be the sum of the zero point energies of the
 Similarly to~\eqref{eq:def-transverse-number-op}, the transverse number operators read
 \begin{equation}\label{eq:superstring-transverse-number-op}
 \begin{aligned}
-    N_\perp = \sum_{n > 0} \alpha_{-n}^i \alpha^i_n + \sum_{k \geq 0 + \phi} k b^i_{-k} b^i_k , \\
-    \tilde{N}_\perp = \sum_{n > 0} \tilde{\alpha}_{-n}^i \tilde{\alpha}^i_n + \sum_{k \geq 0 + \phi} k \tilde{b}^i_{-k} \tilde{b}^i_k ,
+    \tilde{N}_\perp = \sum_{n > 0} \tilde{\alpha}_{-n}^i \tilde{\alpha}^i_n + \sum_{k \geq 0 + \phi} k \tilde{b}^i_{-k} \tilde{b}^i_k ,\\
+    N_\perp = \sum_{n > 0} \alpha_{-n}^i \alpha^i_n + \sum_{k \geq 0 + \phi} k b^i_{-k} b^i_k ,
 \end{aligned}
 \end{equation}
 with $\phi$ given by~\eqref{eq:phi-sectors}, different in (R) and (NS) sectors.
 
 
-For the mass-shell condition, we have a formula similar to~\eqref{eq:left-right-mass-shell}\footnote{Here we aren't considering compactifications yet, so $s = \omega = 0$, and $p_{L/R} = 0$.}, with two independent contributions, $M^2_L$ for the left-moving sector and $M^2_R$ for the right-moving one. Since the normal ordering constants enter the mass-shell\footnote{Via the normal-ordering of $L_0$ in old covariant quantization, or of the hamiltonian in lightcone quantization.}, we should distinguish between the two sectors. In both cases, the \emph{level-matching condition} reads
+For the mass-shell condition, we have a formula similar to~\eqref{eq:left-right-mass-shell}\footnote{Here we aren't considering compactifications yet, so $s = \omega = 0$, and $p_{L/R} = 0$.}, with two independent contributions, $M^2_L$ for the left moving sector and $M^2_R$ for the right moving one. Since the normal ordering constants enter the mass-shell\footnote{Via the normal-ordering of $L_0$ in old covariant quantization, or of the hamiltonian in lightcone quantization.}, we should distinguish between the two sectors. In both cases, the \emph{level-matching condition} reads
 \begin{equation}\label{eq:superstring-level-matching}
     M^2_L = M^2_R.
 \end{equation}
 
-From now on, we'll focus only on the righ-moving part, the equations for the left-moving being the same but with tilde operators. We'll separately study the vacuum and the spectrum of the (NS) and (R) sectors, gluing them together to find the full spectrum of the closed string.
+From now on, we'll focus only on the right moving part, the equations for the left moving being the same but with tilde operators. We'll separately study the vacuum and the spectrum of the (NS) and (R) sectors, gluing them together to find the full spectrum of the closed string.
 
-At the end we will focus on the massless spectrum of the theory, so that they form representations of the little group $SO(8)$ of $SO(1,9)$. Let's denote by $\v$ the vector representation, by $\s$ the positive-chirality spinor representation and by $\c$ the negative-chirality co-spinor representation. Recall that, looking at spinors of $SO(1,D-1)$, we can have Majorana-Weyl spinors, with a number of real degrees of freedom equal to $2^{[\frac{D}{2}]-1}$, for $D = 2 \mod 8$. Moreover, looking at spinors of $SO(D)$, we can have real Weyl spinors for $D = 0 \mod 8$. Therefore, we denote the representations of $SO(8)$ by the number of its real degrees of freedom.
+At the end, we will focus on the massless spectrum of the theory, which is made of representations of the little group $SO(8)$ of $SO(1,9)$. Let's denote by $\v$ the vector representation, by $\s$ the positive-chirality spinor representation and by $\c$ the negative-chirality co-spinor representation. Recall that, looking at spinors of $SO(1,D-1)$, we can have Majorana-Weyl spinors, with a number of real degrees of freedom equal to $2^{[{D}/{2}]-1}$, for $D = 2 \mod 8$. Moreover, looking at spinors of $SO(D)$, we can have real Weyl spinors for $D = 0 \mod 8$. Therefore, we denote the representations of $SO(8)$ by the number of its real degrees of freedom.
 
 A detailed discussion can be found in the appendix of~\cite{polchisnki:superstrings}, from which we take only the summary tables.
 \begin{equation}
@@ -183,17 +177,17 @@ A detailed discussion can be found in the appendix of~\cite{polchisnki:superstri
     \input{tables/polchinski2.tex}
 \end{equation}
 
-Let's now analyse the (NS) and (R) sectors.
+Let's now analyse the (NS) and (R) sectors, for the right movers. The formulas for the left ones are the same, substituting operators with the tilde version.
 
 %**************** ns sector *********************
 \subsection{NS Sector.}
-We focus on the right-moving sector. Here, $\phi = 1/2$ and $a_{NS} = 1/2$. The \emph{mass-shell condition} reads
+Here, $\phi = 1/2$ and $a_{NS} = 1/2$. The \emph{mass-shell condition} reads
 \begin{equation}\label{eq:NS-mass-shell}
     \frac{\alpha' M^2_R}{2} = {N}_\perp - \frac{1}{2},
 \end{equation}
 with number operator given by~\eqref{eq:superstring-transverse-number-op}.
 
-The spectrum is built by defining a groundstate $\ket{0;k}_{NS}$ with spacetime momenta $k_i$, and annihilated by all positive mode operators, i.e.,
+The spectrum is built by defining a ground state $\ket{0;k}_{NS}$ with spacetime momentum $k_i$, and annihilated by all positive mode operators, i.e.,
 \begin{equation}
 \begin{aligned}
     b^i_{k +1/2} \ket{0;k}_{NS} &= 0, \quad \forall k \geq 0, \\
@@ -201,7 +195,7 @@ The spectrum is built by defining a groundstate $\ket{0;k}_{NS}$ with spacetime 
 \end{aligned}
 \end{equation}
 
-Then, we apply negative mode operators in all possible ways. Note that there's no zero mode $b^i_0$. Taking for simplicity zero spacetime momentum, the lightest right-moving states are
+Then, we apply negative mode operators in all possible ways. Note that there's no zero mode $b^i_0$. Taking for simplicity zero spacetime momentum, the lightest right moving states are
 \begin{equation}\label{eq:table-NS}
 \begin{tabular}{|c|c|c|} \hline
     State & $\alpha' M^2_R / 2$ & $SO(8)$ \\ \hline
@@ -211,22 +205,22 @@ Then, we apply negative mode operators in all possible ways. Note that there's n
 \end{equation}
 
 %**************** r sector *********************
-\subsection{R Sector.}
-We focus on the right-moving sector. Here, $\phi = 0$ and $a_R = 0$. The mass-shell condition reads
+\subsection{R Sector.}\label{sec:R-sector}
+Here, $\phi = 0$ and $a_R = 0$. The mass-shell condition reads
 \begin{equation}\label{eq:R-mass-shell}
     \frac{\alpha' M^2_R}{2} = N_\perp,
 \end{equation}
 with number operator given by~\eqref{eq:superstring-transverse-number-op}.
 
-The ground state is now $\ket{0}_R$, with $M_R^2 = 0$\footnote{Beware the notation! The $R$ in the mass stands for right-component, \emph{not} Ramond.}. However, we must pay attention to the existence of zero-modes $b^i_0$. Indeed, since $\comm{M^2_R}{b^i_0} = 0$, the application of $b^i_0$ on the ground state does not change its mass. Hence, it is \emph{degenerate}, and we must find how fermionic mode operators act on them. Indeed, we can require that all positive mode operators annihilate it, but we can't consistently require that all the fermionic zero-mode operators annihilate it, since it wouldn't be consistent with the anticommutators
+The ground state is now $\ket{0}_R$, with $M_R^2 = 0$\footnote{Beware the notation! The $R$ in the mass stands for right component, \emph{not} Ramond.}. However, we must pay attention to the existence of zero-modes $b^i_0$. Indeed, since $\comm{M^2_R}{b^i_0} = 0$, the application of $b^i_0$ on the ground state does not change its mass. Hence, it is \emph{degenerate}, and we must find how fermionic mode operators act on them. Indeed, we can require that all positive mode operators annihilate it, but we can't consistently require that all the fermionic zero-mode operators annihilate it, since it wouldn't be consistent with the anticommutators
 \begin{equation}\label{eq:superstring-clifford}
     \{ b^i_0, b^j_0 \} = \delta^{ij}.
 \end{equation}
 
-In particular, the relation~\eqref{eq:superstring-clifford} defines a Cliffod algebra, and defining the action of $b^i_0$ on the degenerate grandstates is equivalent to find a representation for it. To construct such representation, let's recall how to build generic representations for the Clifford algebra.
+In particular, the relation~\eqref{eq:superstring-clifford} defines a Cliffod algebra, and defining the action of $b^i_0$ on the degenerate ground states is equivalent to find a representation for it. To construct such representation, let's recall how to build generic representations for the Clifford algebra.
 
 \begin{mdframed}
-The Clifford algebra is defined by
+Let's focus on $SO(1,9)$. The Clifford algebra is defined by
 \begin{equation}\label{eq:clifford}
     \{ \Gamma^\mu, \Gamma^\nu \} = 2 \eta^{\mu\nu} , \quad \mu = 0, \dots, 9,
 \end{equation}
@@ -238,20 +232,20 @@ where we're considering an even dimension $d = 10$, $k=4$. We group the $\Gamma^
 \end{align}
 \end{subequations}
 They satisfy
-\begin{subequations}
-\begin{align}
-    \{ \Gamma^+_a, \Gamma^-_b \} &= \delta_{ab} , \\
-    \{ \Gamma^+_a, \Gamma^+_b \} = \{ \Gamma^-_a, \Gamma^-_b \} &= 0 ,
-\end{align}
+\begin{subequations}\label{eq:md-anticomm}
+\begin{gather}
+    \{ \Gamma^+_a, \Gamma^-_b \} = \delta_{ab} , \\
+    \{ \Gamma^+_a, \Gamma^+_b \} = \{ \Gamma^-_a, \Gamma^-_b \} = 0 ,
+\end{gather}
 \end{subequations}
 with $a = 0, \dots, 4$. In particular $(\Gamma^+_a)^2=(\Gamma^-_a)^2=0$. So, we can find the lowest weight state by acting repeatedly with the $\Gamma^-_a$ until we reach a spinor annihilated by all of them, i.e.,
 \begin{equation}
     \Gamma^-_a \ket{\zeta} = 0, \quad \forall a .
 \end{equation}
 Then, by starting from $\ket{\zeta}$, we obtain a $2^5 = 32$-dimensional representation by acting with $\Gamma^+_a$, at most once, in all possible ways. We label those states by $\ket{s_0,s_1,s_2,s_3,s_4}$, with $s_a = \pm 1/2$:
-\begin{equation}
+\begin{equation*}
     \ket{s_0,s_1,s_2,s_3,s_4} \equiv (\Gamma^+_4)^{s_4 + 1/2} (\Gamma^+_3)^{s_3 + 1/2} (\Gamma^+_2)^{s_2 + 1/2} (\Gamma^+_1)^{s_1 + 1/2} (\Gamma^+_0)^{s_0 + 1/2} \ket{\zeta},
-\end{equation}
+\end{equation*}
 where, in particular,
 \begin{equation}
     \ket{\zeta} = \ket{-\frac{1}{2},-\frac{1}{2},-\frac{1}{2},-\frac{1}{2},-\frac{1}{2}}.
@@ -266,7 +260,7 @@ indeed satisfy the $SO(1,9)$ algebra, that is,
     i \comm{\Sigma^{\mu\nu}}{\Sigma^{\sigma\rho}} = \eta^{\nu\sigma} \Sigma^{\mu\rho} + \eta^{\mu\rho}\Sigma^{\nu\sigma} - \eta^{\nu\rho}\Sigma^{\mu\sigma} - \eta^{\mu\sigma}\Sigma^{\nu\rho}.
 \end{equation}
 In particular, the generators $\Sigma^{2a,2a+1}$ commute and can be simultaneously diagonalized. In terms of the raising and lowering operators,
-\begin{equation}
+\begin{equation}\label{eq:md-spin-def}
     S_a \equiv i^{\delta_a} \Sigma^{2a,2a+1} = \Gamma^+_a \Gamma^-_a - \frac{1}{2},
 \end{equation}
 so that
@@ -284,28 +278,32 @@ which satisfies
     (\Gamma)^2 = 1, \quad \{ \Gamma,\Gamma^\mu \} =0, \quad \comm{\Gamma}{\Sigma^{\mu\nu}} = 0.
 \end{equation}
 The eigenvalues of $\Gamma$ are $\pm 1$ and one can easily show
-\begin{equation}
+\begin{equation}\label{eq:md-chirality}
     \Gamma = 2^5 S_0 S_1 S_2 S_3 S_4 .
 \end{equation}
-Then, as a matrix acting on $\ket{s_0,s_1,s_2,s_3,s_4}$, $\Gamma$ is diagonal, with matrix element taking the value $+1$ when $s_a$ include an even number of $-1/2$ and $-1$ for an odd number of $-1/2$. It's eigenvalue is called chirality, and the two $2^4 = 16$ states with definite chirality form two inequivalent Weyl representations of the Lorentz algebra. Therefore, for $d=10$, we obtained
+Then, as a matrix acting on $\ket{s_0,s_1,s_2,s_3,s_4}$, $\Gamma$ is diagonal, with matrix element taking the value $+1$ when $s_a$ include an even number of $-1/2$ and $-1$ for an odd number of $-1/2$. Its eigenvalue is called chirality, and the two $2^4 = 16$ states with definite chirality form two inequivalent Weyl representations of the Lorentz algebra. Therefore, for $d=10$, we obtained
 \begin{equation}\label{eq:clifford-branch}
     \boldsymbol{32}_\textup{Dirac} = \boldsymbol{16} \oplus \boldsymbol{16'} .
 \end{equation}
 
-A priori, the dimensionalities we mentioned above should be regarded as complex. However, in dimensions $d = 2 \mod 8$, we can define Majorana-Weyl spinors. Taking, then, real Majorana spinors from the beginning leads to real degrees of freedom, obviously substituting “Dirac”, with “Majorana”.
+A priori, the dimensionalities we mentioned above should be regarded as complex. However, in dimensions $d = 2 \mod 8$, we can define Majorana-Weyl spinors. Taking, then, real Majorana spinors from the beginning leads to real degrees of freedom. In particular
+\begin{equation}\label{eq:clifford-branch-majorana}
+    \boldsymbol{32}_\textup{Majorana} = \boldsymbol{16} \oplus \boldsymbol{16'},
+\end{equation}
+where the dimensions are now real.
 \end{mdframed}
 
-Turning back to the string, we notice that~\eqref{eq:superstring-clifford} satisfies~\eqref{eq:superstring-clifford} for $\Gamma^i = \sqrt{2} b^i_0$, and that there are no $0,1$ gamma matrices, since we're in lightcone gauge. Basically, we'll find representations of $SO(8)$, which is the little group for massless representations of $SO(1,9)$.
+Turning back to the string, we notice that~\eqref{eq:superstring-clifford} satisfies~\eqref{eq:clifford} for $\Gamma^i = \sqrt{2} b^i_0$, and that there are no $0,1$ gamma matrices, since we're in lightcone gauge. Basically, we'll find representations of $SO(8)$, which is the little group for massless representations of $SO(1,9)$.
 
-From a group theoretic point of view the possibility is twofold. On the one hand, we could've started from the old covariant quantization, with anticommutors~\eqref{eq:anticomm-bs} for $m=n=0$,
+From a group theoretic point of view the possibility is twofold. On the one hand, we could've started from the old covariant quantization, with anticommutators~\eqref{eq:anticomm-bs}, for $m=n=0$,
 \begin{equation}
     \{ b^\mu_0, b^\nu_0 \} = \eta^{\mu\nu},
 \end{equation}
-defining a Clifford algebra for $SO(1,9)$, up to a factor $\sqrt{2}$. Then, similarly to~\eqref{eq:clifford-branch},we'd have found
+defining a Clifford algebra for $SO(1,9)$, up to a factor $\sqrt{2}$. Then, we'd have found~\eqref{eq:clifford-branch-majorana}, namely
 \begin{equation}
-    \boldsymbol{32}_\textup{Majorana} = \boldsymbol{16}_\R \oplus \boldsymbol{16'}_\R ,
+    \boldsymbol{32}_\textup{Majorana} = \boldsymbol{16} \oplus \boldsymbol{16'} ,
 \end{equation}
-where the degrees of freedom are real and the Majorana spinor decomposes into two set of Weyl spinors with distinct chirality. Further, since we're interested in the little group $SO(8)$, to study the massless spectrum of the superstring, we should've considered the branching
+where the degrees of freedom are real and the Majorana spinor decomposes into two set of Majorana-Weyl spinors with opposite chirality. Further, since we're interested in the little group $SO(8)$, to study the massless spectrum of the superstring, we should've considered the branching
 \begin{equation}
 \begin{aligned}
     SO(1,9) &\to SO(1,1) \times SO(8) \\
@@ -318,10 +316,10 @@ where $\pm$ denotes two different irreducible representations of $SO(1,1)$. Then
     \ket{0}_{R} = (+,\s) \oplus (+,\c) .
 \end{equation}
 
-On the other hand, and this is what we'll actually do, we can get advantage from the lightcone gauge ad directly find representations of $SO(8)$, focusing on the Clifford algebra~\eqref{eq:superstring-clifford}. As discussed at the beginning of this section, for $SO(8)$ the reality and Weyl conditions are compatible. Indeed, we start from real gamma matrices, due to~\eqref{eq:reality-condition}, and we'll find that the $2^4=16$-dimensional real representation will split into two inequivalent $8$-dimensional real representations of definite chirality.
+On the other hand, and this is what we'll actually do, we can get advantage of the lightcone gauge ad directly find representations of $SO(8)$, focusing on the Clifford algebra~\eqref{eq:superstring-clifford}. As discussed at the beginning of this section, for $SO(8)$ the reality and Weyl conditions are compatible. Indeed, we start from real gamma matrices, due to~\eqref{eq:reality-condition}, and we'll find that the $2^4=16$-dimensional real representation will split into two inequivalent $8$-dimensional real representations of definite chirality.
 
-Let's then focus again on $\Gamma^i = \sqrt{2}b^i_0$. We haven't the matrices $\Gamma^\pm_0$ in eq.\eqref{eq:gamma-zero-pm}, but only~\eqref{eq:gamma-a-pm}, that is
-\begin{equation}
+Let's then focus again on $\Gamma^i = \sqrt{2}b^i_0$. We haven't the matrices $\Gamma^\pm_0$ of eq.~\eqref{eq:gamma-zero-pm}, but only~\eqref{eq:gamma-a-pm}, that is
+\begin{equation}\label{eq:creation-annihilation-fermion-op}
     B^\pm_a = \frac{1}{\sqrt{2}} \left( b^{2a}_0 \pm i b^{2a+1}_0 \right), \quad a = 1, \dots, 4.
 \end{equation}
 
@@ -329,7 +327,7 @@ Then, the lowest weight state is
 \begin{equation}
     B^-_a\ket{0}_{R} = 0, \quad \forall a = 1, \dots, 4,
 \end{equation}
-which is an eingenstate of the spin operator such that
+which is an eigenstate of the spin operator such that
 \begin{equation}
     \ket{0}_{R} = \ket{-\frac{1}{2},-\frac{1}{2},-\frac{1}{2},-\frac{1}{2}},
 \end{equation}
@@ -340,86 +338,38 @@ with
 
 Then, we obtain a $2^4 = 16$-dimensional real representation by application of the $B^+_a$ operators
 \begin{equation*}
-    \begin{tabular}{|c|c|c|} \hline
-        state & eigenstate of $2S_a$ & number of states \\ \hline
-        $\ket{0}_{R}$ & $\ket{-,-,-,-}$ & $\binom{4}{0} = 1$ \\ \hline
-        \multirow{2}{*}{$B^+_{a_1} \ket{0}_{R}$} & $\ket{+,-,-,-}, \ket{-,+,-,-},$ & \multirow{2}{*}{$\binom{4}{1} = 4$} \\ 
-        & $\ket{-,-,+,-}, \ket{-,-,-,+}.$ & \\ \hline
-        \multirow{2}{*}{$B^+_{a_1}B^+_{a_2}\ket{0}_{R}$} & $\ket{+,+,-,-}, \ket{+,-,+,-}, \ket{+,-,-,+},$ & \multirow{2}{*}{$\binom{4}{2} = 6$} \\ 
-        & $\ket{-,+,+,-}, \ket{-,+,-,+}, \ket{-,-,+,+}.$ & \\ \hline
-        \multirow{2}{*}{$B^+_{a_1}B^+_{a_2}B^+_{a_3} \ket{0}_{R}$} & $\ket{-,+,+,+}, \ket{+,-,+,+},$ & \multirow{2}{*}{$\binom{4}{3} = 4$} \\ 
-        & $\ket{+,+,-,+}, \ket{+,+,+,-}$ & \\ \hline
-        $B^+_{1}B^+_{2}B^+_{3}B^+_{4} \ket{0}_{R}$ & $\ket{+,+,+,+}$ & $\binom{4}{4} = 1$ \\ \hline
-    \end{tabular}
+    \input{tables/ramond-vacuum.tex}
 \end{equation*}
 
 The states $(\ket{0}_{R}, B^+_{a_1}B^+_{a_2}\ket{0}_{R},B^+_{1}B^+_{2}B^+_{3}B^+_{4} \ket{0}_{R})$ are characterized by an even number of creation operators, so they have positive chirality and gather to form the spinor representation $\s$ of $SO(8)$. Those with negative chirality, namely $(B^+_{a_1} \ket{0}_{R}, B^+_{a_1}B^+_{a_2}B^+_{a_3}\ket{0}_{R})$, form the co-spinor representation $\c$ of $SO(8)$. Recall that the dimensions are real.
 
-In conclusion, the massless modes of (R) sector are\footnote{Again, the R in the mass stands for right-movers, \emph{not} Ramond.}
+In conclusion, the massless modes of (R) sector are\footnote{Again, the R in the mass stands for right movers, \emph{not} Ramond.}
 \begin{equation}\label{eq:table-R}
-    \begin{tabular}{|c|c|c|}
-        \hline    state & $\alpha' M^2_R / 2$ & $SO(8)$ \\ \hline
-        \multirow{2}{*}{$\begin{array}{c} 
-            \ket{0}_{R}, B^+_{a_1}B^+_{a_2}\ket{0}_{R}, \\ 
-            B^+_{1}B^+_{2}B^+_{3}B^+_{4} \ket{0}_{R} 
-        \end{array}$} & \multirow{2}{*}{$0$} & \multirow{2}{*}{$\s$} \\ 
-        & & \\ \hline
-        $B^+_{a_1} \ket{0}_{R}, B^+_{a_1}B^+_{a_2}B^+_{a_3}\ket{0}_{R}$   & $0$   & $\c$\\ \hline
-    \end{tabular}
+    \input{tables/massless-ramond.tex}
 \end{equation}
 
-For the left-movers the analysis is completely the same, with tilde operators. We need to understand how to glue those sectors together, consistently.
+For the left movers the analysis is completely the same, with tilde operators. We need to understand how to glue those sectors together, consistently.
 
 %************** closed string spectrum *****************
 \subsection{Closed String Spectrum.}
-To obtain the closed string spectrum, we must glue together the left- and the right-moving sectors, constraint by the level-matching condition~\eqref{eq:superstring-level-matching}. Since left and right movers are themselves divided into (R) and (NS) sectors, we have, a priori, $16$ combinations. Basically, we have to look at~\eqref{eq:table-NS} and~\eqref{eq:table-R}, since $\i$ is the only one to have half-integer value for the mass-squared, it can be tensored only with itself to be consistent with~\eqref{eq:superstring-level-matching}. Further, a priori all the massless representations can be tensored, pairwise.
+To obtain the closed string spectrum, we must glue together the left and the right moving sectors, constraint by the level-matching condition~\eqref{eq:superstring-level-matching}. Since left and right movers are themselves divided into (R) and (NS) sectors, we have, a priori, $16$ combinations. Basically, we have to look at~\eqref{eq:table-NS} and~\eqref{eq:table-R}. Since $\i$ is the only one to have half-integer value for the mass-squared, it can be tensored only with itself to be consistent with~\eqref{eq:superstring-level-matching}. Further, a priori all the massless representations can be tensored, pairwise.
 
-To have a superstring which have spacetime supersymmetry, it's convenient to define $\emph{G-parity}$, and use it in the context of the \emph{GSO-projection}. We're not interested in those details, so we only say that G-parity essentially counts the even-/odd-ness of fermionic excitations. Gathering the information of~\eqref{eq:table-NS} and~\eqref{eq:table-R} into one table, and citing just the result for G-parity, we get the following table, for the right-movers.
+To have a superstring which have spacetime supersymmetry, it's convenient to define $\emph{G-parity}$, and use it in the context of the \emph{GSO-projection}. We're not interested in those details, so we only say that G-parity essentially counts the evenness and oddness of fermionic excitations. Gathering the information of~\eqref{eq:table-NS} and~\eqref{eq:table-R} into one table, and citing just the result for G-parity, we get the following table, for the right movers.
 \begin{equation*}
-\begin{tabular}{|c|c|c|c|c|c|}
-  \hline  sector & G-parity & state & little group rep. & $\alpha' M^2_R /2$ & statistics \\ \hline
-        NS & $-$ & $\ket{0}_{NS}$   & $SO(9): \i \,$ & $-1/2$ & boson   \\ \hline
-    NS & $+$ & $b^i_{-1/2} \ket{0}_{NS}$   & $SO(8): \v$  & 0 & boson \\ \hline 
-        \multirow{2}{*}{R} & \multirow{2}{*}{$+$} & \multirow{2}{*}{$\begin{array}{c} 
-            \ket{0}_{R}, B^+_{a_1}B^+_{a_2}\ket{0}_{R}, \\ 
-            B^+_{1}B^+_{2}B^+_{3}B^+_{4} \ket{0}_{R} 
-        \end{array}$} & \multirow{2}{*}{$SO(8): \, \s$} & \multirow{2}{*}{$0$} & \multirow{2}{*}{fermion} \\ 
-        & & & & & \\ \hline
-        \multirow{2}{*}{R} & \multirow{2}{*}{$-$} & \multirow{2}{*}{$\begin{array}{c} 
-            B^+_{a_1} \ket{0}_{R}, \\ 
-            B^+_{a_1}B^+_{a_2}B^+_{a_3}\ket{0}_{R}
-        \end{array}$} & \multirow{2}{*}{$SO(8): \, \c$} & \multirow{2}{*}{$0$} & \multirow{2}{*}{fermion} \\ 
-        & & & & & \\ \hline
-       
-\end{tabular}
+    \input{tables/superstring-sectors.tex}
 \end{equation*}
-For the left-movers the situation is completely analogous.
-
-
-We'll call NS$_\pm$ and R$_\pm$ the sectors with G-parity $\pm$. Then, the $10$ possibilities to tensor those sectors and glue together left- and right-movers are:
+For the left movers the situation is completely analogous. We call NS$_\pm$ and R$_\pm$ the sectors with G-parity $\pm$. Then, the $10$ possibilities to tensor those sectors and glue together left and right movers are:
 \begin{equation*}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline    sector & state rep. & $\alpha' M^2$ & statistics & $SO(8)$ (indices) & $SO(8)$ (dim.)  \\ \hline
-    (NS$_-$,NS$_-$) & $\i \otimes \i$ & $-2$ & boson & / & / \\ \hline
-    (NS$_+$,NS$_+$) &$\v \otimes \v$&$0$& boson& $[\boldsymbol{0}] \oplus [\boldsymbol{2}] \oplus (\boldsymbol{2})$ &$\boldsymbol{1} \oplus \boldsymbol{28_v} \oplus \boldsymbol{35_v}$\\ \hline
-    (R$_+$,R$_+$) &$\s\otimes \s$&$0$& boson & $[\boldsymbol{0}] \oplus [\boldsymbol{2}] \oplus [\boldsymbol{4}]_+$ & $\boldsymbol{1_s} \oplus \boldsymbol{28_s} \oplus \boldsymbol{35_s}$ \\ \hline
-    (R$_-$,R$_-$) &$\c \otimes \c$&$0$& boson & $[\boldsymbol{0}] \oplus [\boldsymbol{2}] \oplus [\boldsymbol{4}]_-$ & $\boldsymbol{1_c} \oplus \boldsymbol{28_c} \oplus \boldsymbol{35_c}$\\ \hline
-    (R$_-$,R$_+$) &$\c \otimes \s$&$0$& boson & $[\boldsymbol{1}] \oplus [\boldsymbol{3}]$ & $\boldsymbol{8_v} \oplus \boldsymbol{56_v}$\\ \hline
-    (R$_+$,R$_-$) &$\s \otimes \c$&$0$& boson& $[\boldsymbol{1}] \oplus [\boldsymbol{3}]$& $\boldsymbol{8_v} \oplus \boldsymbol{56_v}$\\ \hline
-    (R$_+$,NS$_+$) &$\s \otimes \v$&$0$& fermion & / & $\c \oplus \boldsymbol{56_s}$\\ \hline
-    (R$_-$,NS$_+$) &$\c \otimes \v$&$0$& fermion & / & $\s \oplus \boldsymbol{56_c}$\\ \hline
-    (NS$_+$,R$_+$) &$\v\otimes\s$&$0$& fermion & / & $\c \oplus \boldsymbol{56_s}$\\ \hline
-    (NS$_+$,R$_-$) &$\v\otimes\c$&$0$& fermion & / & $\s \oplus \boldsymbol{56_c}$ \\ \hline
-\end{tabular}
+    \input{tables/superstring-glue.tex}
 \end{equation*}
 
-In the last two columns, we've decomposed the tensor product representations into irreducible representations of $SO(8)$. In particular, in the second to last column, for the bosons, $(n)$ denotes a symmetric tensor with $n$ indices, while $[n]$ a completely antisymmetric tensor with $n$ indices. Moreover, in the last column, we've counted the \emph{real} degrees of freedom, \emph{on-shell}. Then,
+In the last two columns, we've decomposed the tensor product representations into irreducible representations of $SO(8)$. In particular, in the second to last column, for the bosons, $(\boldsymbol{n})$ denotes a symmetric tensor with $n$ indices, while $[\boldsymbol{n}]$ a completely antisymmetric tensor with $n$ indices. Moreover, in the last column, we've counted the \emph{real} degrees of freedom, \emph{on-shell}. Then,
 \begin{itemize}
-    \item $\i$, $\boldsymbol{28_v}$ and $\boldsymbol{35_v}$ are the usual dilaton $\Phi$, Kalb-Ramond $B_{[ij]}$ and graviton $G_{(ij)}$ in $10$ dimensions;
+    \item $\i$, $\boldsymbol{28_v}$ and $\boldsymbol{35_v}$ are the usual dilaton $\Phi$, Kalb-Ramond $B_{[\mu\nu]}$ and graviton $G_{(\mu\nu)}$ in $10$ dimensions;
     \item $\boldsymbol{1_s}$ and $\boldsymbol{1_c}$ represents zero-forms, $C_0$ and $\tilde{C}_0$;
     \item $\boldsymbol{28_s}$ and $\boldsymbol{28_c}$ are the degrees of freedom of two-forms $C_2$ and $\tilde{C}_2$;
     \item $\boldsymbol{35_s}$ and $\boldsymbol{35_c}$ are the degrees of freedom of four-forms $C_4^+$ and $C_4^-$, whose field strenghts are dual and self-dual, respectively;
-    \item $\v$ and $\boldsymbol{56}_v$ are the degrees of freedom of a vector and an antisymmetric three tensor, respectively;
+    \item $\v$ and $\boldsymbol{56}_v$ are the degrees of freedom of a vector and an antisymmetric three-tensor, respectively;
     \item $\s$ and $\c$ are the on-shell degrees of freedom of two dilatini of spin $1/2$, one of each handedness;
     \item $\boldsymbol{56}_s$ and $\boldsymbol{56}_c$ are the on-shell degrees of freedom of two gravitini of spin $3/2$, one of each handedness.
 \end{itemize}
@@ -428,6 +378,7 @@ In particular, for the vector representations $\v \otimes \v$, we used the famil
 \begin{equation}
     \v \otimes \v = [\boldsymbol{0}] \oplus (\boldsymbol{2}) \otimes [\boldsymbol{2}].
 \end{equation}
+
 For the tensor product of two spinor representations, we just cite the group theoretical result, with no proof. For $SO(d)$ in even dimension, with $d = 2l$, the product representations can be decomposed as
 \begin{subequations}
 \begin{align}
@@ -468,9 +419,9 @@ Finally, for the tensor product of a spinor and vector-bilinears, we get
 \end{subequations}
  
 %****************** type ii superstring theories ******************
-\subsection{Type II Superstring Theories}
-In order to obtain consistent spacetime theories, one should combine the above described sectors in a way which is consistent with CFT on the worldsheet and supersymmetry of spacetime. The mathematical tool to achieve this is the \emph{GSO projection}. Without proving it, we just quote the result, in particular focusing on \emph{type II} theories, which are characterized by $\mathcal{N} = 2$ supersymmetries on spacetime. They're characterized by the sectors
-\begin{equation}
+\subsection{Type II Superstring Theories.}
+In order to obtain consistent spacetime theories, one should combine the above described sectors in a way which is consistent with CFT on the worldsheet and supersymmetry of spacetime. The mathematical tool to achieve this is the \emph{GSO projection}. Without proving it, we just quote the result, in particular focusing on \emph{type II} theories, which are characterized by $\mathcal{N} = 2$ susy on spacetime. They're characterized by the sectors
+\begin{equation}\label{eq:type-ii-sectors}
 \begin{aligned}
    \text{IIA}: \quad &(\text{NS}_+, \text{NS}_+),\; (\text{R}_+, \text{R}_-), \;(\text{NS}_+,\text{R}_-),\; (\text{R}_+, \text{NS}_+) , \\
    \text{IIB}: \quad &(\text{NS}_+, \text{NS}_+), \;(\text{R}_+, \text{R}_+), \;(\text{NS}_+,\text{R}_+), \;(\text{R}_+, \text{NS}_+),
@@ -478,38 +429,28 @@ In order to obtain consistent spacetime theories, one should combine the above d
 \end{equation}
 where we could exchange $\text{R}_\pm \to \text{R}_\mp$ in type IIA, and $\text{R}_+\to \text{R}_-$ in type IIB, obtaining equivalent theories in spacetime. The field content from the massless spectrum is the following:
 \begin{equation*}
-        \begin{tabular}{|ccc|ccc|}
-        \hline
-        \multicolumn{3}{|c|}{\textbf{Type IIA}} & \multicolumn{3}{c|}{\textbf{Type IIB}} \\ \hline
-        \multicolumn{1}{|c|}{sector}  & fields & \multicolumn{1}{|c|}{$SO(8)$} & \multicolumn{1}{l|}{sector}  & fields & \multicolumn{1}{|c|}{$SO(8)$}  \\ \hline
-        \multicolumn{1}{|c|}{$(\text{NS}_+, \text{NS}_+)$} & $\Phi$, $B_{[ij]}$, $G_{(ij)}$ & \multicolumn{1}{|c|}{$\v \otimes \v$} & \multicolumn{1}{c|}{$(\text{NS}_+, \text{NS}_+)$}        &      $\Phi$, $B_{[ij]}$, $G_{(ij)}$  & \multicolumn{1}{|c|}{$\v \otimes \v$} \\ \hline
-        \multicolumn{1}{|c|}{$(\text{R}_+, \text{R}_-)$} &$C_1$, $C_3$  & \multicolumn{1}{|c|}{$\s\otimes\c$} & \multicolumn{1}{c|}{$(\text{R}_+, \text{R}_+)$}        &    $C_0$, $C_2$, $C_4^+$   & \multicolumn{1}{|c|}{$\s\otimes\s$}  \\ \hline
-        \multicolumn{1}{|c|}{$(\text{NS}_+,\text{R}_-)$}        &     $\tilde{\lambda}_a$, $\tilde{\psi}^\mu_a$  & \multicolumn{1}{|c|}{$\v\otimes\c$}  & \multicolumn{1}{c|}{$(\text{NS}_+,\text{R}_+)$}        &     ${\lambda}^{(1)}_a$, ${\psi}^{(1)\mu}_a$  & \multicolumn{1}{|c|}{$\v\otimes\s$}  \\ \hline
-
-
-        \multicolumn{1}{|c|}{$(\text{R}_+, \text{NS}_+)$}        &     ${\lambda}_a$, ${\psi}^\mu_a$ & \multicolumn{1}{|c|}{$\s\otimes\v$}   & \multicolumn{1}{c|}{$(\text{R}_+, \text{NS}_+)$}        &     ${\lambda}^{(2)}_a$, ${\psi}^{(2)\mu}_a$  & \multicolumn{1}{|c|}{$\s\otimes\v$}  \\ \hline
-        \end{tabular}
+    \input{tables/type-ii-content.tex}
 \end{equation*}
 
-%******************* COMPACTIFICATION OF TYPE II THEORIES
-\section{T-duality for Type II Superstrings}
-We're now able to generalize the T-duality discussion of section~\ref{sec:t-duality} to Type IIA/IIB superstrings. We focus on the \emph{closed string} and compactify $\M_{10}$ on $\M_{9} \times S^1$. Differently than above, we change the notation for the indices. In particular, we'll denote with $\hat{\mu}$ the indices of $\M_{10}$, with $\hat{\mu} = 0, \dots, 9$, and with $\mu$ the indices of $\M_{9}$, with $\mu = 0, \dots , 8$. This means that we can write $X^{\hat{\mu}} = (X^\mu, X^{9})$. Similarly, the transversal indices will be called $\hat{i}$ in the following, with $\hat{i} = 2, \dots 9$, while $i$ will denote the transversal indices in the non-compact space $\M_{9}$, with $i = 2, \dots 8$. Therefore, in spacetime lightcone coordinates, we have $X^{\hat{\mu}} \to (X^\pm, X^{\hat{i}}) = (X^\pm, X^i, X^{9})$. The same conventions will be used for the fermions on the worldsheet.
+%******************* COMPACTIFICATION OF TYPE II THEORIES ********************
+\section{Compactification of Type II Superstrings on \texorpdfstring{$S^1$}{S1}.}
+We're now able to generalize the T-duality discussion of section~\ref{sec:t-duality} to type IIA/IIB superstrings. We focus on the \emph{closed string} and compactify $\M_{10}$ on $\M_{9} \times S^1$. Differently than above, we change the notation for the indices. In particular, we'll denote with $\hat{\mu}$ the indices of $\M_{10}$, with $\hat{\mu} = 0, \dots, 9$, and with $\mu$ the indices of $\M_{9}$, with $\mu = 0, \dots , 8$. This means that we can write $X^{\hat{\mu}} = (X^\mu, X^{9})$. Similarly, the transversal indices will be called $\hat{i}$ in the following, with $\hat{i} = 2, \dots 9$, while $i$ will denote the transversal indices in the non-compact space $\M_{9}$, with $i = 2, \dots 8$. Therefore, in spacetime lightcone coordinates, we have $X^{\hat{\mu}} \to (X^\pm, X^{\hat{i}}) = (X^\pm, X^i, X^{9})$. The same conventions will be used for the fermions on the worldsheet.
 
 An important detail is that the $2$d fermion sector on the worldsheet is completely unchanged by the compactification. Indeed, we suppose that the only effect of the compactification is on the bosonic fields, which describe how the string in embedded in spacetime, while the fermionic fields are added to guarantee worldsheet supersymmetry. Therefore, the fermions will have the usual (R) or (NS) boundary conditions, with no change due to the compactification. For what concerns the bosons, the analysis is parallel to the bosonic string.
 
 Due to the identification $X^9 \simeq X^9 + 2\pi R$, the possible boundary conditions for the bosonic fields are
 \begin{equation}
 \begin{aligned}
-    X^i (\tau, \sigma +l) = X^i(\tau,\sigma), \quad i = 2, \dots, 8, \\
-    X^9(\tau,\sigma + l) = X^9(\tau,\sigma) + 2\pi R \omega, \quad \omega \in \Z .
+    X^i (\tau, \sigma +l) &= X^i(\tau,\sigma), \quad i = 2, \dots, 8, \\
+    X^9(\tau,\sigma + l) &= X^9(\tau,\sigma) + 2\pi R \omega, \quad \omega \in \Z .
 \end{aligned}
 \end{equation}
 Further, the momentum along $X^9$ is quantized, i.e.,
 \begin{equation}
-    p_9 = \frac{s}{R}, \quad s \in \Z.
+    p_{\!_{9}} = \frac{s}{R}, \quad s \in \Z.
 \end{equation}
 
-Regarding the mode decompositions, for $X^i_{L/R}$ it's given by~\eqref{eq:lightcone-mode-decomposition}, with $i = 2, dots, 8$, while for $X^9 (\tau, \sigma) = X^9_L (\xi^+) + X^9_R (\xi^-)$, it reads
+Regarding the mode decompositions, for $X^i_{L/R}$ is given by~\eqref{eq:lightcone-mode-decomposition}, with $i = 2, \dots, 8$, while for $X^9 (\tau, \sigma) = X^9_L (\xi^+) + X^9_R (\xi^-)$, it reads
 \begin{subequations}
 \begin{align}
     X^{9}_L(\xi^+)     &= \frac{x^{9}}{2} + \frac{\alpha' \pi}{l} p_{\!_L} \xi^+ + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{\tilde{\alpha}^{9}_n}{n}e^{-\frac{2\pi i}{l}n \xi^+} \\
@@ -522,21 +463,21 @@ with
 \end{equation}
 
 From~\eqref{eq:left-right-mass-shell},~\eqref{eq:NS-mass-shell} and~\eqref{eq:R-mass-shell}, since the fermions don't enter this analysis, we easily see that the \emph{mass-shell condition} on $\M_9$ reads
-\begin{equation}
+\begin{equation}\label{eq:superstring-mass-shell-m9}
     M^2_L = \frac{p^2_L}{2} + \frac{2}{\alpha'} \left( \tilde{N}_\perp - \tilde{a}_\phi \right), \quad M^2_R = \frac{p^2_R}{2} + \frac{2}{\alpha'} \left( {N}_\perp - {a}_\phi \right).
 \end{equation}
 The number operators are given by~\eqref{eq:superstring-transverse-number-op}, i.e.,
-\begin{equation}
+\begin{equation}\label{eq:superstring-numbers}
     \begin{aligned}
         \tilde{N}_\perp = \sum_{n > 0} \tilde{\alpha}_{-n}^i \tilde{\alpha}^i_n + \sum_{k \geq 0 + \phi} k \tilde{b}^i_{-k} \tilde{b}^i_k , \\
         N_\perp = \sum_{n > 0} \alpha_{-n}^i \alpha^i_n + \sum_{k \geq 0 + \phi} k b^i_{-k} b^i_k ,
 \end{aligned}
 \end{equation}
-and $a_\phi$ and $\tilde{a}_\phi$ the ordering constants for the (R) or (NS) sector. In particular, for $\phi = 0$, we have $a_0 = \tilde{a}_0 = a_{R} = 0$, while for $\phi = 1/2$, we get $a_{1/2} = \tilde{a}_{1/2} = a_{NS} = 1/2$.
+and $a_\phi$ and $\tilde{a}_\phi$ are the ordering constants for the (R) or (NS) sector. In particular, for $\phi = 0$, we have $a_0 = \tilde{a}_0 = a_{R} = 0$, while for $\phi = 1/2$, we get $a_{1/2} = \tilde{a}_{1/2} = a_{NS} = 1/2$.
 
-For a generic $R$, the only massless states are in the sector $(s=0,\omega=0)$. These states correspond to zero modes of the Kaluza-Klein reduction of the effective field theory of $10$d massless modes. Indeed, the internal momentum is zero and there's no winding. Therefore, in order to perform the Kaluza-Klein reduction to $9$d, keeping just the zero-modes, is equivalent to decoupling representations with respect $SO(8)$, the little group for massless representations of $SO(1,9)$ in $\M_{10}$, into representations of $SO(7)$, which is the little group for massless representations of $SO(1,8)$ in $\M_9$.
+For a generic $R$, the only massless states are in the sector $(s=0,\omega=0)$. These states correspond to zero modes of the Kaluza-Klein reduction of the effective field theory of $10$d massless modes. Indeed, the internal momentum is zero and there's no winding. Therefore, performing the Kaluza-Klein reduction to $9$d, keeping just the zero-modes, is equivalent to decoupling representations with respect $SO(8)$, the little group for massless representations of $SO(1,9)$ in $\M_{10}$, into representations of $SO(7)$, which is the little group for massless representations of $SO(1,8)$ in $\M_9$.
 
-In particular, looking at (N) and (NS) sectors for left or right movers, separately, we get
+In particular, looking at (N) and (NS) sectors for left or right movers, separately, we have
 \begin{equation}
         \begin{tabular}{|c|c|c|}
      \hline   sector & $SO(8)$ rep. & $SO(7)$ rep.    \\ \hline
@@ -552,18 +493,113 @@ Then, we have to glue together the left and right movers. To do so, we can decom
 \input{tables/type-II-decomposition.tex}
 \end{equation*}
 
-Notice that, in decomposing in irreducible representations of $SO(7)$, each representation is labelled by its real dimension, which is equal to the \emph{on-shell} degrees of freedom of the corresponding field. 
+Notice that, in decomposing in irreducible representations of $SO(7)$, each representation is labelled by its real dimension, which is equal to the \emph{on-shell} degrees of freedom of the corresponding field. For the bosons it's enough to count the number of independent lightcone indices, taking into account the symmetry/antisymmetry property. For fermions, one can show that the handedness of the dilatini is opposite to that of the gravitini. Together, a gravitino and a dilatino form a reducible vector-spinor $\psi^\mu_a$ of $SO(1,9)$, where $\mu$ are the spacetime indices while $a$ the spinorial ones. Its traceless part, $\Gamma^\mu \psi_\mu = 0$ it the gravitino, while the trace is the dilatino. Lightcone quantization can be carefully carried over, obtaining, for the gravitino, a state like $\psi^i_a$, but with a constraint deriving from $\Gamma^\mu \psi_\mu = 0$. Without the derivation, we just remark that this constraint will impose $8$ conditions for both $SO(8)$ and $SO(7)$, leading to the correct number of degrees of freedom on-shell.
 
-For the bosons it's enough to count the number of independent indices, taking into account the symmetry/antisymmetry property. For fermions, one can show that the handedness of the dilatini is opposite to that of the gravitini. Together, a gravitino and a dilatino form a reducible vector-spinor $\psi^\mu_a$ of $SO(1,9)$, where $\mu$ are the spacetime indices while $a$ the spinorial ones. Its traceless part, $\Gamma^\mu \psi_\mu = 0$ it the gravitino, while the trace is the dilatino. Lightcone quantization can be carefully carried over, obtaining, for the gravitino, a state like $\psi^i_a$, but with a constraint deriving from $\Gamma^\mu \psi_\mu = 0$. Without the derivation, we just remark that this constraint will impose $8$ conditions for $SO(8)$ and $SO(7)$, leading to the correct number of degrees of freedom on-shell.
-
-As usual, similarly to~\eqref{eq:radion-and-radius}, the scalar which arise from the metric, i.e., $G_{99}$, sets the volume of extra dimension, namely, the compactification radius in this case. There's, however, another scalar, arising from the R-R sector, which is $A_9$. Then, it would be interesting to describe the compactification for an arbitrary backgorund of this field. Unfortunately, it's not known how to couple R-R fields to the $2$d worldsheet theory.
+As usual, similarly to~\eqref{eq:radion-and-radius}, the scalar which arise from the metric, i.e., $G_{99}$, sets the volume of extra dimension, or rather, the compactification radius in this case. There's, however, another scalar, arising from the R-R sector, which is $A_9$. Then, it would be interesting to describe the compactification for an arbitrary background of this field. Unfortunately, it's not known how to couple R-R fields to the $2$d worldsheet theory.
 
 Recall that NS-NS fields are the same as the bosonic string. For them, we know how to couple the background to the $2$d theory. This is provided by the \emph{non-linear $\sigma$-model} action, which reads
-\begin{equation}
+\begin{equation*}
     S_\sigma = \frac{1}{4\pi\alpha'} \int_\Sigma \ud^2 \xi \sqrt{-\det \gamma} \left[ \left( \gamma^{ab} G_{\mu\nu}(X) + i \epsilon^{ab} B_{\mu\nu}(X)  \right) \de_a X^\mu \de_b X^\nu + \alpha' \mathcal{R} \phi(X) \right],
-\end{equation}
-and it's usually exactly solvable. There's no analogue for R-R fields, to couple them directly to the $2$d worldsheet theory. Indeed, they must be coupled to the worldvolume of D-branes, through \emph{Cern-Simons} actions, rising many complications.
+\end{equation*}
+and it's usually exactly solvable. There's no analogue for R-R fields, to couple them directly to the $2$d worldsheet theory. Indeed, they must be coupled to the worldvolume of D-branes, through \emph{Cern-Simons} actions, raising many complications.
 
 The interesting thing to notice is that the $9$d massless spectrum for type IIA and IIB is the same. In particular, chirality of type IIB is lost after compactification, since there's no notion of chirality in odd dimensions. It's easy to see from the $9$d spectrum that the theory has $\mathcal{N} = 2$ susy, since there are two gravitini. The spectrum, indeed, corresponds to $9$d supergravity with $32$ supercharges, which is a unique theory.
 
-In general, \emph{toroidal compactifications} don't break any supersymmetry, and the \emph{number of supercharges is conserved}. Indeed, compactifying on $T^n$ presenrves the spinor degrees of freedom, since the representation of $SO(1,9)$ simply reorganizes under $SO(1,4)$, without loosing degrees of freedom. Then, compactifying type IIA and IIB on $T^6$ to obtain a $4$d spacetime theory, would lead to $\mathcal{N}=8$ $4$d supergravity, since the $32$ supercharges organize into $8$ independent Majorana spinors in $4$d. This is \emph{not} a chiral theory, and so it's useless for phenomenology.
+In general, \emph{toroidal compactifications} don't break any supersymmetry, and the \emph{number of supercharges is conserved}. Indeed, compactification on $T^n$ preserves the spinorial degrees of freedom, since the representation of $SO(1,9)$ simply reorganizes under $SO(1,9-n)$, without loosing degrees of freedom. Then, compactification of type IIA and IIB on $T^6$ to obtain a $4$d spacetime theory, would lead to $\mathcal{N}=8$ $4$d supergravity, since the $32$ supercharges organize into $8$ independent Majorana spinors in $4$d. This is \emph{not} a chiral theory, and so it's useless for phenomenology.
+
+Let's see what happens for non-zero winding and internal momentum. After imposing the \emph{level-matching condition}
+\begin{equation}
+    M^2_L = M^2_R,
+\end{equation}
+with $M^2_{L/R}$ given by~\eqref{eq:superstring-mass-shell-m9}, the mass-shell condition on $\M_{9}$ reads
+\begin{equation}\label{eq:superstring-total-mass-shell-m9}
+    M^2 = \frac{s^2}{R^2} + \frac{\omega^2 R^2}{(\alpha')^2} + \frac{2}{\alpha'} (\tilde{N}_\perp + N_\perp - a_\phi - \tilde{a}_\phi),
+\end{equation}
+with number operators given by~\eqref{eq:superstring-numbers} and $a_{R} = 0, a_{NS} = 1/2$.
+
+Then, as $R \to \infty$, the winding states decouple from the light spectrum and the internal momenta assume continuous values, which corresponds to the \emph{decompactification limit}. Conversely, for $R \to 0$, the Kaluza-Klein modes decouples and the winding states contributes to the light spectrum. As in the bosonic case, it's natural to think of this as the decompactification limit of the \emph{dual theory}, to be studied.
+
+%******************* T-DUALITY OF TYPE II THEORIES ********************
+\section{T-duality for Type II Superstrings.}
+Recall from the bosonic case that a \emph{T-duality transformation}~\eqref{eq:t-duality-transf} reads
+\begin{equation}\label{eq:superstring-t-duality-transf}
+    R \to R' = \frac{\alpha'}{R}, \quad (s,\omega) \to (s',\omega') = (\omega, s) .
+\end{equation}
+By defining~\eqref{eq:t-duality-string-transf}, we've seen that T-duality is a symmetry of the full string theory, which acts as a parity transformation on the coordinates, in particular as
+\begin{equation}
+    X^9_L \to X^9_L, \quad X^9_R \to - X^9_R,
+\end{equation}
+which maps
+\begin{equation}
+    X^9(\tau, \sigma) = X^9_L(\xi^+) + X^9_R(\xi^-) \to X'^9(\tau,\sigma) = X^9_L(\xi^+) - X^9_R(\xi^-),
+\end{equation}
+where $X'^9(\tau,\sigma)$ describes a compactification on a circle of radius $R' = \alpha' / R$. However, this transformation acts non-trivially on the worldsheet fermions. Indeed, worldsheet supersymmetry imposes that $\psi^9$ transforms accordingly, namely
+\begin{equation}\label{eq:t-duality-on-fermions}
+    \psi^9_L \to \psi^9_L, \quad \psi^9_R \to - \psi^9_R,
+\end{equation}
+giving
+\begin{equation}
+    \psi^9(\tau,\sigma) = \psi^9_+(\xi^+) + \psi^9_-(\xi^-) \to \psi'^9(\tau,\sigma) = \psi^9_+(\xi^+) - \psi^9_-(\xi^-).
+\end{equation}
+Then, T-duality acts as a spacetime parity on the right movers.
+
+To see the implications, let's first recall the mode expansion of the fermions, given by~\eqref{eq:superstring-fermions-mode-expansion}. Therefore, the T-duality~\eqref{eq:t-duality-on-fermions} acts on the modes as
+\begin{equation}
+    \tilde{b}^9_r \to \tilde{b}'^9_r = \tilde{b}^9_r, \quad b^9_r \to b'^9_r = - b^9_r .
+\end{equation}
+Recall, then, the construction of the Ramond vacuum in section~\eqref{sec:R-sector}, where we defined creation/annihilation operators for a fermionic harmonic oscillator in~\eqref{eq:creation-annihilation-fermion-op}. Since it's only $b^9_r$ which changes, we focus on $B^\pm_4$, which is the only one containing it. Under T-duality, it transforms as
+\begin{equation}
+    B^\pm_4 = \frac{1}{\sqrt{2}} \left( b^8_0 \pm i b^9_0 \right) \to \frac{1}{\sqrt{2}} \left( b^8_0 \mp i b^9_0 \right) = B^\mp_4.
+\end{equation}
+Analysing~\eqref{eq:md-spin-def},~\eqref{eq:md-anticomm} and~\eqref{eq:md-chirality}, we conclude that T-duality flips the chirality for the right moving spinors, and therefore transforms the various superstring sectors as
+\begin{equation}
+\begin{aligned}
+    (\textup{R}_+, \textup{R}_\pm) &\to (\textup{R}_+, \textup{R}_\mp), \\
+    (\textup{NS}_+, \textup{R}_\pm) &\to (\textup{NS}_+, \textup{R}_\mp),
+\end{aligned}
+\end{equation}
+Indeed, as an example, let's focus on the R$_+$ sector, with degenerate vacuum
+\begin{equation}
+    \ket{0}_R, \quad B^+_{a_1} B^+_{a_1} \ket{0}_R, \quad B^+_1B^+_2 B^+_3 B^+_4 \ket{0}_R.
+\end{equation}
+Here, $\ket{0}_R$ is defined by
+\begin{equation}
+    B^-_a \ket{0}_R = 0, \quad \forall a = 1, \dots, 4.
+\end{equation}
+In the T-dual theory, we'd define the state $\ket{0}'_R$ by
+\begin{equation}
+    B'^-_a \ket{0}'_R = 0, \quad \forall a = 1, \dots, 4.
+\end{equation}
+In terms of the original operators, we have $B^-_a \ket{0}'_R = 0$ for $a=1,2,3$, and $B^+_4 \ket{0}'_R=0$, so
+\begin{equation}
+    \ket{0}'_R = B^+_4 \ket{0}_R .
+\end{equation}
+This exchanges the G-parity of $\ket{0}'_R$ with respect to $\ket{0}_R$, so that the GSO projection of the T-dual theory is the opposite. In particular, the degenerate vacuum in the T-dual theory will be
+\begin{equation}
+    A^+_a \ket{0}_R, \quad A^+_{a_1}A^+_{a_2}A^+_{a_3}\ket{0}_R,
+\end{equation}
+which is the same as R$_-$, as previously mentioned.
+
+The overall effect of T-duality is exchanging type IIA and IIB, by means of~\eqref{eq:type-ii-sectors}. Summarizing,
+\begin{equation*}
+    \textup{Type IIB on $S^1$ with radius $R$ $\; \cong\;$ Type IIA on $S'^1$ with radius $R' = \frac{\alpha'}{R}$} .
+\end{equation*}
+
+ Then, the $9d$ spectrum of the two theories is the same, up to T-duality transformation.
+
+\section{Postilla on Energies and Limits.}
+\begin{itemize}
+    \item The compactification scale is $M_c = \frac{1}{R}$;
+    \item The string scale is $M_s = \frac{1}{l_s} = \frac{1}{2\pi\sqrt{\alpha'}}$;
+    \item In field theory compactification, we work at energies
+    \begin{equation}
+        E \ll M_c \ll M_s \iff \quad L \gg R \gg \sqrt{\alpha'},
+    \end{equation}
+    which allows us to neglect stringy effect and Kaluza-Klein heavy modes;
+    \item In string theory, we can either work in $R \gg \sqrt{\alpha'}$ or $R \ll \sqrt{\alpha'}$, in the T-dual frame;
+    \item To forget about both Kaluza-Klein and winding states, we may work at energies
+    \begin{equation}
+        E \ll \frac{1}{R} \ll \frac{R}{\alpha'},
+    \end{equation}
+    which is compatible with the large volume scenario~\eqref{eq:large-volume-approx}.
+\end{itemize}

@@ -1,2 +1,2 @@
-mv -v ./out/main.pdf ./poincare.pdf
+mv -v ./out/main.pdf ./circle-compactification-giancarlo-oancia.pdf
 rm -r out
