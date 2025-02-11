@@ -1,0 +1,333 @@
+% $Header$
+
+\documentclass{beamer}
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  \usetheme{Madrid}
+  \usecolortheme{seahorse}
+  \usecolortheme{rose}
+  \usefonttheme[onlylarge]{structuresmallcapsserif}
+  %\usefonttheme[onlysmall]{structurebold}
+  \setbeamerfont{title}{shape=\itshape,family=\rmfamily}
+  \setbeamercolor{title}{fg=red!80!black,bg=red!20!white}
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+
+\usepackage[english]{babel}
+% or whatever
+
+\usepackage[latin1]{inputenc}
+% or whatever
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+
+\title % (optional, use only with long paper titles)
+{Circle Compactifications and T-duality}
+
+\subtitle
+{Bosonic and Type II String}
+
+\author % (optional, use only with lots of authors)
+{Giancarlo Oancia}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[University of Bologna] % (optional, but mostly needed)
+{
+  Department of Theoretical Physics\\
+  University of Bologna}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[String Theory, 2025] % (optional, should be abbreviation of conference name)
+{Presentation for String Theory Exam, 2025}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+\subject{String Theory}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+ \pgfdeclareimage[height=0.5cm]{university-logo}{graphics/University_Crest.png}
+ \logo{\pgfuseimage{university-logo}}
+
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+	\tableofcontents
+	% You might wish to add the option [pausesections]
+\end{frame}
+
+
+% Structuring a talk is a difficult task and the following structure
+% may not be suitable. Here are some rules that apply for this
+% solution: 
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+% - A conference audience is likely to know very little of what you
+%   are going to talk about. So *simplify*!
+% - In a 20min talk, getting the main ideas across is hard
+%   enough. Leave out details, even if it means being less precise than
+%   you think necessary.
+% - If you omit details that are vital to the proof/implementation,
+%   just say so once. Everybody will be happy with that.
+
+\section{Field Theory Compactification}
+\begin{frame}
+  1
+  
+  \hyperlink{foo}{\beamerskipbutton{skip slide}}
+  
+  \end{frame}
+  
+  \begin{frame}
+  2
+  \end{frame}
+  
+  \begin{frame}[label=foo]
+  3
+  \end{frame}
+
+
+\begin{frame}[t]
+	\frametitle{There is no Largest Prime number}
+	\framesubtitle{Subtitle}
+
+	\begin{theorem}<1->
+		There is no largest prime number
+	\end{theorem}
+	\begin{proof}<2->
+		\begin{enumerate}
+			\item<2-> Suppose $p$ were the largest prime number.
+			\item<3-> Let $q$ be the product of the first $p$ numbers.
+			\item<4-> Then $q + 1$ is not divisible by any of them.
+			\item<2-> But $q + 1$ is greater than $1$, thus divisible by some prime
+			      number not in the first $p$ numbers.\qedhere
+		\end{enumerate}
+	\end{proof}
+	\uncover<5->{{The proof used \textit{reductio ad absurdum}.}}
+
+\end{frame}
+
+\begin{frame}
+  \begin{description}
+    \item[Prova] Ciao
+    \item[Prova 2] Ciao  
+  \end{description}
+  
+\end{frame}
+
+\section{Bosonic String Compactification}
+
+\subsection{Overview of the Bosonic String}
+
+\begin{frame}{Make Titles Informative. Use Uppercase Letters.}{Subtitles are optional.}
+	% - A title should summarize the slide in an understandable fashion
+	%   for anyone how does not follow everything on the slide itself.
+
+	\begin{itemize}
+		\item
+		      Use \texttt{itemize} a lot.
+		\item
+		      Use very short sentences or \emph{short} \alert{phrases}.
+	\end{itemize}
+	\begin{definition}
+		A \alert{Prime number} is a number
+	\end{definition}
+	\pause
+	\begin{example}
+		\begin{itemize}
+			\item this is prime
+
+			\item this is \emph{not} prime
+
+			\item this may be prime
+		\end{itemize}
+	\end{example}
+\end{frame}
+
+\begin{frame}
+	\frametitle{What's Still To Do?}
+	\begin{block}{Answered Questions}
+		How many primes are there?
+	\end{block}
+	\begin{block}{Open Questions}
+		Is every even number the sum of two primes?
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{What's Still To Do?}
+	\begin{itemize}
+		\item Answered Questions
+		      \begin{itemize}
+			      \item How many primes are there?~\cite{Author1990}
+		      \end{itemize}
+		\item Open Questions
+		      \begin{itemize}
+			      \item Is every even number the sum of two primes?
+		      \end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{An Algorithm For Finding Primes Numbers.}
+	\begin{semiverbatim}
+		\uncover<1->{\alert<0>{int main (void)}}
+		\uncover<1->{\alert<0>{\{}}
+		\uncover<1->{\alert<1>{ \alert<4>{std::}vector<bool> is_prime (100, true);}}
+		\uncover<1->{\alert<1>{ for (int i = 2; i < 100; i++)}}
+		\uncover<2->{\alert<2>{ if (is_prime[i])}}
+		\uncover<2->{\alert<0>{ \{}}
+		\uncover<3->{\alert<3>{ \alert<4>{std::}cout << i << " ";}}
+		\uncover<3->{\alert<3>{ for (int j = i; j < 100;}}
+		\uncover<3->{\alert<3>{ is_prime [j] = false, j+=i);}}
+		\uncover<2->{\alert<0>{ \}}}
+		\uncover<1->{\alert<0>{ return 0;}}
+		\uncover<1->{\alert<0>{\}}}
+	\end{semiverbatim}
+	\visible<4->{Note the use of \alert{\texttt{std::}}.}
+\end{frame}
+
+\begin{frame}
+	\frametitle{What's Still To Do?}
+	\begin{columns}[t]
+		\column{.5\textwidth}
+		\begin{block}{Answered Questions}
+			How many primes are there?
+		\end{block}\pause
+		\column{.5\textwidth}
+		\begin{block}{Open Questions}
+			Is every even number the sum of two primes?
+			23
+		\end{block}
+	\end{columns}
+\end{frame}
+
+
+\section*{Summary}
+
+\begin{frame}{Summary}
+
+	% Keep the summary *very short*.
+	\begin{itemize}
+		\item
+		      The \alert{first main message} of your talk in one or two lines.
+		\item
+		      The \alert{second main message} of your talk in one or two lines.
+		\item
+		      Perhaps a \alert{third message}, but not more than that.
+	\end{itemize}
+
+	% The following outlook is optional.
+	\vskip0pt plus.5fill
+	\begin{itemize}
+		\item
+		      Outlook
+		      \begin{itemize}
+			      \item
+			            Something you haven't solved.
+			      \item
+			            Something else you haven't solved.
+		      \end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+
+% All of the following is optional and typically not needed. 
+\appendix
+\section<presentation>*{\appendixname}
+\subsection<presentation>*{For Further Reading}
+
+\begin{frame}[allowframebreaks]
+	\frametitle<presentation>{For Further Reading}
+
+	\begin{thebibliography}{10}
+
+		\beamertemplatebookbibitems
+		% Start with overview books.
+
+		\bibitem{Author1990}
+		A.~Author.
+		\newblock {\em Handbook of Everything}.
+		\newblock Some Press, 1990.
+
+
+		\beamertemplatearticlebibitems
+		% Followed by interesting articles. Keep the list short. 
+
+		\bibitem{Someone2000}
+		S.~Someone.
+		\newblock On this and that.
+		\newblock {\em Journal of This and That}, 2(1):50--100,
+		2000.
+	\end{thebibliography}
+\end{frame}
+
+\end{document}
+
+

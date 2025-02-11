@@ -1,0 +1,185 @@
+\section{Motivation}
+\begin{frame}{Motivation}
+	\begin{center}
+		Superstring lives in $10$d.\pause \\
+		We live in $4$d.\\ \pause
+		\alert{What to do with those extra-dimensions?}
+	\end{center}
+\end{frame}
+
+\begin{frame}[standout]
+	\color{White}{What Really is Spacetime?}
+\end{frame}
+
+\section{Kaluza-Klein Compactification}
+\begin{frame}{Kaluza-Klein Compactification: Main Results}
+	Compactification of a \alert{scalar field} on $\M_D \to \M_{D-1} \times S^1$:
+	\begin{columns}
+		\column{.45\textwidth}
+		\begin{block}{Kaluza-Klein Masses}
+			\begin{equation*}
+				m^2_s = M^2 + \frac{s^2}{R^2}.
+			\end{equation*}
+		\end{block}
+		\column{.45\textwidth}
+		\begin{block}{Negligible for}
+			\begin{equation*}
+				E \ll \frac{1}{R}.
+			\end{equation*}
+		\end{block}
+	\end{columns} \pause
+	Compactification of \alert{Einstein gravity} on $\M_D \to \M_{D-1} \times S^1$:
+	\begin{block}{Result}
+		\begin{itemize}
+			\item Decomposition $SO(1,D-1) \to SO(1,D-2)$;
+			\item Gauge symmetry;
+			\item $\textup{Vol} (S^1)  = \int_{0}^{2\pi R} \ud y \, \sqrt{G^{(0)}_{yy}} = e^{-(D-3)\alpha_{\!_{D-1}} \phi} \cdot 2\pi R$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{Superstring}
+\begin{frame}{Superstring: the Setting}
+	\begin{block}{Closed Critical String in \texorpdfstring{$10$}{10}d}
+		\begin{itemize}
+			\item Critical setting $\M_{10}$. Closed string;
+			\item Bosonic $X^\mu$ and fermionic $\psi^\mu$ fields; \pause
+			\item Lightcone gauge: $X^\mu \to (X^\pm, X^i), \, \psi^\mu \to (\psi^\pm, \psi^i)$;
+			\item $X^i = X^i_L (\tau + \sigma) + X^i_R (\tau,\sigma), \, \psi^i = \psi^i_L(\tau+\sigma)+\psi^i_R(\tau-\sigma)$; \pause
+			\item Mode expansion: $\psi^i_{\!_{L/R}} (\xi^\pm) = \sqrt{\frac{2\pi}{l}} \sum_{r \in \Z + \phi} \ptwiddle{b^i_r} e ^{-\frac{2\pi i}{l} r \xi^\pm} $; \pause
+			\item NS sector: $\phi = 1/2, \, \ptwiddle{a} = 1/2$;
+			\item R sector: $\phi = 0, \, \ptwiddle{a} = 0$; \pause
+			\item Level-matching condition: $M^2_L = M^2_R$;
+			\item Mass-shell condition: $M^2_{L/R} = \frac{2}{\alpha'} \left({N}_\perp - \ptwiddle{a} \right)$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Superstring: the Sectors}
+	\begin{table}[c]
+		\scalebox{0.77}{
+			\input{tables/superstring-sectors.tex}
+		}
+	\end{table}
+\end{frame}
+
+\begin{frame}{Superstring: Type II Theories}
+	\begin{table}[c]
+		%\vspace{-20pt}
+		\scalebox{0.78}{
+			\input{tables/type-ii-content.tex}
+		}
+	\end{table}
+\end{frame}
+
+%************* TYPE II STRING: COMPACTIFICATION **********
+\section{Type II String: Compactification}
+
+\input{animation/table-type-ii.tex}
+
+\begin{frame}{Type II String: Field Theoretic Compactification}
+	\begin{table}[c]
+		\vspace{-0.1cm}
+		\scalebox{0.63}{
+			\input{tables/type-II-decomposition.tex}
+		}
+	\end{table}
+\end{frame}
+
+\begin{frame}[standout]
+	\color{white}{Is This a Coincidence?} \pause \\
+	\color{white}{is This a Feature of the Massless Spectrum?}
+\end{frame}
+
+\begin{frame}{Type II String: Compactification on \texorpdfstring{$S^1$}{S1}}
+	\begin{block}{Setting and Main Results}
+		Lightcone quantization:
+		\vspace{-3mm}
+		\begin{itemize}
+			\item $\M_{10} \to \M_9 \times S^1, X^9 \simeq X^9 + 2\pi R$;
+			\item $X^i(\tau,\sigma + l) = X^i(\tau,\sigma)$; \pause
+			\item $X^9(\tau,\sigma + l) = X^9(\tau,\sigma)+2\pi R \omega$;
+			\item $p_{\!_{9}} = {s}/{R}, \, s\in\Z$.
+		\end{itemize} \pause
+
+		Mode decomposition:
+		\vspace{-5mm}
+		\begin{itemize}
+			\item $X^{9}_{\!_{L/R}}(\xi^\pm)= \frac{x^{9}}{2} + \frac{\alpha' \pi}{l} p_{\!_{L/R}} \xi^\pm + i \sqrt{\frac{\alpha'}{2}} \sum_{n\neq 0} \frac{\ptwiddle{\alpha^9_n}}{n}e^{-\frac{2\pi i}{l}n \xi^\pm}$;
+			\item $p_{\!_L} = \left( \frac{s}{R} + \frac{\omega R}{\alpha'} \right), \, p_{\!_R} = \left( \frac{s}{R} - \frac{\omega R}{\alpha'} \right)$; \pause
+			\item $M^2_L = \frac{p^2_L}{2} + \frac{2}{\alpha'} \left( \tilde{N}_\perp - \tilde{a} \right), \quad M^2_R = \frac{p^2_R}{2} + \frac{2}{\alpha'} \left( {N}_\perp - a \right)$;
+			\item $M^2_L = M^2_R, \, M^2 = M^2_L + M^2_R$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{T-Duality: Introduction}
+\begin{frame}{T-Duality}
+	\begin{block}{Mass-Shell Condition}
+		\setlength\abovedisplayskip{0pt}
+		\begin{gather*}
+			M^2 = \frac{s^2}{R^2} + \frac{\omega^2 R^2}{\alpha'^2} + \frac{2}{\alpha'}(\tilde{N}_\perp + N_\perp - a - \tilde{a}), \\
+			p_{\!_L} = \left( \frac{s}{R} + \frac{\omega R}{\alpha'} \right), \, p_{\!_R} = \left( \frac{s}{R} - \frac{\omega R}{\alpha'} \right).
+		\end{gather*}
+	\end{block}
+	\begin{columns}
+		\column{0.55\textwidth} \pause
+		\begin{block}{From Spectrum}
+			\setlength\abovedisplayskip{0pt}
+			\begin{align*}
+				R & \to R' = {\alpha'}/{R}, \\ (s,\omega) &\to (s',\omega') = (\omega, s) .
+			\end{align*}
+		\end{block}
+		\column{0.55\textwidth} \pause
+		\begin{block}{From Full Theory}
+			\setlength\abovedisplayskip{0pt}
+			\begin{align*}
+				\quad p_{\!_L} \to p_{\!_L}, \; & p_{\!_R} \to - p_{\!_R} , \\
+				X^9_L \to X^9_L, \;             & X^9_R \to -X^9_R .
+			\end{align*}
+		\end{block}
+	\end{columns} \pause
+	\begin{block}{from Worldsheet Supersymmetry}
+		\begin{equation*}
+			\psi^9_L \to \psi^9_L, \; \psi^9_R \to -\psi^9_R.
+		\end{equation*}
+	\end{block}
+\end{frame}
+
+\begin{frame}{T-Duality: Consequence}
+	\begin{block}{T-Duality}
+		Transformation:
+		\vspace{-3mm}
+		\begin{gather*}
+			X^9(\tau, \sigma) = X^9_L(\xi^+) + X^9_R(\xi^-) \to X'^9(\tau,\sigma) = X^9_L(\xi^+) - X^9_R(\xi^-), \\
+			\psi^9(\tau,\sigma) = \psi^9_L(\xi^+) + \psi^9_R(\xi^-) \to \psi'^9(\tau,\sigma) = \psi^9_L(\xi^+) - \psi^9_R(\xi^-).
+		\end{gather*} \pause
+		On the modes:
+		\vspace{-3mm}
+		\begin{gather*}
+			\tilde{b}^9_r \to \tilde{b}'^9_r = \tilde{b}^9_r, \quad b^9_r \to b'^9_r = - b^9_r, \\
+			B^\pm_4 = \frac{1}{\sqrt{2}} \left( b^8_0 \pm i b^9_0 \right) \to \frac{1}{\sqrt{2}} \left( b^8_0 \mp i b^9_0 \right) = B^\mp_4.
+		\end{gather*} \pause
+		On the sectors:
+		\vspace{-3mm}
+		\begin{align*}
+			(\text{R}_+, \text{R}_\pm) &\to (\text{R}_+, \text{R}_\mp), \\
+    (\text{NS}_+, \text{R}_\pm) &\to (\text{NS}_+, \text{R}_\mp).
+		\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}{T-Duality: Conclusion}
+	\begin{equation*}
+		\text{Type IIB on $S^1$ with $R$ $\; \cong\;$ Type IIA on $S'^1$ with $R' = \frac{\alpha'}{R}$} .
+  \end{equation*}
+\end{frame}
+
+\begin{frame}{T-Duality: Conclusion}
+	\begin{gather*}
+		X^9(\tau,\sigma) = X^9_L(\xi^+) + X^9_R(\xi^-) ,\\
+		X'^9(\tau,\sigma) = X^9_L(\xi^+) - X^9_R(\xi^-) .
+  \end{gather*}
+\end{frame}
+
+\subsection{T-Duality}

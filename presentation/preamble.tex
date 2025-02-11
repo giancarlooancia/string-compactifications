@@ -1,0 +1,21 @@
+\usepackage{comment}
+\usepackage{lipsum}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{bm}
+\usepackage{array}
+\usepackage{multirow}
+\renewcommand{\arraystretch}{1.3}
+
+\usepackage{braket}
+
+
+\makeatletter
+\def\beamer@framenotesbegin{% at beginning of slide
+\usebeamercolor[fg]{normal text}
+\gdef\beamer@noteitems{}%
+\gdef\beamer@notes{}%
+}
+\makeatother
+
+\renewcommand\appendixname{Appendix}
